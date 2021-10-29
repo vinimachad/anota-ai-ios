@@ -15,7 +15,7 @@ target 'AnotaAi' do
     inherit! :search_paths
     # Pods for testing
     pod 'iOSSnapshotTestCase'
-  end
+  end 
 
   target 'AnotaAiUITests' do
     # Pods for testing
