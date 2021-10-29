@@ -7,14 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		022F2AD3ED203733F4D68EE4 /* Pods_AnotaAiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB04001192C74A409F86BAFF /* Pods_AnotaAiTests.framework */; };
+		77C27B2D0FA1606D488FF91A /* Pods_AnotaAi_AnotaAiUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEE173B975CCA42782996915 /* Pods_AnotaAi_AnotaAiUITests.framework */; };
 		814B3C39272B794A00C9F0CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814B3C38272B794A00C9F0CB /* AppDelegate.swift */; };
 		814B3C3B272B794A00C9F0CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814B3C3A272B794A00C9F0CB /* SceneDelegate.swift */; };
-		814B3C3D272B794A00C9F0CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814B3C3C272B794A00C9F0CB /* ViewController.swift */; };
 		814B3C42272B794D00C9F0CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 814B3C41272B794D00C9F0CB /* Assets.xcassets */; };
 		814B3C45272B794D00C9F0CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 814B3C43272B794D00C9F0CB /* LaunchScreen.storyboard */; };
 		814B3C50272B794E00C9F0CB /* AnotaAiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814B3C4F272B794E00C9F0CB /* AnotaAiTests.swift */; };
 		814B3C5A272B794E00C9F0CB /* AnotaAiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814B3C59272B794E00C9F0CB /* AnotaAiUITests.swift */; };
 		814B3C5C272B794E00C9F0CB /* AnotaAiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814B3C5B272B794E00C9F0CB /* AnotaAiUITestsLaunchTests.swift */; };
+		81E7E782272B7FBD00E0E726 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 81E7E781272B7FBD00E0E726 /* GoogleService-Info.plist */; };
+		E076D7C24BCB09C49033EBF2 /* Pods_AnotaAi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 212A0C367AF176B42D62C4E8 /* Pods_AnotaAi.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,10 +38,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		212A0C367AF176B42D62C4E8 /* Pods_AnotaAi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AnotaAi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4330ABF6F1B1E9808534A4BC /* Pods-AnotaAiTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnotaAiTests.release.xcconfig"; path = "Target Support Files/Pods-AnotaAiTests/Pods-AnotaAiTests.release.xcconfig"; sourceTree = "<group>"; };
 		814B3C35272B794A00C9F0CB /* AnotaAi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnotaAi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		814B3C38272B794A00C9F0CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		814B3C3A272B794A00C9F0CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		814B3C3C272B794A00C9F0CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		814B3C41272B794D00C9F0CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		814B3C44272B794D00C9F0CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		814B3C46272B794D00C9F0CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +51,14 @@
 		814B3C55272B794E00C9F0CB /* AnotaAiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnotaAiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		814B3C59272B794E00C9F0CB /* AnotaAiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnotaAiUITests.swift; sourceTree = "<group>"; };
 		814B3C5B272B794E00C9F0CB /* AnotaAiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnotaAiUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		81E7E781272B7FBD00E0E726 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8ECE1E38ED6F4CFFAE65946C /* Pods-AnotaAi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnotaAi.debug.xcconfig"; path = "Target Support Files/Pods-AnotaAi/Pods-AnotaAi.debug.xcconfig"; sourceTree = "<group>"; };
+		9A059C42AB7EF5E3257B535B /* Pods-AnotaAi-AnotaAiUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnotaAi-AnotaAiUITests.debug.xcconfig"; path = "Target Support Files/Pods-AnotaAi-AnotaAiUITests/Pods-AnotaAi-AnotaAiUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A0EF8CF182494A070B183A81 /* Pods-AnotaAi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnotaAi.release.xcconfig"; path = "Target Support Files/Pods-AnotaAi/Pods-AnotaAi.release.xcconfig"; sourceTree = "<group>"; };
+		A8718A45AAD663E1AFB7F493 /* Pods-AnotaAiTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnotaAiTests.debug.xcconfig"; path = "Target Support Files/Pods-AnotaAiTests/Pods-AnotaAiTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BB04001192C74A409F86BAFF /* Pods_AnotaAiTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AnotaAiTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC7FE972E182CDA915624C27 /* Pods-AnotaAi-AnotaAiUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnotaAi-AnotaAiUITests.release.xcconfig"; path = "Target Support Files/Pods-AnotaAi-AnotaAiUITests/Pods-AnotaAi-AnotaAiUITests.release.xcconfig"; sourceTree = "<group>"; };
+		DEE173B975CCA42782996915 /* Pods_AnotaAi_AnotaAiUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AnotaAi_AnotaAiUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E076D7C24BCB09C49033EBF2 /* Pods_AnotaAi.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				022F2AD3ED203733F4D68EE4 /* Pods_AnotaAiTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +82,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77C27B2D0FA1606D488FF91A /* Pods_AnotaAi_AnotaAiUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		61C19EE1EA33964990F66930 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				212A0C367AF176B42D62C4E8 /* Pods_AnotaAi.framework */,
+				DEE173B975CCA42782996915 /* Pods_AnotaAi_AnotaAiUITests.framework */,
+				BB04001192C74A409F86BAFF /* Pods_AnotaAiTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		814B3C2C272B794A00C9F0CB = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +106,8 @@
 				814B3C4E272B794E00C9F0CB /* AnotaAiTests */,
 				814B3C58272B794E00C9F0CB /* AnotaAiUITests */,
 				814B3C36272B794A00C9F0CB /* Products */,
+				C85EE6ED94090B1B3A3B46B1 /* Pods */,
+				61C19EE1EA33964990F66930 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,12 +124,13 @@
 		814B3C37272B794A00C9F0CB /* AnotaAi */ = {
 			isa = PBXGroup;
 			children = (
+				81E7E786272B800200E0E726 /* Coordinators */,
+				81E7E785272B7FF100E0E726 /* API */,
+				81E7E784272B7FEA00E0E726 /* Features */,
+				81E7E783272B7FE200E0E726 /* Support */,
+				81E7E780272B7F9600E0E726 /* SupportingFiles */,
 				814B3C38272B794A00C9F0CB /* AppDelegate.swift */,
 				814B3C3A272B794A00C9F0CB /* SceneDelegate.swift */,
-				814B3C3C272B794A00C9F0CB /* ViewController.swift */,
-				814B3C41272B794D00C9F0CB /* Assets.xcassets */,
-				814B3C43272B794D00C9F0CB /* LaunchScreen.storyboard */,
-				814B3C46272B794D00C9F0CB /* Info.plist */,
 			);
 			path = AnotaAi;
 			sourceTree = "<group>";
@@ -124,6 +152,66 @@
 			path = AnotaAiUITests;
 			sourceTree = "<group>";
 		};
+		81E7E780272B7F9600E0E726 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				814B3C41272B794D00C9F0CB /* Assets.xcassets */,
+				814B3C43272B794D00C9F0CB /* LaunchScreen.storyboard */,
+				814B3C46272B794D00C9F0CB /* Info.plist */,
+				81E7E781272B7FBD00E0E726 /* GoogleService-Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		81E7E783272B7FE200E0E726 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		81E7E784272B7FEA00E0E726 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		81E7E785272B7FF100E0E726 /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		81E7E786272B800200E0E726 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				81E7E787272B800B00E0E726 /* SetupCoordinator */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		81E7E787272B800B00E0E726 /* SetupCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SetupCoordinator;
+			sourceTree = "<group>";
+		};
+		C85EE6ED94090B1B3A3B46B1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8ECE1E38ED6F4CFFAE65946C /* Pods-AnotaAi.debug.xcconfig */,
+				A0EF8CF182494A070B183A81 /* Pods-AnotaAi.release.xcconfig */,
+				9A059C42AB7EF5E3257B535B /* Pods-AnotaAi-AnotaAiUITests.debug.xcconfig */,
+				DC7FE972E182CDA915624C27 /* Pods-AnotaAi-AnotaAiUITests.release.xcconfig */,
+				A8718A45AAD663E1AFB7F493 /* Pods-AnotaAiTests.debug.xcconfig */,
+				4330ABF6F1B1E9808534A4BC /* Pods-AnotaAiTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -131,9 +219,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 814B3C5F272B794E00C9F0CB /* Build configuration list for PBXNativeTarget "AnotaAi" */;
 			buildPhases = (
+				ECE3CF280D437905932E827C /* [CP] Check Pods Manifest.lock */,
 				814B3C31272B794A00C9F0CB /* Sources */,
 				814B3C32272B794A00C9F0CB /* Frameworks */,
 				814B3C33272B794A00C9F0CB /* Resources */,
+				186E33DBD5C286A78B6EDB35 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -148,9 +238,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 814B3C62272B794E00C9F0CB /* Build configuration list for PBXNativeTarget "AnotaAiTests" */;
 			buildPhases = (
+				B6BD918AA2368F19960AC56E /* [CP] Check Pods Manifest.lock */,
 				814B3C47272B794E00C9F0CB /* Sources */,
 				814B3C48272B794E00C9F0CB /* Frameworks */,
 				814B3C49272B794E00C9F0CB /* Resources */,
+				3363D8424936E59F0FCB7364 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -166,9 +258,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 814B3C65272B794E00C9F0CB /* Build configuration list for PBXNativeTarget "AnotaAiUITests" */;
 			buildPhases = (
+				AF8D1AC6EBE14CB52C9612B6 /* [CP] Check Pods Manifest.lock */,
 				814B3C51272B794E00C9F0CB /* Sources */,
 				814B3C52272B794E00C9F0CB /* Frameworks */,
 				814B3C53272B794E00C9F0CB /* Resources */,
+				E103B74B3CBBED9508CB966A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -230,6 +324,7 @@
 			files = (
 				814B3C45272B794D00C9F0CB /* LaunchScreen.storyboard in Resources */,
 				814B3C42272B794D00C9F0CB /* Assets.xcassets in Resources */,
+				81E7E782272B7FBD00E0E726 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,12 +344,131 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		186E33DBD5C286A78B6EDB35 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AnotaAi/Pods-AnotaAi-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AnotaAi/Pods-AnotaAi-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AnotaAi/Pods-AnotaAi-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3363D8424936E59F0FCB7364 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AnotaAiTests/Pods-AnotaAiTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AnotaAiTests/Pods-AnotaAiTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AnotaAiTests/Pods-AnotaAiTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF8D1AC6EBE14CB52C9612B6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AnotaAi-AnotaAiUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B6BD918AA2368F19960AC56E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AnotaAiTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E103B74B3CBBED9508CB966A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AnotaAi-AnotaAiUITests/Pods-AnotaAi-AnotaAiUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AnotaAi-AnotaAiUITests/Pods-AnotaAi-AnotaAiUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AnotaAi-AnotaAiUITests/Pods-AnotaAi-AnotaAiUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ECE3CF280D437905932E827C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AnotaAi-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		814B3C31272B794A00C9F0CB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				814B3C3D272B794A00C9F0CB /* ViewController.swift in Sources */,
 				814B3C39272B794A00C9F0CB /* AppDelegate.swift in Sources */,
 				814B3C3B272B794A00C9F0CB /* SceneDelegate.swift in Sources */,
 			);
@@ -422,6 +636,7 @@
 		};
 		814B3C60272B794E00C9F0CB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8ECE1E38ED6F4CFFAE65946C /* Pods-AnotaAi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -450,6 +665,7 @@
 		};
 		814B3C61272B794E00C9F0CB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0EF8CF182494A070B183A81 /* Pods-AnotaAi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -478,6 +694,7 @@
 		};
 		814B3C63272B794E00C9F0CB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8718A45AAD663E1AFB7F493 /* Pods-AnotaAiTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -503,6 +720,7 @@
 		};
 		814B3C64272B794E00C9F0CB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4330ABF6F1B1E9808534A4BC /* Pods-AnotaAiTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -528,6 +746,7 @@
 		};
 		814B3C66272B794E00C9F0CB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A059C42AB7EF5E3257B535B /* Pods-AnotaAi-AnotaAiUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -551,6 +770,7 @@
 		};
 		814B3C67272B794E00C9F0CB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC7FE972E182CDA915624C27 /* Pods-AnotaAi-AnotaAiUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
