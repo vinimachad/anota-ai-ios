@@ -1,0 +1,13 @@
+/* 
+  Error.strings
+  AnotaAi
+
+  Created by Vinicius Galhardo Machado on 28/10/21.
+  
+*/
+
+"unknown_error" = "Aconteceu um erro interno, tente novamente mais tarde.";
+"request_error" = "Aconteceu um erro inesperado com os nossos servidores.";
+"timeout_error" = "O tempo de requisição esgotou, tente novamente mais tarde.";
+"no_connection_error" = "Aparentemente você está sem internet, verifique sua conexão e tente novamente.";
+"alert_error_title" = "Opss...";

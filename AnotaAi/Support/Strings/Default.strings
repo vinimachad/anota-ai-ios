@@ -1,0 +1,13 @@
+/* 
+  Default.strings
+  AnotaAi
+
+  Created by Vinicius Galhardo Machado on 19/08/21.
+  
+*/
+
+// MARK: - Error
+
+"ok" = "OK";
+"loading_message" = "Carregando...";
+"try_again_input_title" = "Tentar novamente";

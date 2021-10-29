@@ -12,9 +12,20 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
+    var appCoordinator: AppCoordinator?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        // Override point for customization after application launch.
         FirebaseApp.configure()
+        
+        guard #available(iOS 13.0, *) else {
+            let window = UIWindow(frame: UIScreen.main.bounds)
+            appCoordinator = AppCoordinator(window: window)
+            appCoordinator?.start()
+            self.window = window
+            return true
+        }
+        
         return true
     }
 
