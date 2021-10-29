@@ -1,6 +1,6 @@
 //
 //  CoordinatorProtocol.swift
-//  app-template
+//  AnotaAi
 //
 //  Created by Vinicius Galhardo Machado on 25/04/21.
 //

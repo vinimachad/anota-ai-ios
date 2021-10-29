@@ -1,6 +1,6 @@
 //
 //  AppCoordinator.swift
-//  app-template
+//  AnotaAi
 //
 //  Created by Vinicius Galhardo Machado on 25/04/21.
 //
@@ -22,8 +22,8 @@ class AppCoordinator {
     }
     
     func coordinatorDefault() -> UIViewController {
-        let homeCoordinator = HomeCoordinator()
-        childCoordinator = homeCoordinator
-        return homeCoordinator.start()
+        let coordinator = WelcomeCoordinator()
+        childCoordinator = coordinator
+        return coordinator.start()
     }
 }
