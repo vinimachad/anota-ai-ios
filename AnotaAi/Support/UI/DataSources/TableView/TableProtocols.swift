@@ -32,9 +32,9 @@ extension TableSectionProtocol {
     }
 }
 
-protocol TableViewModelProtocol { }
+protocol TablesViewModelProtocol { }
 
 protocol TableViewProtocol {
-    associatedtype ViewModel = TableViewModelProtocol
+    associatedtype ViewModel = TablesViewModelProtocol
     func bindIn(viewModel: ViewModel)
 }

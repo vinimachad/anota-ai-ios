@@ -10,6 +10,8 @@ import Foundation
 enum LocalizableFiles: String {
     case `default` = "Default"
     case error = "Error"
+    case welcome = "Welcome"
+    case restaurantMenu = "RestaurantMenu"
 }
 
 extension String {

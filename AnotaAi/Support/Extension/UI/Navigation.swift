@@ -2,7 +2,7 @@
 //  Navigation.swift
 //  AnotaAi
 //
-//  Created by Vitor Mesquita on 30/08/21.
+//  Created by Vinicius Galhardo Machado on 30/08/21.
 //
 
 import UIKit
