@@ -8,6 +8,7 @@ target 'AnotaAi' do
   # Pods for AnotaAi
 
   pod 'SwiftLint'
+  pod 'FirebaseFirestoreSwift'
   pod 'Firebase/Analytics'
   pod 'Firebase/Crashlytics'
 

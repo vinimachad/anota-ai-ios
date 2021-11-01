@@ -8,7 +8,7 @@
 import Foundation
 
 protocol MenuProtocol: MenuViewModelProtocol {
-    
+    func createTable()
 }
 
 class MenuViewModel {
@@ -17,8 +17,27 @@ class MenuViewModel {
     
     // MARK: - Private properties
     
+    private let tableRequest: Table
+    private let createTableUseCase: CreateTableUseCaseProtocol?
+    
     // MARK: - Init
     
+    init(tableRequest: Table, createTableUseCase: CreateTableUseCaseProtocol?) {
+        self.tableRequest = tableRequest
+        self.createTableUseCase = createTableUseCase
+    }
+    
+    func createTable() {
+        createTableUseCase?.execute(
+            request: tableRequest,
+            success: { table in
+               print("table", table)
+            },
+            failure: { error in
+                print("error", error.description)
+            }
+        )
+    }
 }
 
 extension MenuViewModel: MenuProtocol {}

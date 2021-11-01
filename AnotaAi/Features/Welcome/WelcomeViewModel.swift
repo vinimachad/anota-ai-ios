@@ -8,8 +8,8 @@
 import Foundation
 
 protocol WelcomeProtocol: WelcomeViewModelProtocol {
-    var onSuccessGetQRCodeValue: ((String) -> Void)? { get set }
-    var onFailureGetQRCodeValue: (() -> Void)? { get set }
+    var onSuccessGetQRCodeValue: ((Table) -> Void)? { get set }
+    var onFailureGetQRCodeValue: ((String) -> Void)? { get set }
     func startScan()
     func stopScan()
 }
@@ -19,20 +19,41 @@ class WelcomeViewModel {
     // MARK: - Public properties
     
     var scannerView = QRScannerView()
-    var onSuccessGetQRCodeValue: ((String) -> Void)?
-    var onFailureGetQRCodeValue: (() -> Void)?
+    var onSuccessGetQRCodeValue: ((Table) -> Void)?
+    var onFailureGetQRCodeValue: ((String) -> Void)?
     
     // MARK: - Private properties
     
+    private var tableId: String?
+    private var personRequest: Person? = Person()
+    private var createPersonUseCase: CreatePersonUseCaseProtocol
+    
     // MARK: - Init
     
-    init() {
+    init(createPersonUseCase: CreatePersonUseCaseProtocol) {
+        self.createPersonUseCase = createPersonUseCase
         scannerView.delegate = self
     }
     
+    private func validation() {
+        guard let _ = personRequest?.name else {
+            onFailureGetQRCodeValue?("Você deve preencher seu nome para continuarmos")
+            startScan()
+            return
+        }
+        createPerson()
+    }
 }
 
 extension WelcomeViewModel: WelcomeProtocol {
+    
+    // MARK: - Updates
+    
+    func didChangeName(_ text: String?) {
+        personRequest?.name = text
+    }
+    
+    // MARK: - Scan
     
     func startScan() {
         if !scannerView.isRunning {
@@ -45,6 +66,22 @@ extension WelcomeViewModel: WelcomeProtocol {
             scannerView.stopScanning()
         }
     }
+    
+    // MARK: - Request
+    
+    private func createPerson() {
+        guard let personRequest = personRequest else { return }
+        createPersonUseCase.execute(
+            request: personRequest,
+            success: { [weak self] person in
+                let tableRequest = Table(id: self?.tableId ?? "", persons: [person])
+                self?.onSuccessGetQRCodeValue?(tableRequest)
+            }, failure: { [weak self] error in
+                self?.onFailureGetQRCodeValue?(error)
+                self?.startScan()
+            }
+        )
+    }
 }
 
 extension WelcomeViewModel: QRScannerViewDelegate {
@@ -54,7 +91,8 @@ extension WelcomeViewModel: QRScannerViewDelegate {
     }
     
     func qrScanningSucceededWithCode(_ str: String?) {
-        onSuccessGetQRCodeValue?(str ?? "")
+        tableId = str
+        validation()
     }
     
     func qrScanningDidStop() {

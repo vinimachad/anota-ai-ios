@@ -8,10 +8,14 @@
 import UIKit
 
 protocol WelcomeControllerDelegate: AnyObject {
-    func openTable(code: String)
+    func openTable(tableRequest: Table)
 }
 
-class WelcomeController<ViewModel: WelcomeProtocol>: UIViewController {
+class WelcomeController<ViewModel: WelcomeProtocol>: UIViewController, KeyboardHandler {
+    
+    var scrollView: UIScrollView? {
+        contentView.scrollView
+    }
     
     // MARK: - Private properties
     
@@ -60,8 +64,8 @@ class WelcomeController<ViewModel: WelcomeProtocol>: UIViewController {
     private func bind() {
         contentView.bindIn(viewModel: viewModel)
         
-        viewModel.onSuccessGetQRCodeValue = { [weak self] value in
-            self?.delegate?.openTable(code: value)
+        viewModel.onSuccessGetQRCodeValue = { [weak self] request in
+            self?.delegate?.openTable(tableRequest: request)
         }
     }
 }
