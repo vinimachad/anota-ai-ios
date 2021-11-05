@@ -1,8 +1,8 @@
 //
 //  HomeViewModel.swift
-//  Muvver
+//  AnotaAi
 //
-//  Created by mano on 14/07/20.
+//  Created by Vinicius Galhardo Machdo on 14/07/20.
 //  Copyright © 2020 Jera. All rights reserved.
 //
 
