@@ -55,6 +55,12 @@
 		814B3C50272B794E00C9F0CB /* AnotaAiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814B3C4F272B794E00C9F0CB /* AnotaAiTests.swift */; };
 		814B3C5A272B794E00C9F0CB /* AnotaAiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814B3C59272B794E00C9F0CB /* AnotaAiUITests.swift */; };
 		814B3C5C272B794E00C9F0CB /* AnotaAiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814B3C5B272B794E00C9F0CB /* AnotaAiUITestsLaunchTests.swift */; };
+		814D0E9D27336DF400570934 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814D0E9C27336DF400570934 /* Alert.swift */; };
+		818CDB3D273016A6000B8E06 /* GetTableUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818CDB3C273016A6000B8E06 /* GetTableUseCase.swift */; };
+		8194F2E0272EF44900C902FC /* PersonSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8194F2DF272EF44900C902FC /* PersonSession.swift */; };
+		8194F2E3272F28ED00C902FC /* CreatePersonUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8194F2E2272F28ED00C902FC /* CreatePersonUseCase.swift */; };
+		8194F2E7272F2B0000C902FC /* PersonRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8194F2E6272F2B0000C902FC /* PersonRoutes.swift */; };
+		8194F2E9272F307B00C902FC /* UIViewController+KeyboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8194F2E8272F307B00C902FC /* UIViewController+KeyboardHandler.swift */; };
 		81AB1D2B272D9125006FB3C1 /* MenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AB1D2A272D9125006FB3C1 /* MenuCoordinator.swift */; };
 		81AB1D2E272D914B006FB3C1 /* MenuFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AB1D2D272D914B006FB3C1 /* MenuFactory.swift */; };
 		81AB1D30272D91AB006FB3C1 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AB1D2F272D91AB006FB3C1 /* MenuView.swift */; };
@@ -62,9 +68,18 @@
 		81AB1D34272D91BF006FB3C1 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AB1D33272D91BF006FB3C1 /* MenuViewModel.swift */; };
 		81AB1D36272D91CB006FB3C1 /* MenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81AB1D35272D91CB006FB3C1 /* MenuView.xib */; };
 		81AB1D39272D9ADE006FB3C1 /* RestaurantMenu.strings in Resources */ = {isa = PBXBuildFile; fileRef = 81AB1D38272D9ADE006FB3C1 /* RestaurantMenu.strings */; };
+		81AB1D3C272DA6EB006FB3C1 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AB1D3B272DA6EB006FB3C1 /* API.swift */; };
+		81AB1D3F272DAC52006FB3C1 /* TableRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AB1D3E272DAC52006FB3C1 /* TableRoutes.swift */; };
+		81BB5DF92734B20C00E78BE8 /* CreateSessionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BB5DF72734B20C00E78BE8 /* CreateSessionUseCase.swift */; };
+		81BB5DFA2734B20C00E78BE8 /* AnotaAiSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BB5DF82734B20C00E78BE8 /* AnotaAiSession.swift */; };
+		81BB5DFC2734B6F700E78BE8 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BB5DFB2734B6F700E78BE8 /* Person.swift */; };
 		81E7E782272B7FBD00E0E726 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 81E7E781272B7FBD00E0E726 /* GoogleService-Info.plist */; };
 		81E7E78A272B836F00E0E726 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E7E788272B836F00E0E726 /* AppCoordinator.swift */; };
 		81E7E78B272B836F00E0E726 /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E7E789272B836F00E0E726 /* CoordinatorProtocol.swift */; };
+		81EDA1E427337EED002EE3B9 /* UpdateTableUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EDA1E327337EED002EE3B9 /* UpdateTableUseCase.swift */; };
+		81EDA1E627337F79002EE3B9 /* AddPersonUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EDA1E527337F79002EE3B9 /* AddPersonUseCase.swift */; };
+		81FAB363272DB5C600D1B2A0 /* Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FAB362272DB5C600D1B2A0 /* Table.swift */; };
+		81FAB369272DC02D00D1B2A0 /* CreateTableUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FAB368272DC02D00D1B2A0 /* CreateTableUseCase.swift */; };
 		E076D7C24BCB09C49033EBF2 /* Pods_AnotaAi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 212A0C367AF176B42D62C4E8 /* Pods_AnotaAi.framework */; };
 /* End PBXBuildFile section */
 
@@ -138,6 +153,12 @@
 		814B3C55272B794E00C9F0CB /* AnotaAiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnotaAiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		814B3C59272B794E00C9F0CB /* AnotaAiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnotaAiUITests.swift; sourceTree = "<group>"; };
 		814B3C5B272B794E00C9F0CB /* AnotaAiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnotaAiUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		814D0E9C27336DF400570934 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		818CDB3C273016A6000B8E06 /* GetTableUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTableUseCase.swift; sourceTree = "<group>"; };
+		8194F2DF272EF44900C902FC /* PersonSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonSession.swift; sourceTree = "<group>"; };
+		8194F2E2272F28ED00C902FC /* CreatePersonUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePersonUseCase.swift; sourceTree = "<group>"; };
+		8194F2E6272F2B0000C902FC /* PersonRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonRoutes.swift; sourceTree = "<group>"; };
+		8194F2E8272F307B00C902FC /* UIViewController+KeyboardHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+KeyboardHandler.swift"; sourceTree = "<group>"; };
 		81AB1D2A272D9125006FB3C1 /* MenuCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCoordinator.swift; sourceTree = "<group>"; };
 		81AB1D2D272D914B006FB3C1 /* MenuFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuFactory.swift; sourceTree = "<group>"; };
 		81AB1D2F272D91AB006FB3C1 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
@@ -145,9 +166,18 @@
 		81AB1D33272D91BF006FB3C1 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
 		81AB1D35272D91CB006FB3C1 /* MenuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuView.xib; sourceTree = "<group>"; };
 		81AB1D38272D9ADE006FB3C1 /* RestaurantMenu.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = RestaurantMenu.strings; sourceTree = "<group>"; };
+		81AB1D3B272DA6EB006FB3C1 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		81AB1D3E272DAC52006FB3C1 /* TableRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableRoutes.swift; sourceTree = "<group>"; };
+		81BB5DF72734B20C00E78BE8 /* CreateSessionUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateSessionUseCase.swift; sourceTree = "<group>"; };
+		81BB5DF82734B20C00E78BE8 /* AnotaAiSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnotaAiSession.swift; sourceTree = "<group>"; };
+		81BB5DFB2734B6F700E78BE8 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		81E7E781272B7FBD00E0E726 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		81E7E788272B836F00E0E726 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		81E7E789272B836F00E0E726 /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
+		81EDA1E327337EED002EE3B9 /* UpdateTableUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTableUseCase.swift; sourceTree = "<group>"; };
+		81EDA1E527337F79002EE3B9 /* AddPersonUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPersonUseCase.swift; sourceTree = "<group>"; };
+		81FAB362272DB5C600D1B2A0 /* Table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Table.swift; sourceTree = "<group>"; };
+		81FAB368272DC02D00D1B2A0 /* CreateTableUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTableUseCase.swift; sourceTree = "<group>"; };
 		8ECE1E38ED6F4CFFAE65946C /* Pods-AnotaAi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnotaAi.debug.xcconfig"; path = "Target Support Files/Pods-AnotaAi/Pods-AnotaAi.debug.xcconfig"; sourceTree = "<group>"; };
 		9A059C42AB7EF5E3257B535B /* Pods-AnotaAi-AnotaAiUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnotaAi-AnotaAiUITests.debug.xcconfig"; path = "Target Support Files/Pods-AnotaAi-AnotaAiUITests/Pods-AnotaAi-AnotaAiUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A0EF8CF182494A070B183A81 /* Pods-AnotaAi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnotaAi.release.xcconfig"; path = "Target Support Files/Pods-AnotaAi/Pods-AnotaAi.release.xcconfig"; sourceTree = "<group>"; };
@@ -198,6 +228,7 @@
 		8100316E272C9F7A003FD820 /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
+				8194F2E1272F28E100C902FC /* Domain */,
 				81003176272C9FC6003FD820 /* WelcomeView.xib */,
 				81003170272C9F96003FD820 /* WelcomeView.swift */,
 				81003174272C9FB6003FD820 /* WelcomeController.swift */,
@@ -318,6 +349,7 @@
 		811E4D7A272C4DF20099C7AA /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				81FAB364272DBDAD00D1B2A0 /* Foundation */,
 				811E4D7B272C4DF20099C7AA /* UI */,
 			);
 			path = Extension;
@@ -326,6 +358,8 @@
 		811E4D7B272C4DF20099C7AA /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				814D0E9C27336DF400570934 /* Alert.swift */,
+				8194F2E8272F307B00C902FC /* UIViewController+KeyboardHandler.swift */,
 				811E4D7C272C4DF20099C7AA /* UIView+NibLodable.swift */,
 				811E4D7D272C4DF20099C7AA /* Navigation.swift */,
 				811E4D7E272C4DF20099C7AA /* UIView+Nib.swift */,
@@ -398,8 +432,10 @@
 		814B3C37272B794A00C9F0CB /* AnotaAi */ = {
 			isa = PBXGroup;
 			children = (
-				81E7E786272B800200E0E726 /* Coordinators */,
 				81E7E785272B7FF100E0E726 /* API */,
+				81BB5DF62734B20C00E78BE8 /* Session */,
+				8194F2DE272EF43500C902FC /* Models */,
+				81E7E786272B800200E0E726 /* Coordinators */,
 				81E7E784272B7FEA00E0E726 /* Features */,
 				81E7E783272B7FE200E0E726 /* Support */,
 				81E7E780272B7F9600E0E726 /* SupportingFiles */,
@@ -426,9 +462,28 @@
 			path = AnotaAiUITests;
 			sourceTree = "<group>";
 		};
+		8194F2DE272EF43500C902FC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8194F2DF272EF44900C902FC /* PersonSession.swift */,
+				81BB5DFB2734B6F700E78BE8 /* Person.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8194F2E1272F28E100C902FC /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				8194F2E2272F28ED00C902FC /* CreatePersonUseCase.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
 		81AB1D2C272D9138006FB3C1 /* RestaurantMenu */ = {
 			isa = PBXGroup;
 			children = (
+				81FAB361272DB5BC00D1B2A0 /* Model */,
+				81FAB367272DC01C00D1B2A0 /* Domain */,
 				81AB1D37272D9A82006FB3C1 /* Menu */,
 				81AB1D2D272D914B006FB3C1 /* MenuFactory.swift */,
 			);
@@ -444,6 +499,32 @@
 				81AB1D33272D91BF006FB3C1 /* MenuViewModel.swift */,
 			);
 			path = Menu;
+			sourceTree = "<group>";
+		};
+		81AB1D3A272DA6CF006FB3C1 /* Setup */ = {
+			isa = PBXGroup;
+			children = (
+				81AB1D3B272DA6EB006FB3C1 /* API.swift */,
+			);
+			path = Setup;
+			sourceTree = "<group>";
+		};
+		81AB1D3D272DAC1E006FB3C1 /* Routes */ = {
+			isa = PBXGroup;
+			children = (
+				81AB1D3E272DAC52006FB3C1 /* TableRoutes.swift */,
+				8194F2E6272F2B0000C902FC /* PersonRoutes.swift */,
+			);
+			path = Routes;
+			sourceTree = "<group>";
+		};
+		81BB5DF62734B20C00E78BE8 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				81BB5DF72734B20C00E78BE8 /* CreateSessionUseCase.swift */,
+				81BB5DF82734B20C00E78BE8 /* AnotaAiSession.swift */,
+			);
+			path = Session;
 			sourceTree = "<group>";
 		};
 		81E7E780272B7F9600E0E726 /* SupportingFiles */ = {
@@ -480,6 +561,8 @@
 		81E7E785272B7FF100E0E726 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				81AB1D3D272DAC1E006FB3C1 /* Routes */,
+				81AB1D3A272DA6CF006FB3C1 /* Setup */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -501,6 +584,32 @@
 				81E7E789272B836F00E0E726 /* CoordinatorProtocol.swift */,
 			);
 			path = SetupCoordinator;
+			sourceTree = "<group>";
+		};
+		81FAB361272DB5BC00D1B2A0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				81FAB362272DB5C600D1B2A0 /* Table.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		81FAB364272DBDAD00D1B2A0 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		81FAB367272DC01C00D1B2A0 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				81FAB368272DC02D00D1B2A0 /* CreateTableUseCase.swift */,
+				818CDB3C273016A6000B8E06 /* GetTableUseCase.swift */,
+				81EDA1E327337EED002EE3B9 /* UpdateTableUseCase.swift */,
+				81EDA1E527337F79002EE3B9 /* AddPersonUseCase.swift */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 		C85EE6ED94090B1B3A3B46B1 /* Pods */ = {
@@ -785,14 +894,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81FAB369272DC02D00D1B2A0 /* CreateTableUseCase.swift in Sources */,
 				811E4D6F272C4B790099C7AA /* Fonts.swift in Sources */,
+				818CDB3D273016A6000B8E06 /* GetTableUseCase.swift in Sources */,
 				811E4D94272C4EC70099C7AA /* CollectionSection.swift in Sources */,
 				811E4D93272C4EC70099C7AA /* CollectionProtocol.swift in Sources */,
 				81003184272CA182003FD820 /* TitleView.swift in Sources */,
 				81AB1D2E272D914B006FB3C1 /* MenuFactory.swift in Sources */,
+				8194F2E7272F2B0000C902FC /* PersonRoutes.swift in Sources */,
 				81E7E78A272B836F00E0E726 /* AppCoordinator.swift in Sources */,
+				81EDA1E427337EED002EE3B9 /* UpdateTableUseCase.swift in Sources */,
 				814B3C39272B794A00C9F0CB /* AppDelegate.swift in Sources */,
 				81003173272C9FA4003FD820 /* WelcomeViewModel.swift in Sources */,
+				81BB5DF92734B20C00E78BE8 /* CreateSessionUseCase.swift in Sources */,
 				811E4D83272C4DF20099C7AA /* Navigation.swift in Sources */,
 				811E4D61272C4A5D0099C7AA /* WelcomeCoordinator.swift in Sources */,
 				811E4D92272C4EC70099C7AA /* TableSection.swift in Sources */,
@@ -800,22 +914,32 @@
 				811E4D70272C4B790099C7AA /* Images.swift in Sources */,
 				81AB1D30272D91AB006FB3C1 /* MenuView.swift in Sources */,
 				8116BF5A272CBA8F00DDC725 /* LayoutProxy.swift in Sources */,
+				81BB5DFC2734B6F700E78BE8 /* Person.swift in Sources */,
 				81AB1D34272D91BF006FB3C1 /* MenuViewModel.swift in Sources */,
+				8194F2E0272EF44900C902FC /* PersonSession.swift in Sources */,
 				811E4D90272C4EC70099C7AA /* TableViewDataSource.swift in Sources */,
 				8100317F272CA10A003FD820 /* Button.swift in Sources */,
 				81AB1D2B272D9125006FB3C1 /* MenuCoordinator.swift in Sources */,
 				811E4D86272C4DF20099C7AA /* UITableView+Reusable.swift in Sources */,
+				8194F2E9272F307B00C902FC /* UIViewController+KeyboardHandler.swift in Sources */,
 				811E4D85272C4DF20099C7AA /* Reusable.swift in Sources */,
 				8100316D272C9DBB003FD820 /* UICollectionView+Reusable.swift in Sources */,
 				81003180272CA10A003FD820 /* TextField.swift in Sources */,
 				8116BF59272CBA8F00DDC725 /* LayoutAnchor.swift in Sources */,
+				81EDA1E627337F79002EE3B9 /* AddPersonUseCase.swift in Sources */,
 				811E4D6E272C4B790099C7AA /* Colors.swift in Sources */,
+				814D0E9D27336DF400570934 /* Alert.swift in Sources */,
 				81E7E78B272B836F00E0E726 /* CoordinatorProtocol.swift in Sources */,
+				81BB5DFA2734B20C00E78BE8 /* AnotaAiSession.swift in Sources */,
 				811E4D84272C4DF20099C7AA /* UIView+Nib.swift in Sources */,
 				811E4D95272C4EC70099C7AA /* CollectionViewDataSource.swift in Sources */,
 				81003175272C9FB6003FD820 /* WelcomeController.swift in Sources */,
+				81FAB363272DB5C600D1B2A0 /* Table.swift in Sources */,
 				8116BF54272CB2F600DDC725 /* QRCodeScanView.swift in Sources */,
+				81AB1D3F272DAC52006FB3C1 /* TableRoutes.swift in Sources */,
 				81AB1D32272D91B6006FB3C1 /* MenuController.swift in Sources */,
+				81AB1D3C272DA6EB006FB3C1 /* API.swift in Sources */,
+				8194F2E3272F28ED00C902FC /* CreatePersonUseCase.swift in Sources */,
 				81003171272C9F96003FD820 /* WelcomeView.swift in Sources */,
 				811E4D91272C4EC70099C7AA /* TableProtocols.swift in Sources */,
 				8116BF5B272CBA8F00DDC725 /* LayoutDimension.swift in Sources */,

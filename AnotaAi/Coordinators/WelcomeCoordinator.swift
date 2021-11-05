@@ -35,7 +35,7 @@ class WelcomeCoordinator: CoordinatorProtocol {
 }
 
 extension WelcomeCoordinator: WelcomeControllerDelegate {
-    func openTable(code: String) {
+    func openTable() {
         let coordinator = MenuCoordinator()
         childDelegate = coordinator.childDelegate
         navigationController.present(coordinator.start(), animated: true)

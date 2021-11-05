@@ -14,11 +14,11 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IHK-NX-7B9">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="IHK-NX-7B9">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
-                        <view contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="600" translatesAutoresizingMaskIntoConstraints="NO" id="bEp-eZ-0Jh">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="600"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rBa-gQ-qly">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="194"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KxD-I8-tDq" customClass="TitleView" customModule="AnotaAi" customModuleProvider="target">
                                     <rect key="frame" x="16" y="0.0" width="382" height="100"/>
@@ -27,22 +27,35 @@
                                         <constraint firstAttribute="height" constant="100" id="LCh-Wn-Xv6"/>
                                     </constraints>
                                 </view>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MJV-Ee-vK0" customClass="TextField" customModule="AnotaAi" customModuleProvider="target">
+                                    <rect key="frame" x="16" y="124" width="382" height="46"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="46" id="lb8-xj-KhV"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
                             </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
-                                <constraint firstAttribute="trailing" secondItem="KxD-I8-tDq" secondAttribute="trailing" constant="16" id="1cn-OX-NEc"/>
-                                <constraint firstItem="KxD-I8-tDq" firstAttribute="top" secondItem="bEp-eZ-0Jh" secondAttribute="top" id="819-hy-wsP"/>
-                                <constraint firstItem="KxD-I8-tDq" firstAttribute="leading" secondItem="bEp-eZ-0Jh" secondAttribute="leading" constant="16" id="ab3-7Q-K8Z"/>
+                                <constraint firstAttribute="trailing" secondItem="MJV-Ee-vK0" secondAttribute="trailing" constant="16" id="7Q2-Gp-ucF"/>
+                                <constraint firstItem="MJV-Ee-vK0" firstAttribute="top" secondItem="KxD-I8-tDq" secondAttribute="bottom" constant="24" id="Cur-bh-gW0"/>
+                                <constraint firstAttribute="bottom" secondItem="MJV-Ee-vK0" secondAttribute="bottom" constant="24" id="Oxn-6K-aBz"/>
+                                <constraint firstAttribute="trailing" secondItem="KxD-I8-tDq" secondAttribute="trailing" constant="16" id="Rba-kM-Kiy"/>
+                                <constraint firstItem="KxD-I8-tDq" firstAttribute="top" secondItem="rBa-gQ-qly" secondAttribute="top" id="Xxw-zG-dl2"/>
+                                <constraint firstItem="KxD-I8-tDq" firstAttribute="leading" secondItem="rBa-gQ-qly" secondAttribute="leading" constant="16" id="hEu-6t-xhe"/>
+                                <constraint firstItem="MJV-Ee-vK0" firstAttribute="leading" secondItem="rBa-gQ-qly" secondAttribute="leading" constant="16" id="wEm-xX-wQU"/>
                             </constraints>
                         </view>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="bEp-eZ-0Jh" firstAttribute="centerX" secondItem="AGH-HE-NC4" secondAttribute="centerX" id="D9A-h6-krC"/>
-                        <constraint firstItem="bEp-eZ-0Jh" firstAttribute="bottom" secondItem="AGH-HE-NC4" secondAttribute="bottom" id="J9C-rC-bYp"/>
-                        <constraint firstItem="bEp-eZ-0Jh" firstAttribute="trailing" secondItem="AGH-HE-NC4" secondAttribute="trailing" id="Q3D-BG-QLt"/>
-                        <constraint firstItem="bEp-eZ-0Jh" firstAttribute="leading" secondItem="AGH-HE-NC4" secondAttribute="leading" id="cqn-5Q-3f5"/>
-                        <constraint firstItem="bEp-eZ-0Jh" firstAttribute="top" secondItem="AGH-HE-NC4" secondAttribute="top" id="iJL-UV-OpG"/>
-                        <constraint firstItem="bEp-eZ-0Jh" firstAttribute="height" secondItem="AGH-HE-NC4" secondAttribute="height" id="msc-vE-hVu"/>
-                        <constraint firstItem="bEp-eZ-0Jh" firstAttribute="width" secondItem="vgc-tN-Ha6" secondAttribute="width" id="wF5-si-xeu"/>
+                        <constraint firstItem="AGH-HE-NC4" firstAttribute="leading" secondItem="rBa-gQ-qly" secondAttribute="leading" id="2dQ-VZ-iYA"/>
+                        <constraint firstItem="rBa-gQ-qly" firstAttribute="trailing" secondItem="AGH-HE-NC4" secondAttribute="trailing" id="F3K-hi-9h1"/>
+                        <constraint firstItem="rBa-gQ-qly" firstAttribute="bottom" secondItem="AGH-HE-NC4" secondAttribute="bottom" id="ICc-T9-0Ne"/>
+                        <constraint firstItem="rBa-gQ-qly" firstAttribute="width" secondItem="vgc-tN-Ha6" secondAttribute="width" id="Jn4-uR-IMg"/>
+                        <constraint firstItem="rBa-gQ-qly" firstAttribute="height" secondItem="AGH-HE-NC4" secondAttribute="height" id="WOv-Ed-bQ7"/>
+                        <constraint firstItem="AGH-HE-NC4" firstAttribute="top" secondItem="rBa-gQ-qly" secondAttribute="top" id="XCe-XE-Td4"/>
+                        <constraint firstItem="rBa-gQ-qly" firstAttribute="centerX" secondItem="AGH-HE-NC4" secondAttribute="centerX" id="YBZ-Cm-Ifa"/>
                     </constraints>
                     <viewLayoutGuide key="contentLayoutGuide" id="AGH-HE-NC4"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="vgc-tN-Ha6"/>
@@ -57,9 +70,12 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="IHK-NX-7B9" secondAttribute="trailing" id="ofK-AO-YVd"/>
             </constraints>
             <connections>
+                <outlet property="contentView" destination="rBa-gQ-qly" id="FL1-cH-gzL"/>
+                <outlet property="nameTextField" destination="MJV-Ee-vK0" id="psf-uy-up6"/>
+                <outlet property="scrollView" destination="IHK-NX-7B9" id="vVb-kc-e7p"/>
                 <outlet property="titleView" destination="KxD-I8-tDq" id="7PY-0B-MhF"/>
             </connections>
-            <point key="canvasLocation" x="-43.478260869565219" y="196.875"/>
+            <point key="canvasLocation" x="-655" y="145"/>
         </view>
     </objects>
     <resources>

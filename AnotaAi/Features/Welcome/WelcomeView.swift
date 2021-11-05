@@ -9,6 +9,7 @@ import UIKit
 
 protocol WelcomeViewModelProtocol {
     var scannerView: QRScannerView { get }
+    func didChangeName(_ text: String?)
 }
  
 class WelcomeView: UIView {
@@ -16,6 +17,9 @@ class WelcomeView: UIView {
     // MARK: - UI Components
     
     @IBOutlet private weak var titleView: TitleView!
+    @IBOutlet private weak var nameTextField: TextField!
+    @IBOutlet private weak var contentView: UIView!
+    @IBOutlet private(set) weak var scrollView: UIScrollView!
     private var scannerView: QRScannerView?
     
     // MARK: - Private properties
@@ -39,11 +43,19 @@ class WelcomeView: UIView {
     }
 }
 
-// MARK: - View setup
-
 extension WelcomeView {
+    
+    // MARK: - Actions
+    
+    @objc private func didChangeName() {
+        viewModel?.didChangeName(nameTextField.text)
+    }
+    
+    // MARK: - View setup
+    
     private func setup() {
         setupTitleView()
+        setupTextField()
     }
     
     private func setupTitleView() {
@@ -59,8 +71,13 @@ extension WelcomeView {
         scannerView?.layout {
             $0.leading.equal(leadingAnchor, constant: 16)
             $0.trailing.equal(trailingAnchor, constant: -16)
+            $0.top.equal(contentView.bottomAnchor, constant: 24)
             $0.height.equalTo(400)
-            $0.centerY.equal(centerYAnchor)
         }
+    }
+    
+    private func setupTextField() {
+        nameTextField.addTarget(self, action: #selector(didChangeName), for: .editingChanged)
+        nameTextField.placeholder = "your_name_input_hint".localize(.restaurantMenu)
     }
 }

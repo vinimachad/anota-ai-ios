@@ -43,6 +43,7 @@ class MenuController<ViewModel: MenuProtocol>: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bind()
+        viewModel.createTable()
     }
     
     // MARK: - Bind

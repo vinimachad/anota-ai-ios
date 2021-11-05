@@ -8,10 +8,14 @@
 import UIKit
 
 protocol WelcomeControllerDelegate: AnyObject {
-    func openTable(code: String)
+    func openTable()
 }
 
-class WelcomeController<ViewModel: WelcomeProtocol>: UIViewController {
+class WelcomeController<ViewModel: WelcomeProtocol>: UIViewController, KeyboardHandler {
+    
+    var scrollView: UIScrollView? {
+        contentView.scrollView
+    }
     
     // MARK: - Private properties
     
@@ -60,8 +64,33 @@ class WelcomeController<ViewModel: WelcomeProtocol>: UIViewController {
     private func bind() {
         contentView.bindIn(viewModel: viewModel)
         
-        viewModel.onSuccessGetQRCodeValue = { [weak self] value in
-            self?.delegate?.openTable(code: value)
+        viewModel.onSuccessGetQRCodeValue = { [weak self] request in
+            self?.delegate?.openTable()
+        }
+        
+        viewModel.onFailureGetQRCodeValue = { [weak self] error in
+            self?.showAlert(title: "alert_error_title".localize(.error), message: error)
+            self?.viewModel.startScan()
+        }
+        
+        viewModel.onPutPassword = { [weak self]  in
+            self?.showTextFieldAlert(
+                title: "table_password_alert_title".localize(.welcome),
+                message: "which_password_alert_message".localize(.welcome),
+                completion: { [weak self] password in
+                    self?.viewModel.passwordValidation(password)
+                }
+            )
+        }
+        
+        viewModel.onCreateTable = { [weak self] in
+            self?.showTextFieldAlert(
+                title: "passowrd_alert_title".localize(.welcome),
+                message: "add_password_alert_message".localize(.welcome),
+                completion: { [weak self] password in
+                    self?.viewModel.didCreateTable(password)
+                }
+            )
         }
     }
 }
