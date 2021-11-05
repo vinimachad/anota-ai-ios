@@ -67,7 +67,7 @@ class WelcomeViewModel {
     
     private func validation() {
         guard let _ = personRequest.name else {
-            onFailureGetQRCodeValue?("Você deve preencher seu nome para continuarmos")
+            onFailureGetQRCodeValue?("must_fill_name_error".localize(.error))
             startScan()
             return
         }
@@ -125,7 +125,7 @@ extension WelcomeViewModel: WelcomeProtocol {
             addPerson()
             return
         }
-        onFailureGetQRCodeValue?("Campo de texto vazio ou senha incorreta!")
+        onFailureGetQRCodeValue?("password_insert_error".localize(.error))
     }
     
     // MARK: - Updates
@@ -137,7 +137,9 @@ extension WelcomeViewModel: WelcomeProtocol {
     func didCreateTable(_ password: String?) {
         if let password = password, !password.isEmpty {
             createTable(password)
+            return
         }
+        onFailureGetQRCodeValue?("password_create_error".localize(.error))
     }
     
     // MARK: - Scan
@@ -158,15 +160,11 @@ extension WelcomeViewModel: WelcomeProtocol {
 extension WelcomeViewModel: QRScannerViewDelegate {
     
     func qrScanningDidFail() {
-        print("fail")
+        onFailureGetQRCodeValue?("try_scan_again_error".localize(.error))
     }
     
     func qrScanningSucceededWithCode(_ str: String?) {
         table.id = str ?? ""
         validation()
-    }
-    
-    func qrScanningDidStop() {
-        print("stop")
     }
 }

@@ -121,3 +121,7 @@ extension QRScannerView: AVCaptureMetadataOutputObjectsDelegate {
     }
     
 }
+
+extension QRScannerViewDelegate {
+    func qrScanningDidStop() { }
+}

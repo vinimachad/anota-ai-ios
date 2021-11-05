@@ -8,3 +8,7 @@
 
 "screen_title" = "Acesse sua mesa";
 "subtitle_label" = "Aponte a camera para o QRCode em sua mesa ou insira o código";
+"table_password_alert_title" = "Senha da mesa";
+"which_password_alert_message" = "Qual é a senha da sua mesa?";
+"passowrd_alert_title" = "Senha";
+"add_password_alert_message"= "Adicione uma senha à sua mesa";
