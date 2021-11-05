@@ -28,9 +28,9 @@ class AppCoordinator {
     
     private func coordinatorBySession() -> UIViewController {
         if session.hasSession {
-            let coordinator = MenuCoordinator()
+            let coordinator = HomeCoordinator()
             childCoordinator = coordinator
-            return coordinator.start()
+            return coordinator.containerViewController
         }
         
         let coordinator = WelcomeCoordinator()

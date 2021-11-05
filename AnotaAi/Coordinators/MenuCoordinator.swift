@@ -10,22 +10,22 @@ import Foundation
 import UIKit
 
 class MenuCoordinator: CoordinatorProtocol {
-    
+
     // MARK: - Public properties
-    
+
     weak var childDelegate: ChildCoordinatorDelegate?
     var childCoordinator: CoordinatorProtocol?
-    
+
     var containerViewController: UIViewController {
         navigationController
     }
-    
+
     // MARK: - Private properties
-    
+
     private var navigationController = UINavigationController()
-    
+
     // MARK: - Start
-    
+
     func start() -> UIViewController {
         let vc = MenuFactory.table(delegate: self)
         navigationController.modalPresentationStyle = .fullScreen
@@ -35,5 +35,5 @@ class MenuCoordinator: CoordinatorProtocol {
 }
 
 extension MenuCoordinator: MenuControllerDelegate {
-    
+
 }

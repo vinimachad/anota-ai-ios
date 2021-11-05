@@ -1,0 +1,11 @@
+/* 
+  Home.strings
+  AnotaAi
+
+  Created by Vinicius Galhardo Machado on 05/11/21.
+  
+*/
+
+"menu_hint_title" = "Início";
+"request_hint_title" = "Comanda";
+"profile_hint_title" = "Perfil";
