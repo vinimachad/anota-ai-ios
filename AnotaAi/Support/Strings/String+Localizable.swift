@@ -12,6 +12,7 @@ enum LocalizableFiles: String {
     case error = "Error"
     case welcome = "Welcome"
     case restaurantMenu = "RestaurantMenu"
+    case home = "Home"
 }
 
 extension String {
