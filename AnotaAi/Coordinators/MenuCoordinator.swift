@@ -26,8 +26,8 @@ class MenuCoordinator: CoordinatorProtocol {
     
     // MARK: - Start
     
-    func start(tableRequest: Table) -> UIViewController {
-        let vc = MenuFactory.table(delegate: self, tableRequest: tableRequest)
+    func start() -> UIViewController {
+        let vc = MenuFactory.table(delegate: self)
         navigationController.modalPresentationStyle = .fullScreen
         navigationController.setViewControllers([vc], animated: true)
         return navigationController

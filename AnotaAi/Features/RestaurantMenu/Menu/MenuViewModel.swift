@@ -17,13 +17,11 @@ class MenuViewModel {
     
     // MARK: - Private properties
     
-    private let tableRequest: Table
     private let createTableUseCase: CreateTableUseCaseProtocol?
     
     // MARK: - Init
     
-    init(tableRequest: Table, createTableUseCase: CreateTableUseCaseProtocol?) {
-        self.tableRequest = tableRequest
+    init(createTableUseCase: CreateTableUseCaseProtocol?) {
         self.createTableUseCase = createTableUseCase
     }
     

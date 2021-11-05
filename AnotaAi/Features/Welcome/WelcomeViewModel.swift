@@ -38,17 +38,20 @@ class WelcomeViewModel {
     private var createTableUseCase: CreateTableUseCaseProtocol
     private var getTableUseCase: GetTableUseCaseProtocol
     private var addPersonUseCase: AddPersonUseCaseProtocol
+    private var createSessionUseCase: CreateSessionUseCaseProtocol
     
     // MARK: - Init
     
     init(
         getTablesUseCase: GetTableUseCaseProtocol,
         createTablesUseCase: CreateTableUseCaseProtocol,
-        addPersonUseCase: AddPersonUseCaseProtocol
+        addPersonUseCase: AddPersonUseCaseProtocol,
+        createSessionUseCase: CreateSessionUseCaseProtocol
     ) {
         self.getTableUseCase = getTablesUseCase
         self.createTableUseCase = createTablesUseCase
         self.addPersonUseCase = addPersonUseCase
+        self.createSessionUseCase = createSessionUseCase
         scannerView.delegate = self
     }
     
@@ -79,13 +82,21 @@ class WelcomeViewModel {
         addPersonUseCase.execute(
             request: personRequest,
             success: { [weak self] person in
-                // todo - create session
-                self?.onSuccessGetQRCodeValue?(self?.table ?? Table())
+                self?.createSession(person)
             },
             failure: { [weak self] error in
                 self?.onFailureGetQRCodeValue?(error)
             }
         )
+    }
+    
+    private func createSession(_ token: String) {
+        personRequest.token = token
+        createSessionUseCase.execute(userSession: personRequest, success: { [weak self] in
+            self?.onSuccessGetQRCodeValue?(self?.table ?? Table())
+        }, failure: { [weak self] error in
+            self?.onFailureGetQRCodeValue?(error.localizedDescription)
+        })
     }
     
     private func getTable(id: String) {

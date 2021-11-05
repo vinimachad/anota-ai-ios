@@ -8,7 +8,7 @@
 import UIKit
 
 protocol WelcomeControllerDelegate: AnyObject {
-    func openTable(tableRequest: Table)
+    func openTable()
 }
 
 class WelcomeController<ViewModel: WelcomeProtocol>: UIViewController, KeyboardHandler {
@@ -65,7 +65,7 @@ class WelcomeController<ViewModel: WelcomeProtocol>: UIViewController, KeyboardH
         contentView.bindIn(viewModel: viewModel)
         
         viewModel.onSuccessGetQRCodeValue = { [weak self] request in
-            self?.delegate?.openTable(tableRequest: request)
+            self?.delegate?.openTable()
         }
         
         viewModel.onFailureGetQRCodeValue = { [weak self] error in

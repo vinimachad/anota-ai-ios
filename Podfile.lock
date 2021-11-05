@@ -328,6 +328,7 @@ PODS:
   - iOSSnapshotTestCase/SwiftSupport (7.0.0):
     - iOSSnapshotTestCase/Core
   - leveldb-library (1.22.1)
+  - MSession/Session (1.0.1)
   - nanopb (1.30906.0):
     - nanopb/decode (= 1.30906.0)
     - nanopb/encode (= 1.30906.0)
@@ -341,6 +342,7 @@ DEPENDENCIES:
   - Firebase/Crashlytics
   - FirebaseFirestoreSwift
   - iOSSnapshotTestCase
+  - MSession/Session
   - SwiftLint
 
 SPEC REPOS:
@@ -362,6 +364,7 @@ SPEC REPOS:
     - gRPC-Core
     - iOSSnapshotTestCase
     - leveldb-library
+    - MSession
     - nanopb
     - PromisesObjC
     - SwiftLint
@@ -384,10 +387,11 @@ SPEC CHECKSUMS:
   gRPC-Core: 4afa11bfbedf7cdecd04de535a9e046893404ed5
   iOSSnapshotTestCase: 63402a5707db9c4103b6cc3f04c76e981fff7952
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
+  MSession: 9b9d18b333a008aa79a7a663bc6fd5b4d95245cb
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   SwiftLint: e5c7f1fba68eccfc51509d5b2ce1699f5502e0c7
 
-PODFILE CHECKSUM: 9f5b9647139c889e086b24bc4e9fc4023637da3d
+PODFILE CHECKSUM: db111b101dbba98594ad43da8cc82d8af7c242c3
 
 COCOAPODS: 1.11.2
