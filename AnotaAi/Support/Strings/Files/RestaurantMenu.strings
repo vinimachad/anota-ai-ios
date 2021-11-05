@@ -6,5 +6,7 @@
   
 */
 
-"screen_title" = "Cardápio";
+"hello_title" = "Olá, %@";
+"make_request_label" = "Faça todos seus pedidos por aqui. Vamos adicionar eles á sua comanda.";
 "your_name_input_hint" = "Insira seu nome";
+"serves_label" = "Serve até %@ pessoas";

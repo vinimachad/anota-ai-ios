@@ -12,6 +12,7 @@ target 'AnotaAi' do
   pod 'Firebase/Analytics'
   pod 'Firebase/Crashlytics'
   pod 'MSession/Session'
+  pod 'Kingfisher'
 
   target 'AnotaAiTests' do
     inherit! :search_paths

@@ -10,8 +10,8 @@ import UIKit
 
 enum MenuFactory {
     static func table(delegate: MenuControllerDelegate?) -> UIViewController {
-        let createTableUseCase = CreateTableUseCase(api: TableRoutes())
-        let viewModel = MenuViewModel(createTableUseCase: createTableUseCase)
+        let menuUseCase = MenuUseCase(api: MenuRoutes())
+        let viewModel = MenuViewModel(menuUseCase: menuUseCase)
         return MenuController(viewModel: viewModel, delegate: delegate)
     }
 }
