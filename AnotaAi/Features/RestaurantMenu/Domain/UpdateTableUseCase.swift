@@ -1,21 +1,20 @@
 //
-//  createTableUseCase.swift
+//  UpdateTableUseCase.swift
 //  AnotaAi
 //
-//  Created by Vinicius Galhardo Machado on 30/10/21.
+//  Created by Vinicius Galhardo Machado on 03/11/21.
 //
 
 import Foundation
-import FirebaseFirestore
 
-protocol CreateTableUseCaseProtocol {
+protocol UpdateTableUseCaseProtocol {
     typealias Success = (() -> Void)
     typealias Failure = ((String) -> Void)
     
     func execute(request: Table, success: Success?, failure: Failure?)
 }
 
-class CreateTableUseCase: CreateTableUseCaseProtocol {
+class UpdateTableUseCase: CreateTableUseCaseProtocol {
     
     // MARK: - Private properties
     

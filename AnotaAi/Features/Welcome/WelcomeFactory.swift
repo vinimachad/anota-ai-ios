@@ -11,8 +11,16 @@ import UIKit
 enum WelcomeFactory {
     
     static func welcome(delegate: WelcomeControllerDelegate?) -> UIViewController {
-        let createPersonUseCaseProtocol = CreatePersonUseCase(api: PersonRoutes())
-        let viewModel = WelcomeViewModel(createPersonUseCase: createPersonUseCaseProtocol)
+        let tableRoutes = TableRoutes()
+        let createTablesUseCase = CreateTableUseCase(api: tableRoutes)
+        let getTablesUseCase = GetTableUseCase(api: tableRoutes)
+        let addPersonUseCase = AddPersonUseCase(api: tableRoutes)
+        
+        let viewModel = WelcomeViewModel(
+            getTablesUseCase: getTablesUseCase,
+            createTablesUseCase: createTablesUseCase,
+            addPersonUseCase: addPersonUseCase
+        )
         return WelcomeController(viewModel: viewModel, delegate: delegate)
     }
 }

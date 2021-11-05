@@ -13,6 +13,8 @@ protocol ApiProtocol {
     typealias Failure = ((String) -> Void)?
     typealias Success = (() -> Void)?
     
+    var db: Firestore { get }
+    
     func insertData<T: Codable>(_ path: String, id: String, data: T, failure: Failure, success: Success)
     func insertDataWithoutId<T: Codable>(_ path: String, data: T, failure: ((String) -> Void)?, success: ((String) -> Void)?)
     func getData<T: Codable>(_ path: String, id: String, failure: ((String) -> Void)?, success: ((T) -> Void)?)
@@ -27,7 +29,7 @@ class Api: ApiProtocol {
     
     // MARK: - Public properties
     
-    let db = Firestore.firestore()
+    var db = Firestore.firestore()
     
     // MARK: Private properties
     
@@ -58,6 +60,7 @@ class Api: ApiProtocol {
             failure?(error.localizedDescription)
         }
     }
+    
     
     // MARK: - Get
     

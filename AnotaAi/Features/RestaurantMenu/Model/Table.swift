@@ -9,19 +9,10 @@ import Foundation
 
 struct Table: Codable {
     var id: String = ""
-    var persons: [Person] = []
+    var password: String?
     
     enum CodingKeys: String, CodingKey {
         case id
-        case persons
-    }
-    
-    func toJSON() -> [String: Any] {
-        let params: [String: Any] = [
-            "id": id,
-            "persons": persons
-        ]
-        
-        return params
+        case password
     }
 }

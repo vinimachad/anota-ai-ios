@@ -9,6 +9,7 @@ import Foundation
 
 struct Person: Codable {
     var name: String?
+    var tableId: String?
 }
 
 extension Person {

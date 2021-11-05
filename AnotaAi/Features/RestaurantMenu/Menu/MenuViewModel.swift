@@ -28,15 +28,7 @@ class MenuViewModel {
     }
     
     func createTable() {
-        createTableUseCase?.execute(
-            request: tableRequest,
-            success: { table in
-               print("table", table)
-            },
-            failure: { error in
-                print("error", error.description)
-            }
-        )
+        
     }
 }
 

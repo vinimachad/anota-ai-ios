@@ -67,5 +67,30 @@ class WelcomeController<ViewModel: WelcomeProtocol>: UIViewController, KeyboardH
         viewModel.onSuccessGetQRCodeValue = { [weak self] request in
             self?.delegate?.openTable(tableRequest: request)
         }
+        
+        viewModel.onFailureGetQRCodeValue = { [weak self] error in
+            self?.showAlert(title: "Oopss..", message: error)
+            self?.viewModel.startScan()
+        }
+        
+        viewModel.onPutPassword = { [weak self]  in
+            self?.showTextFieldAlert(
+                title: "Senha da mesa",
+                message: "Qual é a senha da sua mesa?",
+                completion: { [weak self] password in
+                    self?.viewModel.passwordValidation(password)
+                }
+            )
+        }
+        
+        viewModel.onCreateTable = { [weak self] in
+            self?.showTextFieldAlert(
+                title: "Senha",
+                message: "Adicione uma senha à sua mesa",
+                completion: { [weak self] password in
+                    self?.viewModel.didCreateTable(password)
+                }
+            )
+        }
     }
 }

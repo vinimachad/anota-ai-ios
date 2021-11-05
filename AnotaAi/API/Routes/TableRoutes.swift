@@ -14,6 +14,7 @@ protocol TableRoutesProtocol {
     
     func createTable(request: Table, failure: Failure, success: Success)
     func tableData<T: Codable>(id: String, failure: ((String) -> Void)?, success: ((T) -> Void)?)
+    func addPersonsInTable<T: Codable>(request: T, tableId: String, failure: ((String) -> Void)?, success: ((String) -> Void)?)
 }
 
 class TableRoutes {
@@ -24,10 +25,36 @@ class TableRoutes {
 extension TableRoutes: TableRoutesProtocol {
     
     func createTable(request: Table, failure: Failure, success: Success) {
-        provider.insertData("tables", id: request.id, data: request, failure: failure, success: success)
+        do {
+            try provider.db.collection("tables").document(request.id).setData(from: request)
+            success?()
+        } catch let error {
+            failure?(error.localizedDescription)
+        }
+    }
+    
+    func addPersonsInTable<T: Codable>(request: T, tableId: String, failure: ((String) -> Void)?, success: ((String) -> Void)?) {
+        var ref: DocumentReference?
+        do {
+            ref = try provider.db.collection("tables").document(tableId).collection("persons").addDocument(from: request)
+            success?(ref?.documentID ?? "")
+        } catch let error {
+            failure?(error.localizedDescription)
+        }
     }
     
     func tableData<T: Codable>(id: String, failure: ((String) -> Void)?, success: ((T) -> Void)?) {
-        provider.getData("tables", id: id, failure: failure, success: success)
+        provider.db.collection("tables").document(id).addSnapshotListener { snapshot, error in
+            guard let document = snapshot else {
+                failure?(error?.localizedDescription ?? "")
+                return
+            }
+            guard let model = try? document.data(as: T.self) else {
+                failure?("DECODER")
+                return
+            }
+            
+            success?(model)
+        }
     }
 }
