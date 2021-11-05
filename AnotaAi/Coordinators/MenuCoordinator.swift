@@ -1,15 +1,15 @@
 //
-//  WelcomeCoordinator.swift
+//  MenuCoordinator.swift
 //  AnotaAi
 //
-//  Created by Vinicius Galhardo Machado on 29/10/21.
+//  Created by Vinicius Galhardo Machado on 30/10/21.
 //
 
 import Foundation
 
 import UIKit
 
-class WelcomeCoordinator: CoordinatorProtocol {
+class MenuCoordinator: CoordinatorProtocol {
     
     // MARK: - Public properties
     
@@ -27,18 +27,13 @@ class WelcomeCoordinator: CoordinatorProtocol {
     // MARK: - Start
     
     func start() -> UIViewController {
-        let vc = WelcomeFactory.welcome(delegate: self)
+        let vc = MenuFactory.table(delegate: self)
         navigationController.modalPresentationStyle = .fullScreen
         navigationController.setViewControllers([vc], animated: true)
         return navigationController
     }
 }
 
-extension WelcomeCoordinator: WelcomeControllerDelegate {
-    func openTable(code: String) {
-        let coordinator = MenuCoordinator()
-        childDelegate = coordinator.childDelegate
-        navigationController.present(coordinator.start(), animated: true)
-        childCoordinator = coordinator
-    }
+extension MenuCoordinator: MenuControllerDelegate {
+    
 }

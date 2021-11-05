@@ -1,0 +1,10 @@
+/* 
+  Welcome.strings
+  AnotaAi
+
+  Created by Vinicius Galhardo Machado on 29/10/21.
+  
+*/
+
+"screen_title" = "Acesse sua mesa";
+"subtitle_label" = "Aponte a camera para o QRCode em sua mesa ou insira o código";
