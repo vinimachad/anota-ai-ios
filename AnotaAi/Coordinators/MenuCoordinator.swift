@@ -36,6 +36,11 @@ class MenuCoordinator: CoordinatorProtocol {
 
 extension MenuCoordinator: MenuControllerDelegate {
     func openAddToCommand(_ viewModel: FoodCellViewModelProtocol) {
-//        let vc =
+        let coordinator = AddToCommandCoordinator()
+        childDelegate = coordinator.childDelegate
+        navigationController.present(coordinator.start(), animated: true)
+        childCoordinator = coordinator
     }
 }
+
+extension MenuCoordinator: AddToCommandControllerDelegate { }

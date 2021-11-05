@@ -74,6 +74,11 @@
 		817473F92735B5D100B30046 /* Double+Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817473F82735B5D100B30046 /* Double+Currency.swift */; };
 		817473FB2735B62800B30046 /* NumberFormatter+Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817473FA2735B62800B30046 /* NumberFormatter+Currency.swift */; };
 		817473FD2735C23400B30046 /* UIImageView+Url.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817473FC2735C23400B30046 /* UIImageView+Url.swift */; };
+		817474002735D0E400B30046 /* AddToCommandView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 817473FF2735D0E400B30046 /* AddToCommandView.xib */; };
+		817474022735D0F500B30046 /* AddToCommandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817474012735D0F500B30046 /* AddToCommandView.swift */; };
+		817474042735D10300B30046 /* AddToCommandController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817474032735D10300B30046 /* AddToCommandController.swift */; };
+		817474062735D11100B30046 /* AddToCommandViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817474052735D11100B30046 /* AddToCommandViewModel.swift */; };
+		817474082735D53500B30046 /* AddToCommandCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817474072735D53500B30046 /* AddToCommandCoordinator.swift */; };
 		818CDB3D273016A6000B8E06 /* GetTableUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818CDB3C273016A6000B8E06 /* GetTableUseCase.swift */; };
 		8194F2E0272EF44900C902FC /* PersonSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8194F2DF272EF44900C902FC /* PersonSession.swift */; };
 		8194F2E3272F28ED00C902FC /* CreatePersonUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8194F2E2272F28ED00C902FC /* CreatePersonUseCase.swift */; };
@@ -190,6 +195,11 @@
 		817473F82735B5D100B30046 /* Double+Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Currency.swift"; sourceTree = "<group>"; };
 		817473FA2735B62800B30046 /* NumberFormatter+Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+Currency.swift"; sourceTree = "<group>"; };
 		817473FC2735C23400B30046 /* UIImageView+Url.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Url.swift"; sourceTree = "<group>"; };
+		817473FF2735D0E400B30046 /* AddToCommandView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddToCommandView.xib; sourceTree = "<group>"; };
+		817474012735D0F500B30046 /* AddToCommandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToCommandView.swift; sourceTree = "<group>"; };
+		817474032735D10300B30046 /* AddToCommandController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToCommandController.swift; sourceTree = "<group>"; };
+		817474052735D11100B30046 /* AddToCommandViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToCommandViewModel.swift; sourceTree = "<group>"; };
+		817474072735D53500B30046 /* AddToCommandCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToCommandCoordinator.swift; sourceTree = "<group>"; };
 		818CDB3C273016A6000B8E06 /* GetTableUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTableUseCase.swift; sourceTree = "<group>"; };
 		8194F2DF272EF44900C902FC /* PersonSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonSession.swift; sourceTree = "<group>"; };
 		8194F2E2272F28ED00C902FC /* CreatePersonUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePersonUseCase.swift; sourceTree = "<group>"; };
@@ -543,11 +553,15 @@
 			path = FoodCell;
 			sourceTree = "<group>";
 		};
-		817473FE2735D01700B30046 /* New Group */ = {
+		817473FE2735D01700B30046 /* AddToCommand */ = {
 			isa = PBXGroup;
 			children = (
+				817473FF2735D0E400B30046 /* AddToCommandView.xib */,
+				817474012735D0F500B30046 /* AddToCommandView.swift */,
+				817474032735D10300B30046 /* AddToCommandController.swift */,
+				817474052735D11100B30046 /* AddToCommandViewModel.swift */,
 			);
-			path = "New Group";
+			path = AddToCommand;
 			sourceTree = "<group>";
 		};
 		8194F2DE272EF43500C902FC /* Models */ = {
@@ -642,7 +656,7 @@
 		81E7E784272B7FEA00E0E726 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				817473FE2735D01700B30046 /* New Group */,
+				817473FE2735D01700B30046 /* AddToCommand */,
 				817473EC2735A83E00B30046 /* Domain */,
 				817473CD27358CA800B30046 /* Home */,
 				8100316E272C9F7A003FD820 /* Welcome */,
@@ -667,6 +681,7 @@
 				811E4D60272C4A5D0099C7AA /* WelcomeCoordinator.swift */,
 				81AB1D2A272D9125006FB3C1 /* MenuCoordinator.swift */,
 				817473E22735909000B30046 /* HomeCoordinator.swift */,
+				817474072735D53500B30046 /* AddToCommandCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -829,6 +844,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				817474002735D0E400B30046 /* AddToCommandView.xib in Resources */,
 				811E4D67272C4B360099C7AA /* Error.strings in Resources */,
 				817473DA27358CA800B30046 /* HomeView.xib in Resources */,
 				81003177272C9FC6003FD820 /* WelcomeView.xib in Resources */,
@@ -1009,8 +1025,10 @@
 				817473F02735A97900B30046 /* Food.swift in Sources */,
 				81BB5DF92734B20C00E78BE8 /* CreateSessionUseCase.swift in Sources */,
 				811E4D83272C4DF20099C7AA /* Navigation.swift in Sources */,
+				817474022735D0F500B30046 /* AddToCommandView.swift in Sources */,
 				811E4D61272C4A5D0099C7AA /* WelcomeCoordinator.swift in Sources */,
 				817473E32735909000B30046 /* HomeCoordinator.swift in Sources */,
+				817474062735D11100B30046 /* AddToCommandViewModel.swift in Sources */,
 				811E4D92272C4EC70099C7AA /* TableSection.swift in Sources */,
 				8116BF51272CA78800DDC725 /* WelcomeFactory.swift in Sources */,
 				811E4D70272C4B790099C7AA /* Images.swift in Sources */,
@@ -1020,12 +1038,14 @@
 				81AB1D34272D91BF006FB3C1 /* MenuViewModel.swift in Sources */,
 				8194F2E0272EF44900C902FC /* PersonSession.swift in Sources */,
 				817473D727358CA800B30046 /* HomeViewModel.swift in Sources */,
+				817474082735D53500B30046 /* AddToCommandCoordinator.swift in Sources */,
 				817473DE27358E6100B30046 /* UIViewController+Parent.swift in Sources */,
 				811E4D90272C4EC70099C7AA /* TableViewDataSource.swift in Sources */,
 				8100317F272CA10A003FD820 /* Button.swift in Sources */,
 				81AB1D2B272D9125006FB3C1 /* MenuCoordinator.swift in Sources */,
 				811E4D86272C4DF20099C7AA /* UITableView+Reusable.swift in Sources */,
 				817473FB2735B62800B30046 /* NumberFormatter+Currency.swift in Sources */,
+				817474042735D10300B30046 /* AddToCommandController.swift in Sources */,
 				8194F2E9272F307B00C902FC /* UIViewController+KeyboardHandler.swift in Sources */,
 				817473D827358CA800B30046 /* HomeView.swift in Sources */,
 				811E4D85272C4DF20099C7AA /* Reusable.swift in Sources */,

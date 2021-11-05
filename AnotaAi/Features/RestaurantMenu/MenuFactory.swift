@@ -14,4 +14,9 @@ enum MenuFactory {
         let viewModel = MenuViewModel(menuUseCase: menuUseCase)
         return MenuController(viewModel: viewModel, delegate: delegate)
     }
+    
+    static func addToCommand(delegate: AddToCommandControllerDelegate?) -> UIViewController {
+        let viewModel = AddToCommandViewModel()
+        return AddToCommandController(viewModel: viewModel, delegate: delegate)
+    }
 }
