@@ -102,6 +102,9 @@
 		81AB1D39272D9ADE006FB3C1 /* RestaurantMenu.strings in Resources */ = {isa = PBXBuildFile; fileRef = 81AB1D38272D9ADE006FB3C1 /* RestaurantMenu.strings */; };
 		81AB1D3C272DA6EB006FB3C1 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AB1D3B272DA6EB006FB3C1 /* API.swift */; };
 		81AB1D3F272DAC52006FB3C1 /* TableRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AB1D3E272DAC52006FB3C1 /* TableRoutes.swift */; };
+		81AF8BD02736D5F90069BF43 /* FoodCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81AF8BCF2736D5F90069BF43 /* FoodCardCell.xib */; };
+		81AF8BD22736D6060069BF43 /* FoodCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AF8BD12736D6060069BF43 /* FoodCardCell.swift */; };
+		81AF8BD42736D6130069BF43 /* FoodCardCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AF8BD32736D6130069BF43 /* FoodCardCellViewModel.swift */; };
 		81BB5DF92734B20C00E78BE8 /* CreateSessionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BB5DF72734B20C00E78BE8 /* CreateSessionUseCase.swift */; };
 		81BB5DFA2734B20C00E78BE8 /* AnotaAiSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BB5DF82734B20C00E78BE8 /* AnotaAiSession.swift */; };
 		81BB5DFC2734B6F700E78BE8 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BB5DFB2734B6F700E78BE8 /* Person.swift */; };
@@ -232,6 +235,9 @@
 		81AB1D38272D9ADE006FB3C1 /* RestaurantMenu.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = RestaurantMenu.strings; sourceTree = "<group>"; };
 		81AB1D3B272DA6EB006FB3C1 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		81AB1D3E272DAC52006FB3C1 /* TableRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableRoutes.swift; sourceTree = "<group>"; };
+		81AF8BCF2736D5F90069BF43 /* FoodCardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodCardCell.xib; sourceTree = "<group>"; };
+		81AF8BD12736D6060069BF43 /* FoodCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCardCell.swift; sourceTree = "<group>"; };
+		81AF8BD32736D6130069BF43 /* FoodCardCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCardCellViewModel.swift; sourceTree = "<group>"; };
 		81BB5DF72734B20C00E78BE8 /* CreateSessionUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateSessionUseCase.swift; sourceTree = "<group>"; };
 		81BB5DF82734B20C00E78BE8 /* AnotaAiSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnotaAiSession.swift; sourceTree = "<group>"; };
 		81BB5DFB2734B6F700E78BE8 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
@@ -578,6 +584,7 @@
 		817473FE2735D01700B30046 /* AddToCommand */ = {
 			isa = PBXGroup;
 			children = (
+				81AF8BCE2736D5CE0069BF43 /* FoodCardCell */,
 				817473FF2735D0E400B30046 /* AddToCommandView.xib */,
 				817474012735D0F500B30046 /* AddToCommandView.swift */,
 				817474032735D10300B30046 /* AddToCommandController.swift */,
@@ -679,6 +686,16 @@
 				817473EA27359FA000B30046 /* MenuRoutes.swift */,
 			);
 			path = Routes;
+			sourceTree = "<group>";
+		};
+		81AF8BCE2736D5CE0069BF43 /* FoodCardCell */ = {
+			isa = PBXGroup;
+			children = (
+				81AF8BCF2736D5F90069BF43 /* FoodCardCell.xib */,
+				81AF8BD12736D6060069BF43 /* FoodCardCell.swift */,
+				81AF8BD32736D6130069BF43 /* FoodCardCellViewModel.swift */,
+			);
+			path = FoodCardCell;
 			sourceTree = "<group>";
 		};
 		81BB5DF62734B20C00E78BE8 /* Session */ = {
@@ -923,6 +940,7 @@
 				81E7E782272B7FBD00E0E726 /* GoogleService-Info.plist in Resources */,
 				817474222735FEA100B30046 /* TextFieldView.xib in Resources */,
 				817473E5273593B500B30046 /* Home.strings in Resources */,
+				81AF8BD02736D5F90069BF43 /* FoodCardCell.xib in Resources */,
 				81AB1D36272D91CB006FB3C1 /* MenuView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1115,6 +1133,8 @@
 				8194F2E9272F307B00C902FC /* UIViewController+KeyboardHandler.swift in Sources */,
 				817473D827358CA800B30046 /* HomeView.swift in Sources */,
 				811E4D85272C4DF20099C7AA /* Reusable.swift in Sources */,
+				81AF8BD22736D6060069BF43 /* FoodCardCell.swift in Sources */,
+				81AF8BD42736D6130069BF43 /* FoodCardCellViewModel.swift in Sources */,
 				817473FD2735C23400B30046 /* UIImageView+Url.swift in Sources */,
 				8100316D272C9DBB003FD820 /* UICollectionView+Reusable.swift in Sources */,
 				81003180272CA10A003FD820 /* TextField.swift in Sources */,

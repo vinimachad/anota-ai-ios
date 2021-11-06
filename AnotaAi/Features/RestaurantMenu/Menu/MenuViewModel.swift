@@ -9,7 +9,7 @@ import Foundation
 
 protocol MenuProtocol: MenuViewModelProtocol {
     var onFailureGetFoods: ((String) -> Void)? { get set }
-    var onOpenAddToCommand: ((Food?) -> Void)? { get set }
+    var onOpenAddToCommand: ((Food?, [Food?]) -> Void)? { get set }
     func getMenu()
 }
 
@@ -19,7 +19,7 @@ class MenuViewModel {
     
     var onFailureGetFoods: ((String) -> Void)?
     var onChangeFoods: (([FoodCellViewModelProtocol]) -> Void)?
-    var onOpenAddToCommand: ((Food?) -> Void)?
+    var onOpenAddToCommand: ((Food?, [Food?]) -> Void)?
     
     // MARK: - Private properties
     
@@ -74,7 +74,7 @@ extension MenuViewModel: MenuProtocol {
     // MARK: - Actions
     
     func didOpenAddToCommand(_ food: Food?) {
-        onOpenAddToCommand?(food)
+        onOpenAddToCommand?(food, foods)
     }
     
     func didSelect(viewModel: FoodCellViewModelProtocol, row: Int?) {

@@ -6,8 +6,10 @@
 //
 
 import Foundation
+import FirebaseFirestoreSwift
 
 struct Food: Codable {
+    @DocumentID var id: String? = UUID().uuidString
     var description: String
     var name: String
     var preview: String

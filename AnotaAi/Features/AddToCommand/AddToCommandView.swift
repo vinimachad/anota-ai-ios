@@ -16,7 +16,7 @@ protocol AddToCommandViewModelProtocol {
     var serves: Int? { get }
     var price: String? { get }
     
-    var onAddOneMoreFood: ((Bool) -> Void)? { get set }
+    var onAddOneMoreFood: ((Bool, [FoodCardCellViewModelProtocol]?) -> Void)? { get set }
     
     var fieldSideBySideViewModel: TextFieldSideBySideViewModelProtocol { get }
     var fieldViewViewModel: TextFieldViewModelProtocol { get }
@@ -33,10 +33,13 @@ class AddToCommandView: UIView {
     @IBOutlet private weak var priceLabel: UILabel!
     @IBOutlet private weak var textFieldSideBySide: TextFieldSideBySideView!
     @IBOutlet private weak var textFieldView: TextFieldView!
+    @IBOutlet private var collectionView: UICollectionView?
+    @IBOutlet private weak var collectionFlowLayout: UICollectionViewFlowLayout!
     
     // MARK: - Private properties
     
     private(set) var viewModel: AddToCommandViewModelProtocol?
+    private var collectionDataSource = CollectionViewDataSource()
     
     // MARK: - Life cycle
     
@@ -59,13 +62,14 @@ class AddToCommandView: UIView {
         textFieldSideBySide.bindIn(viewModel: viewModel.fieldSideBySideViewModel)
         textFieldView.bindIn(viewModel: viewModel.fieldViewViewModel)
         
-        self.viewModel?.onAddOneMoreFood = { [weak self] addOneMore in
-            self?.addOrRemoveCollection(addOneMore)
+        self.viewModel?.onAddOneMoreFood = { [weak self] addOneMore, viewModels in
+            self?.addOrRemoveCollection(addOneMore, viewModels)
         }
     }
     
-    private func addOrRemoveCollection(_ isAdd: Bool) {
+    private func addOrRemoveCollection(_ isAdd: Bool, _ viewModels: [FoodCardCellViewModelProtocol]?) {
         if isAdd {
+            collectionDataSource.sections = [CollectionSection<FoodCardCell>(items: viewModels ?? [])]
             addCollection()
             return
         }
@@ -84,6 +88,7 @@ extension AddToCommandView {
         setupPriceLabel()
         setupTextFieldSideBySide()
         setupTextFieldView()
+        setupCollectionView()
     }
     
     private func setupPreviewImageView() {
@@ -126,33 +131,21 @@ extension AddToCommandView {
         textFieldView.title = "Alguma observação?"
         textFieldView.placeholder = "Ex: Tirar azeitonas e cebolas..."
     }
+    
+    private func setupCollectionView() {
+        collectionFlowLayout.itemSize = CGSize(width: 160, height: 160)
+        collectionDataSource.collectionView = collectionView
+        collectionView?.isHidden = true
+    }
 }
 
 extension AddToCommandView {
     
     private func addCollection() {
-        let collectionDataSource = CollectionViewDataSource()
-        let collection = UICollectionView()
-        collection.backgroundColor = .blackColor
-        collectionDataSource.collectionView = collection
-        
-        let constraint = findConstraint(textFieldView.constraints, id: "TextViewTop")
-        removeConstraint(constraint)
-        
-        collection.layout {
-            $0.top.equal(textFieldSideBySide.bottomAnchor, constant: 10)
-            $0.leading.equal(leadingAnchor, constant: 16)
-            $0.trailing.equal(trailingAnchor, constant: -16)
-            $0.bottom.equal(textFieldView.topAnchor, constant: 10)
-            $0.height.equalTo(100)
-        }
+        collectionView?.isHidden = false
     }
     
     private func removeCollection() {
-        
-    }
-    
-    private func findConstraint(_ constraint: [NSLayoutConstraint], id: String) -> NSLayoutConstraint {
-        constraint.filter { $0.identifier == id }.first ?? NSLayoutConstraint()
+        collectionView?.isHidden = true
     }
 }
