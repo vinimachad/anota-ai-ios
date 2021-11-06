@@ -14,7 +14,7 @@ protocol FoodCellViewModelProtocol: TablesViewModelProtocol {
     var description: String? { get }
     var serves: Int? { get }
     var price: String? { get }
-    func didSelect(_ viewModel: FoodCellViewModelProtocol)
+    func didSelect(_ food: Food?)
 }
 
 class FoodCell: UITableViewCell, TableViewProtocol {

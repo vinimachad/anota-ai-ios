@@ -79,6 +79,15 @@
 		817474042735D10300B30046 /* AddToCommandController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817474032735D10300B30046 /* AddToCommandController.swift */; };
 		817474062735D11100B30046 /* AddToCommandViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817474052735D11100B30046 /* AddToCommandViewModel.swift */; };
 		817474082735D53500B30046 /* AddToCommandCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817474072735D53500B30046 /* AddToCommandCoordinator.swift */; };
+		8174740B2735E30E00B30046 /* TextFieldSideBySideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8174740A2735E30E00B30046 /* TextFieldSideBySideView.swift */; };
+		8174740D2735E33000B30046 /* TextFieldSideBySideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8174740C2735E33000B30046 /* TextFieldSideBySideView.xib */; };
+		817474122735E96400B30046 /* TextField+Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8174740E2735E96300B30046 /* TextField+Picker.swift */; };
+		817474132735E96400B30046 /* TextField+Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8174740F2735E96300B30046 /* TextField+Toolbar.swift */; };
+		817474192735E9DA00B30046 /* PickerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817474182735E9DA00B30046 /* PickerDataSource.swift */; };
+		8174741B2735EF0900B30046 /* TextFieldSideBySideViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8174741A2735EF0900B30046 /* TextFieldSideBySideViewModel.swift */; };
+		817474202735FEA100B30046 /* TextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8174741D2735FEA100B30046 /* TextFieldViewModel.swift */; };
+		817474212735FEA100B30046 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8174741E2735FEA100B30046 /* TextFieldView.swift */; };
+		817474222735FEA100B30046 /* TextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8174741F2735FEA100B30046 /* TextFieldView.xib */; };
 		818CDB3D273016A6000B8E06 /* GetTableUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818CDB3C273016A6000B8E06 /* GetTableUseCase.swift */; };
 		8194F2E0272EF44900C902FC /* PersonSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8194F2DF272EF44900C902FC /* PersonSession.swift */; };
 		8194F2E3272F28ED00C902FC /* CreatePersonUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8194F2E2272F28ED00C902FC /* CreatePersonUseCase.swift */; };
@@ -200,6 +209,15 @@
 		817474032735D10300B30046 /* AddToCommandController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToCommandController.swift; sourceTree = "<group>"; };
 		817474052735D11100B30046 /* AddToCommandViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToCommandViewModel.swift; sourceTree = "<group>"; };
 		817474072735D53500B30046 /* AddToCommandCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToCommandCoordinator.swift; sourceTree = "<group>"; };
+		8174740A2735E30E00B30046 /* TextFieldSideBySideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldSideBySideView.swift; sourceTree = "<group>"; };
+		8174740C2735E33000B30046 /* TextFieldSideBySideView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldSideBySideView.xib; sourceTree = "<group>"; };
+		8174740E2735E96300B30046 /* TextField+Picker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TextField+Picker.swift"; sourceTree = "<group>"; };
+		8174740F2735E96300B30046 /* TextField+Toolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TextField+Toolbar.swift"; sourceTree = "<group>"; };
+		817474182735E9DA00B30046 /* PickerDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerDataSource.swift; sourceTree = "<group>"; };
+		8174741A2735EF0900B30046 /* TextFieldSideBySideViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldSideBySideViewModel.swift; sourceTree = "<group>"; };
+		8174741D2735FEA100B30046 /* TextFieldViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldViewModel.swift; sourceTree = "<group>"; };
+		8174741E2735FEA100B30046 /* TextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
+		8174741F2735FEA100B30046 /* TextFieldView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldView.xib; sourceTree = "<group>"; };
 		818CDB3C273016A6000B8E06 /* GetTableUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTableUseCase.swift; sourceTree = "<group>"; };
 		8194F2DF272EF44900C902FC /* PersonSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonSession.swift; sourceTree = "<group>"; };
 		8194F2E2272F28ED00C902FC /* CreatePersonUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePersonUseCase.swift; sourceTree = "<group>"; };
@@ -307,6 +325,9 @@
 		8100317C272CA10A003FD820 /* TextField */ = {
 			isa = PBXGroup;
 			children = (
+				817474162735E96900B30046 /* Picker */,
+				817474092735E2E300B30046 /* TextFieldSideBySide */,
+				8174741C2735FEA100B30046 /* TextFieldView */,
 				8100317D272CA10A003FD820 /* TextField.swift */,
 			);
 			path = TextField;
@@ -430,6 +451,7 @@
 		811E4D87272C4EC70099C7AA /* DataSources */ = {
 			isa = PBXGroup;
 			children = (
+				817474172735E9DA00B30046 /* PickerView */,
 				811E4D88272C4EC70099C7AA /* TableView */,
 				811E4D8C272C4EC70099C7AA /* CollectionView */,
 			);
@@ -562,6 +584,43 @@
 				817474052735D11100B30046 /* AddToCommandViewModel.swift */,
 			);
 			path = AddToCommand;
+			sourceTree = "<group>";
+		};
+		817474092735E2E300B30046 /* TextFieldSideBySide */ = {
+			isa = PBXGroup;
+			children = (
+				8174740A2735E30E00B30046 /* TextFieldSideBySideView.swift */,
+				8174740C2735E33000B30046 /* TextFieldSideBySideView.xib */,
+				8174741A2735EF0900B30046 /* TextFieldSideBySideViewModel.swift */,
+			);
+			path = TextFieldSideBySide;
+			sourceTree = "<group>";
+		};
+		817474162735E96900B30046 /* Picker */ = {
+			isa = PBXGroup;
+			children = (
+				8174740E2735E96300B30046 /* TextField+Picker.swift */,
+				8174740F2735E96300B30046 /* TextField+Toolbar.swift */,
+			);
+			path = Picker;
+			sourceTree = "<group>";
+		};
+		817474172735E9DA00B30046 /* PickerView */ = {
+			isa = PBXGroup;
+			children = (
+				817474182735E9DA00B30046 /* PickerDataSource.swift */,
+			);
+			path = PickerView;
+			sourceTree = "<group>";
+		};
+		8174741C2735FEA100B30046 /* TextFieldView */ = {
+			isa = PBXGroup;
+			children = (
+				8174741D2735FEA100B30046 /* TextFieldViewModel.swift */,
+				8174741E2735FEA100B30046 /* TextFieldView.swift */,
+				8174741F2735FEA100B30046 /* TextFieldView.xib */,
+			);
+			path = TextFieldView;
 			sourceTree = "<group>";
 		};
 		8194F2DE272EF43500C902FC /* Models */ = {
@@ -845,6 +904,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				817474002735D0E400B30046 /* AddToCommandView.xib in Resources */,
+				8174740D2735E33000B30046 /* TextFieldSideBySideView.xib in Resources */,
 				811E4D67272C4B360099C7AA /* Error.strings in Resources */,
 				817473DA27358CA800B30046 /* HomeView.xib in Resources */,
 				81003177272C9FC6003FD820 /* WelcomeView.xib in Resources */,
@@ -861,6 +921,7 @@
 				81003187272CA1CF003FD820 /* Colors.xcassets in Resources */,
 				811E4D77272C4BBE0099C7AA /* Gilroy-Black.ttf in Resources */,
 				81E7E782272B7FBD00E0E726 /* GoogleService-Info.plist in Resources */,
+				817474222735FEA100B30046 /* TextFieldView.xib in Resources */,
 				817473E5273593B500B30046 /* Home.strings in Resources */,
 				81AB1D36272D91CB006FB3C1 /* MenuView.xib in Resources */,
 			);
@@ -1008,22 +1069,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				817473E127358FA900B30046 /* HomeFactory.swift in Sources */,
+				8174741B2735EF0900B30046 /* TextFieldSideBySideViewModel.swift in Sources */,
 				81FAB369272DC02D00D1B2A0 /* CreateTableUseCase.swift in Sources */,
 				811E4D6F272C4B790099C7AA /* Fonts.swift in Sources */,
 				818CDB3D273016A6000B8E06 /* GetTableUseCase.swift in Sources */,
 				811E4D94272C4EC70099C7AA /* CollectionSection.swift in Sources */,
 				811E4D93272C4EC70099C7AA /* CollectionProtocol.swift in Sources */,
+				817474192735E9DA00B30046 /* PickerDataSource.swift in Sources */,
 				81003184272CA182003FD820 /* TitleView.swift in Sources */,
 				81AB1D2E272D914B006FB3C1 /* MenuFactory.swift in Sources */,
 				8194F2E7272F2B0000C902FC /* PersonRoutes.swift in Sources */,
 				81E7E78A272B836F00E0E726 /* AppCoordinator.swift in Sources */,
 				817473D927358CA800B30046 /* HomeTab.swift in Sources */,
 				81EDA1E427337EED002EE3B9 /* UpdateTableUseCase.swift in Sources */,
+				817474132735E96400B30046 /* TextField+Toolbar.swift in Sources */,
 				814B3C39272B794A00C9F0CB /* AppDelegate.swift in Sources */,
 				81003173272C9FA4003FD820 /* WelcomeViewModel.swift in Sources */,
 				817473F52735AC5900B30046 /* FoodCellViewModel.swift in Sources */,
 				817473F02735A97900B30046 /* Food.swift in Sources */,
 				81BB5DF92734B20C00E78BE8 /* CreateSessionUseCase.swift in Sources */,
+				817474202735FEA100B30046 /* TextFieldViewModel.swift in Sources */,
+				817474212735FEA100B30046 /* TextFieldView.swift in Sources */,
 				811E4D83272C4DF20099C7AA /* Navigation.swift in Sources */,
 				817474022735D0F500B30046 /* AddToCommandView.swift in Sources */,
 				811E4D61272C4A5D0099C7AA /* WelcomeCoordinator.swift in Sources */,
@@ -1054,6 +1120,7 @@
 				81003180272CA10A003FD820 /* TextField.swift in Sources */,
 				8116BF59272CBA8F00DDC725 /* LayoutAnchor.swift in Sources */,
 				81EDA1E627337F79002EE3B9 /* AddPersonUseCase.swift in Sources */,
+				817474122735E96400B30046 /* TextField+Picker.swift in Sources */,
 				811E4D6E272C4B790099C7AA /* Colors.swift in Sources */,
 				814D0E9D27336DF400570934 /* Alert.swift in Sources */,
 				81E7E78B272B836F00E0E726 /* CoordinatorProtocol.swift in Sources */,
@@ -1067,6 +1134,7 @@
 				817473F92735B5D100B30046 /* Double+Currency.swift in Sources */,
 				8116BF54272CB2F600DDC725 /* QRCodeScanView.swift in Sources */,
 				81AB1D3F272DAC52006FB3C1 /* TableRoutes.swift in Sources */,
+				8174740B2735E30E00B30046 /* TextFieldSideBySideView.swift in Sources */,
 				81AB1D32272D91B6006FB3C1 /* MenuController.swift in Sources */,
 				81AB1D3C272DA6EB006FB3C1 /* API.swift in Sources */,
 				817473EB27359FA000B30046 /* MenuRoutes.swift in Sources */,
