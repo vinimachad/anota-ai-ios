@@ -15,11 +15,14 @@ protocol AddToCommandViewModelProtocol {
     var description: String? { get }
     var serves: Int? { get }
     var price: String? { get }
-    
-    var onAddOneMoreFood: ((Bool, [FoodCardCellViewModelProtocol]?) -> Void)? { get set }
-    
+    var total: String? { get }
+
     var fieldSideBySideViewModel: TextFieldSideBySideViewModelProtocol { get }
     var fieldViewViewModel: TextFieldViewModelProtocol { get }
+    var counterViewModel: CounterViewModelProtocol { get }
+
+    var onAddOneMoreFood: ((Bool, [FoodCardCellViewModelProtocol]?) -> Void)? { get set }
+    var onChangeValues: (() -> Void)? { get set }
 }
 
 class AddToCommandView: UIView {
@@ -33,8 +36,11 @@ class AddToCommandView: UIView {
     @IBOutlet private weak var priceLabel: UILabel!
     @IBOutlet private weak var textFieldSideBySide: TextFieldSideBySideView!
     @IBOutlet private weak var textFieldView: TextFieldView!
-    @IBOutlet private var collectionView: UICollectionView?
+    @IBOutlet private weak var collectionView: UICollectionView?
     @IBOutlet private weak var collectionFlowLayout: UICollectionViewFlowLayout!
+    @IBOutlet private weak var counterView: CounterView!
+    @IBOutlet private weak var addToCommandButton: Button!
+    @IBOutlet private weak var totalLabel: UILabel!
     
     // MARK: - Private properties
     
@@ -52,15 +58,22 @@ class AddToCommandView: UIView {
     
     func bindIn(viewModel: AddToCommandViewModelProtocol) {
         self.viewModel = viewModel
-        
+
         nameLabel.text = viewModel.name
         descriptionLabel.text = viewModel.description
         servesLabel.text = "serves_label".localize(.restaurantMenu, [String(viewModel.serves ?? 0)])
         priceLabel.text = viewModel.price
+        updateTotalLabel(viewModel.total ?? "")
         previewImageView.imageBy(url: viewModel.url)
         
         textFieldSideBySide.bindIn(viewModel: viewModel.fieldSideBySideViewModel)
         textFieldView.bindIn(viewModel: viewModel.fieldViewViewModel)
+        counterView.bindIn(viewModel: viewModel.counterViewModel)
+        
+        self.viewModel?.onChangeValues = { [weak self] in
+            self?.priceLabel.text = viewModel.price
+            self?.updateTotalLabel(viewModel.total ?? "")
+        }
         
         self.viewModel?.onAddOneMoreFood = { [weak self] addOneMore, viewModels in
             self?.addOrRemoveCollection(addOneMore, viewModels)
@@ -69,7 +82,7 @@ class AddToCommandView: UIView {
     
     private func addOrRemoveCollection(_ isAdd: Bool, _ viewModels: [FoodCardCellViewModelProtocol]?) {
         if isAdd {
-            collectionDataSource.sections = [CollectionSection<FoodCardCell>(items: viewModels ?? [])]
+            collectionDataSource.sections = [CollectionSection<FoodCardCell>(items: viewModels ?? [], delegate: self)]
             addCollection()
             return
         }
@@ -89,6 +102,9 @@ extension AddToCommandView {
         setupTextFieldSideBySide()
         setupTextFieldView()
         setupCollectionView()
+        setupAddToCommandButton()
+        setupCounterView()
+        setupTotalLabel()
     }
     
     private func setupPreviewImageView() {
@@ -137,6 +153,29 @@ extension AddToCommandView {
         collectionDataSource.collectionView = collectionView
         collectionView?.isHidden = true
     }
+    
+    private func setupCounterView() {
+        counterView.layer.cornerRadius = 8
+    }
+    
+    private func setupAddToCommandButton() {
+        addToCommandButton.style = .default
+        addToCommandButton.title = "Adicionar"
+    }
+    
+    private func setupTotalLabel() {
+        totalLabel.textColor = .greenColor
+    }
+    
+    // MARK: - Updates
+    
+    private func updateTotalLabel(_ total: String) {
+        let text = "total_label".localize(.addToCommand, [total])
+        let totalText = NSMutableAttributedString(string: text)
+        totalText.setFont(font: .default(type: .bold, ofSize: 16), forText: text)
+        totalText.setFont(font: .default(type: .bold, ofSize: 24), forText: total)
+        totalLabel.attributedText = totalText
+    }
 }
 
 extension AddToCommandView {
@@ -147,5 +186,12 @@ extension AddToCommandView {
     
     private func removeCollection() {
         collectionView?.isHidden = true
+    }
+}
+
+extension AddToCommandView: CollectionSectionDelegate {
+    func didSelect(item: Any, row: Int) {
+        guard let viewModel = item as? FoodCardCellViewModelProtocol else { return }
+        viewModel.didSelect()
     }
 }

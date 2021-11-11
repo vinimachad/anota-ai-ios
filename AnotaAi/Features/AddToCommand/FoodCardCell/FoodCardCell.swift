@@ -9,11 +9,12 @@ import Foundation
 import UIKit
 
 protocol FoodCardCellViewModelProtocol: CollectionViewModelProtocol {
+    var id: String? { get }
     var url: URL? { get }
     var name: String? { get }
     var description: String? { get }
     var price: String? { get }
-    func didSelect(_ food: Food?)
+    func didSelect()
 }
 
 class FoodCardCell: UICollectionViewCell, CollectionViewProtocol {
@@ -47,7 +48,6 @@ class FoodCardCell: UICollectionViewCell, CollectionViewProtocol {
         previewImageView.imageBy(url: viewModel.url)
     }
     
-    
 }
 
 extension FoodCardCell {
@@ -59,13 +59,15 @@ extension FoodCardCell {
         setupNameLabel()
         setupDescriptionLabel()
         setupPriceLabel()
-        backgroundColor = .white
+        layer.borderWidth = 0.4
+        layer.borderColor = UIColor.lightGrayOneColor.cgColor
         layer.cornerRadius = 8
     }
     
     private func setupPreviewImageView() {
         previewImageView.contentMode = .scaleAspectFill
         previewImageView.layer.cornerRadius = 8
+        previewImageView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
     }
     
     private func setupNameLabel() {

@@ -15,4 +15,13 @@ struct Food: Codable {
     var preview: String
     var price: Double
     var serves: Int
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case description
+        case name
+        case preview
+        case price
+        case serves
+    }
 }

@@ -8,7 +8,7 @@
 import UIKit
 
 protocol CollectionSectionDelegate: AnyObject {
-    func didSelect(item: Any)
+    func didSelect(item: Any, row: Int)
 }
 
 class CollectionSection<Cell: UICollectionViewCell & CollectionViewProtocol>: CollectionSectionProtocol {
@@ -37,6 +37,6 @@ class CollectionSection<Cell: UICollectionViewCell & CollectionViewProtocol>: Co
     
     func didSelectAt(row: Int) {
         guard row < items.count else { return }
-        delegate?.didSelect(item: items[row])
+        delegate?.didSelect(item: items[row], row: row)
     }
 }

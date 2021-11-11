@@ -16,17 +16,20 @@ class AddToCommandViewModel {
     // MARK: - Public properties
     
     var onAddOneMoreFood: ((Bool, [FoodCardCellViewModelProtocol]?) -> Void)?
+    var onChangeValues: (() -> Void)?
     
     // MARK: - Private properties
     
-    private let food: Food?
+    private var food: Food?
     private let foods: [Food?]
+    private var commandItem = CommandItem()
     
     // MARK: - Init
     
     init(food: Food?, foods: [Food?]) {
         self.food = food
         self.foods = foods
+        commandItem.value = self.food?.price ?? 0.0
     }
     
     private func generateViewModels() -> [FoodCardCellViewModelProtocol] {
@@ -38,7 +41,15 @@ class AddToCommandViewModel {
         }
         
         return differentViewModels.map {
-            FoodCardCellViewModel(stringUrl: $0?.preview, name: $0?.name, description: $0?.description, pricing: $0?.price, onSelect: { _ in })
+            FoodCardCellViewModel(
+                id: $0?.id,
+                stringUrl: $0?.preview,
+                name: $0?.name,
+                description: $0?.description,
+                pricing: $0?.price,
+                serves: $0?.serves,
+                onSelect: self.updateOtherFood(_:)
+            )
         }
     }
 }
@@ -51,6 +62,12 @@ extension AddToCommandViewModel: AddToCommandProtocol {
     
     var fieldViewViewModel: TextFieldViewModelProtocol {
         TextFieldViewModel(onChangeTextFieldValue: self.updateObservationText(_:))
+    }
+    
+    var counterViewModel: CounterViewModelProtocol {
+        CounterViewModel(onUpdateCountValue: { [weak self] count in
+            self?.commandItem.howMany = count
+        })
     }
     
     var url: URL? {
@@ -70,24 +87,56 @@ extension AddToCommandViewModel: AddToCommandProtocol {
     }
     
     var price: String? {
-        food?.price.localizedCurrency()
+        food?.price.localizedCurrency() 
+    }
+    
+    var total: String? {
+        commandItem.value.localizedCurrency()
     }
     
     // MARK: - Updates
     
     private func updateHalfText(_ text: String) {
         switch text {
-        case "Metade": onAddOneMoreFood?(true, generateViewModels())
-        case "Inteira": onAddOneMoreFood?(false, nil)
+        case "Metade":
+            onAddOneMoreFood?(true, generateViewModels())
+            commandItem.isHalf = true
+            updateTotalValue()
+        case "Inteira":
+            onAddOneMoreFood?(false, nil)
+            commandItem.isHalf = false
         default: return
         }
     }
     
     private func updateSizeText(_ text: String) {
-        print(text)
+        commandItem.size = text
     }
     
     private func updateObservationText(_ text: String?) {
-        print(text)
+        commandItem.observation = text ?? ""
+    }
+    
+    private func updateOtherFood(_ food: Food?) {
+        guard let food = food else { return }
+        commandItem.otherFood = food
+        updateTotalValue()
+    }
+    
+    private func updateTotalValue() {
+        guard let currentFoodPrice = food?.price else { return }
+        
+        let priceDivided = currentFoodPrice / 2
+        self.food?.price = priceDivided
+        commandItem.value = priceDivided
+        
+        guard let otherFoodValue = commandItem.otherFood?.price else {
+            onChangeValues?()
+            return
+        }
+        
+        let total = priceDivided + otherFoodValue
+        commandItem.value = total
+        onChangeValues?()
     }
 }

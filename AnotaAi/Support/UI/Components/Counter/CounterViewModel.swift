@@ -18,9 +18,15 @@ class CounterViewModel {
     
     var onChangeCount: ((String) -> Void)?
     
+    var counter: Int = 1 {
+        didSet {
+            onChangeCount?(String(counter))
+            onUpdateCountValue?(counter)
+        }
+    }
+    
     // MARK: - Private properties
     
-    private var counter: Int = 0
     private var onUpdateCountValue: ((Int) -> Void)?
     
     // MARK: - Init

@@ -1,0 +1,8 @@
+/* 
+  AddToCommand.strings
+  AnotaAi
+
+  Created by Vinicius Galhardo Machado on 10/11/21.
+  
+*/
+"total_label" = "Total: %@";

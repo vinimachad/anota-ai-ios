@@ -11,22 +11,27 @@ class FoodCardCellViewModel {
     
     // MARK: - Public properties
     
+    var id: String?
     var stringUrl: String?
     var name: String?
     var description: String?
     var pricing: Double?
+    var serves: Int?
     
     var onSelect: ((Food?) -> Void)?
     
     // MARK: - Init
     
     internal init(
+        id: String? = nil,
         stringUrl: String? = nil,
         name: String? = nil,
         description: String? = nil,
         pricing: Double? = nil,
+        serves: Int?,
         onSelect: ((Food?) -> Void)?
     ) {
+        self.id = id
         self.stringUrl = stringUrl
         self.name = name
         self.description = description
@@ -46,7 +51,23 @@ extension FoodCardCellViewModel: FoodCardCellViewModelProtocol {
         pricing?.localizedCurrency()
     }
     
-    func didSelect(_ food: Food?) {
+    func didSelect() {
+        guard
+            let description = description,
+            let name = name,
+            let preview = stringUrl,
+            let price = pricing,
+            let serves = serves
+        else { return }
+        
+        let food = Food(
+            description: description,
+            name: name,
+            preview: preview,
+            price: price,
+            serves: serves
+        )
+        
         onSelect?(food)
     }
 }

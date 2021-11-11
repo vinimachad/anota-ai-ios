@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 protocol CounterViewModelProtocol {
+    var counter: Int { get }
     var onChangeCount: ((String) -> Void)? { get set }
     func didIncrement(_ type: CounterViewModel.Counter)
 }
@@ -51,8 +52,10 @@ class CounterView: UIView, NibLoadable {
     
     func bindIn(viewModel: CounterViewModelProtocol) {
         self.viewModel = viewModel
+        self.countLabel.text = String(viewModel.counter)
         self.viewModel?.onChangeCount = { [weak self] count in
             self?.countLabel.text = count
+            self?.subtractButton.isEnabled = Int(count) ?? 0 > 0 ? true : false
         }
     }
 }
@@ -75,6 +78,9 @@ extension CounterView {
         setupSubtractButton()
         setupCountLabel()
         setupSumButton()
+        layer.borderWidth = 1
+        layer.borderColor = UIColor.lightGrayTwoColor.cgColor
+        layer.cornerRadius = 8
     }
     
     private func setupSubtractButton() {
