@@ -31,6 +31,7 @@ class FoodCardCellViewModel {
         serves: Int?,
         onSelect: ((Food?) -> Void)?
     ) {
+        self.serves = serves
         self.id = id
         self.stringUrl = stringUrl
         self.name = name

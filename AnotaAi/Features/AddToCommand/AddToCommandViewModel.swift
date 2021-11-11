@@ -23,12 +23,14 @@ class AddToCommandViewModel {
     private var food: Food?
     private let foods: [Food?]
     private var commandItem = CommandItem()
+    private let currentPrice: Double?
     
     // MARK: - Init
     
     init(food: Food?, foods: [Food?]) {
         self.food = food
         self.foods = foods
+        currentPrice = food?.price
         commandItem.value = self.food?.price ?? 0.0
     }
     
@@ -124,7 +126,7 @@ extension AddToCommandViewModel: AddToCommandProtocol {
     }
     
     private func updateTotalValue() {
-        guard let currentFoodPrice = food?.price else { return }
+        guard let currentFoodPrice = currentPrice else { return }
         
         let priceDivided = currentFoodPrice / 2
         self.food?.price = priceDivided
