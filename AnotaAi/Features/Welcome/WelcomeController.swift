@@ -58,6 +58,9 @@ class WelcomeController<ViewModel: WelcomeProtocol>: UIViewController, KeyboardH
         super.viewWillDisappear(animated)
         viewModel.stopScan()
     }
+}
+
+extension WelcomeController {
     
     // MARK: - Bind
     

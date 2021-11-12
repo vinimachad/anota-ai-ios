@@ -11,7 +11,7 @@ import UIKit
 
 protocol AddToCommandControllerDelegate: AnyObject {}
 
-class AddToCommandController<ViewModel: AddToCommandProtocol>: UIViewController {
+class AddToCommandController<ViewModel: AddToCommandProtocol>: UIViewController, KeyboardHandler {
     
     // MARK: - Private properties
     
@@ -40,9 +40,20 @@ class AddToCommandController<ViewModel: AddToCommandProtocol>: UIViewController 
         view = contentView
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        startObserveKeyboard()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        stopObserveKeyboard()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         bind()
+        setTransparentNavigation()
     }
     
     // MARK: - Bind

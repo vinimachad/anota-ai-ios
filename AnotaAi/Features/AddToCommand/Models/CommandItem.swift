@@ -13,7 +13,7 @@ class CommandItem: Codable {
     var size: String = "M"
     var otherFood: Food?
     var observation: String = ""
-    var howMany: Int = 0
+    var howMany: Int = 1
     var value: Double = 0.0
     
     enum CodingKeys: String, CodingKey {

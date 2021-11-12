@@ -23,6 +23,8 @@ protocol AddToCommandViewModelProtocol {
 
     var onAddOneMoreFood: ((Bool, [FoodCardCellViewModelProtocol]?) -> Void)? { get set }
     var onChangeValues: (() -> Void)? { get set }
+    
+    func didAddToCommand()
 }
 
 class AddToCommandView: UIView {
@@ -137,10 +139,10 @@ extension AddToCommandView {
     
     private func setupTextFieldSideBySide() {
         textFieldSideBySide.first = "Pela metade?"
-        textFieldSideBySide.firstOptions = ["Metade", "Inteira"]
+        textFieldSideBySide.firstOptions = ["Inteira", "Metade"]
         
         textFieldSideBySide.second = "Tamanho"
-        textFieldSideBySide.secondOptions = ["G", "M"]
+        textFieldSideBySide.secondOptions = ["M", "G"]
     }
     
     private func setupTextFieldView() {
@@ -152,6 +154,7 @@ extension AddToCommandView {
         collectionFlowLayout.itemSize = CGSize(width: 160, height: 160)
         collectionDataSource.collectionView = collectionView
         collectionView?.isHidden = true
+        collectionView?.showsHorizontalScrollIndicator = false
     }
     
     private func setupCounterView() {
@@ -161,6 +164,7 @@ extension AddToCommandView {
     private func setupAddToCommandButton() {
         addToCommandButton.style = .default
         addToCommandButton.title = "Adicionar"
+        addToCommandButton.addTarget(self, action: #selector(didTapAddToCommandButton), for: .touchUpInside)
     }
     
     private func setupTotalLabel() {
@@ -175,6 +179,12 @@ extension AddToCommandView {
         totalText.setFont(font: .default(type: .bold, ofSize: 16), forText: text)
         totalText.setFont(font: .default(type: .bold, ofSize: 24), forText: total)
         totalLabel.attributedText = totalText
+    }
+    
+    // MARK: - Actions
+    
+    @objc private func didTapAddToCommandButton() {
+        viewModel?.didAddToCommand()
     }
 }
 

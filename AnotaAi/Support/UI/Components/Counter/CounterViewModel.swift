@@ -36,7 +36,7 @@ class CounterViewModel {
     }
     
     private func subValidation() {
-        if counter >= 1 && counter > 0 {
+        if counter > 1 {
             counter -= 1
         }
     }

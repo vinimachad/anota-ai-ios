@@ -31,6 +31,7 @@ class TextFieldSideBySideView: UIView, NibLoadable {
     var firstOptions: [String]? {
         get { firstPickerDataSource.options }
         set {
+            firstTextField.text = newValue?[0]
             firstPickerDataSource.options = newValue ?? []
             firstTextField.createPicker(dataSource: firstPickerDataSource)
         }
@@ -38,6 +39,7 @@ class TextFieldSideBySideView: UIView, NibLoadable {
     var secondOptions: [String]? {
         get { secondPickerDataSource.options }
         set {
+            secondTextField.text = newValue?[0]
             secondPickerDataSource.options = newValue ?? []
             secondTextField.createPicker(dataSource: secondPickerDataSource)
         }

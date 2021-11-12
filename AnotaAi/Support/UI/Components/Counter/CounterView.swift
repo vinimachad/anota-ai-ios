@@ -55,7 +55,7 @@ class CounterView: UIView, NibLoadable {
         self.countLabel.text = String(viewModel.counter)
         self.viewModel?.onChangeCount = { [weak self] count in
             self?.countLabel.text = count
-            self?.subtractButton.isEnabled = Int(count) ?? 0 > 0 ? true : false
+            self?.subtractButton.isEnabled = Int(count) ?? 1 > 1 ? true : false
         }
     }
 }
@@ -84,6 +84,7 @@ extension CounterView {
     }
     
     private func setupSubtractButton() {
+        subtractButton.isEnabled = false
         subtractButton.setTitle("-", for: .normal)
         subtractButton.setTitleColor(.primaryColor, for: .normal)
         subtractButton.setTitleColor(.lightGrayOneColor, for: .disabled)
