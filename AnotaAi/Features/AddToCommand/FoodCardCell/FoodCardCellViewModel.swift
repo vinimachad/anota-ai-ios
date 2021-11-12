@@ -19,6 +19,7 @@ class FoodCardCellViewModel {
     var serves: Int?
     
     var onSelect: ((Food?) -> Void)?
+    var onChangeToSelect: ((Bool) -> Void)?
     
     // MARK: - Init
     
@@ -52,7 +53,7 @@ extension FoodCardCellViewModel: FoodCardCellViewModelProtocol {
         pricing?.localizedCurrency()
     }
     
-    func didSelect() {
+    func didSelect(_ isSelected: Bool) {
         guard
             let description = description,
             let name = name,
@@ -69,6 +70,10 @@ extension FoodCardCellViewModel: FoodCardCellViewModelProtocol {
             serves: serves
         )
         
-        onSelect?(food)
+        if isSelected {
+            onSelect?(food)
+        }
+        
+        onChangeToSelect?(isSelected)
     }
 }

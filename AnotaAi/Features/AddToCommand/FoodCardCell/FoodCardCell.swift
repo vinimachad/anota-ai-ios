@@ -14,7 +14,9 @@ protocol FoodCardCellViewModelProtocol: CollectionViewModelProtocol {
     var name: String? { get }
     var description: String? { get }
     var price: String? { get }
-    func didSelect()
+    var onChangeToSelect: ((Bool) -> Void)? { get set }
+    
+    func didSelect(_ isSelected: Bool)
 }
 
 class FoodCardCell: UICollectionViewCell, CollectionViewProtocol {
@@ -46,6 +48,10 @@ class FoodCardCell: UICollectionViewCell, CollectionViewProtocol {
         descriptionLabel.text = viewModel.description
         priceLabel.text = viewModel.price
         previewImageView.imageBy(url: viewModel.url)
+        
+        self.viewModel?.onChangeToSelect = { [weak self] isSelected in
+            self?.backgroundColor =  isSelected ? .lightGrayTwoColor : .white
+        }
     }
     
 }

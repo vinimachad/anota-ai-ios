@@ -14,7 +14,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="1042"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="MJF-ne-UFy">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="MJF-ne-UFy">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="1008"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PlH-er-nnk">
@@ -179,6 +179,7 @@
                 <outlet property="nameLabel" destination="vcX-HU-aMZ" id="jCm-EJ-gpr"/>
                 <outlet property="previewImageView" destination="NP6-cS-tSV" id="o5m-kc-Zth"/>
                 <outlet property="priceLabel" destination="ope-eK-ttK" id="5qb-z7-tfm"/>
+                <outlet property="scrollView" destination="MJF-ne-UFy" id="etG-la-vdi"/>
                 <outlet property="servesLabel" destination="8ms-xz-mNG" id="bgv-Zz-aSd"/>
                 <outlet property="textFieldSideBySide" destination="k88-Jj-GdQ" id="FAa-Vu-tg5"/>
                 <outlet property="textFieldView" destination="cW6-mU-5wI" id="KNc-Vt-plh"/>

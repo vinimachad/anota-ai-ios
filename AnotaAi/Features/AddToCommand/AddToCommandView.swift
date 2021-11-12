@@ -31,6 +31,7 @@ class AddToCommandView: UIView {
     
     // MARK: - UI Components
     
+    @IBOutlet private(set) weak var scrollView: UIScrollView!
     @IBOutlet private weak var previewImageView: UIImageView!
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var descriptionLabel: UILabel!
@@ -200,8 +201,9 @@ extension AddToCommandView {
 }
 
 extension AddToCommandView: CollectionSectionDelegate {
-    func didSelect(item: Any, row: Int) {
-        guard let viewModel = item as? FoodCardCellViewModelProtocol else { return }
-        viewModel.didSelect()
+    
+    func didSelect(items: [Any], row: Int) {
+        guard let viewModels = items as? [FoodCardCellViewModelProtocol] else { return }
+        viewModels.enumerated().forEach { $0.element.didSelect($0.offset == row) }
     }
 }

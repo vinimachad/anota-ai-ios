@@ -12,6 +12,10 @@ import UIKit
 protocol AddToCommandControllerDelegate: AnyObject {}
 
 class AddToCommandController<ViewModel: AddToCommandProtocol>: UIViewController, KeyboardHandler {
+
+    var scrollView: UIScrollView? {
+        contentView.scrollView
+    }
     
     // MARK: - Private properties
     
