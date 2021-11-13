@@ -16,6 +16,7 @@ class Item: Codable {
     var observation: String = ""
     var howMany: Int = 1
     var value: Double = 0.0
+    var status: String = "Aguardando"
     
     enum CodingKeys: String, CodingKey {
         case name

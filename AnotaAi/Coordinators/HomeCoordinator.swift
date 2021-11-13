@@ -24,6 +24,12 @@ class HomeCoordinator: CoordinatorProtocol {
         coordinator.start()
         return coordinator
     }()
+    
+    private lazy var commandCoordinator: CommandCoordinator = {
+        let coordinator = CommandCoordinator()
+        coordinator.start()
+        return coordinator
+    }()
 }
 
 extension HomeCoordinator: HomeControllerDelegate {
@@ -34,7 +40,8 @@ extension HomeCoordinator: HomeControllerDelegate {
                 childCoordinator = menuCoordinator
                 return menuCoordinator.containerViewController
             case .requests:
-                return UIViewController()
+                childCoordinator = commandCoordinator
+                return commandCoordinator.containerViewController
             case .profile:
                 return UIViewController()
         }
