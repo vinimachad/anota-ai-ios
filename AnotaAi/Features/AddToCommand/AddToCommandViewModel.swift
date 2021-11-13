@@ -8,13 +8,16 @@
 import Foundation
 
 protocol AddToCommandProtocol: AddToCommandViewModelProtocol {
-    
+    var onFailureAddToCommand: ((String) -> Void)? { get set }
+    var onSuccessAddToCommand: (() -> Void)? { get set }
 }
 
 class AddToCommandViewModel {
     
     // MARK: - Public properties
     
+    var onFailureAddToCommand: ((String) -> Void)?
+    var onSuccessAddToCommand: (() -> Void)?
     var onAddOneMoreFood: ((Bool, [FoodCardCellViewModelProtocol]?) -> Void)?
     var onChangeValues: (() -> Void)?
     
@@ -22,16 +25,20 @@ class AddToCommandViewModel {
     
     private var food: Food?
     private let foods: [Food?]
-    private var commandItem = CommandItem()
+    private var item = Item()
+    private var session: PersonSession?
     private let currentPrice: Double?
+    private let addToCommandUseCase: AddToCommandUseCaseProtocol
     
     // MARK: - Init
     
-    init(food: Food?, foods: [Food?]) {
+    init(food: Food?, foods: [Food?], addToCommandUseCase: AddToCommandUseCaseProtocol, session: PersonSession?) {
         self.food = food
         self.foods = foods
+        self.session = session
+        self.addToCommandUseCase = addToCommandUseCase
         currentPrice = food?.price
-        commandItem.value = self.food?.price ?? 0.0
+        item.value = self.food?.price ?? 0.0
         updateHalfText("Inteira")
         updateSizeText("M")
     }
@@ -70,7 +77,7 @@ extension AddToCommandViewModel: AddToCommandProtocol {
     
     var counterViewModel: CounterViewModelProtocol {
         CounterViewModel(onUpdateCountValue: { [weak self] count in
-            self?.commandItem.howMany = count
+            self?.item.howMany = count
             self?.updateTotalValue()
         })
     }
@@ -96,13 +103,33 @@ extension AddToCommandViewModel: AddToCommandProtocol {
     }
     
     var total: String? {
-        commandItem.value.localizedCurrency()
+        item.value.localizedCurrency()
     }
     
     // MARK: - Action
     
     func didAddToCommand() {
+        guard item.isHalf && item.otherFood != nil || !item.isHalf else {
+            onFailureAddToCommand?("other_food_nil_error".localize(.error))
+            return
+        }
         
+        addToCommand()
+    }
+    
+    // MARK: - Requests
+    
+    private func addToCommand() {
+        guard let person = session, let tableId = person.tableId, let token = person.token else { return }
+        addToCommandUseCase.execute(
+            item: item,
+            ids: [tableId, token],
+            success: { [weak self] in
+                self?.onSuccessAddToCommand?()
+            }, failure: { [weak self] error in
+                self?.onFailureAddToCommand?(error)
+            }
+        )
     }
     
     // MARK: - Updates
@@ -111,28 +138,28 @@ extension AddToCommandViewModel: AddToCommandProtocol {
         switch text {
         case "Metade":
             onAddOneMoreFood?(true, generateViewModels())
-            commandItem.isHalf = true
+            item.isHalf = true
         case "Inteira":
             onAddOneMoreFood?(false, nil)
-            commandItem.isHalf = false
+            item.isHalf = false
         default: return
         }
         updateTotalValue()
     }
     
     private func updateSizeText(_ text: String) {
-        guard commandItem.size != text else { return }
-        commandItem.size = text
+        guard item.size != text else { return }
+        item.size = text
         updateTotalValue()
     }
     
     private func updateObservationText(_ text: String?) {
-        commandItem.observation = text ?? ""
+        item.observation = text ?? ""
     }
     
     private func updateOtherFood(_ food: Food?) {
         guard let food = food else { return }
-        commandItem.otherFood = food
+        item.otherFood = food
         updateTotalValue()
     }
     
@@ -145,8 +172,9 @@ extension AddToCommandViewModel: AddToCommandProtocol {
         
         guard let otherFoodValue = selectOtherFoodValidation() else { return }
 
-        let total = commandItem.value + otherFoodValue
-        commandItem.value = total * Double(commandItem.howMany)
+        item.name = "\(food?.name ?? "") e \(item.otherFood?.name ?? "")"
+        let total = item.value + otherFoodValue
+        item.value = total * Double(item.howMany)
         onChangeValues?()
     }
 }
@@ -155,29 +183,29 @@ extension AddToCommandViewModel: AddToCommandProtocol {
 
 extension AddToCommandViewModel {
     private func isHalfValidation(divided: Double, price: Double) {
-        if commandItem.isHalf {
+        if item.isHalf {
             self.food?.price = divided
-            commandItem.value = divided
+            item.value = divided
         } else {
             food?.price = price
-            commandItem.value = price
-            commandItem.otherFood = nil
+            item.value = price
+            item.otherFood = nil
         }
     }
     
     private func sizeValidation() {
-        switch commandItem.size {
-            case "M": commandItem.value = commandItem.value
+        switch item.size {
+            case "M": item.value = item.value
             case "G":
-                commandItem.value += 10
+                item.value += 10
                 food?.price += 10
             default: return
         }
     }
     
     private func selectOtherFoodValidation() -> Double? {
-        guard let otherFoodValue = commandItem.otherFood?.price else {
-            commandItem.value = commandItem.value * Double(commandItem.howMany)
+        guard let otherFoodValue = item.otherFood?.price else {
+            item.value = item.value * Double(item.howMany)
             onChangeValues?()
             return nil
         }

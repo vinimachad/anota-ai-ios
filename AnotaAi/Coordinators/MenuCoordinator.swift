@@ -43,5 +43,3 @@ extension MenuCoordinator: MenuControllerDelegate {
         childCoordinator = coordinator
     }
 }
-
-extension MenuCoordinator: AddToCommandControllerDelegate { }

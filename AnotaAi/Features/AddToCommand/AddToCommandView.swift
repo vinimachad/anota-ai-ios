@@ -139,16 +139,16 @@ extension AddToCommandView {
     }
     
     private func setupTextFieldSideBySide() {
-        textFieldSideBySide.first = "Pela metade?"
-        textFieldSideBySide.firstOptions = ["Inteira", "Metade"]
+        textFieldSideBySide.first = "half_label".localize(.addToCommand)
+        textFieldSideBySide.firstOptions = ["whole_option_label".localize(.addToCommand), "half_option_label".localize(.addToCommand)]
         
-        textFieldSideBySide.second = "Tamanho"
+        textFieldSideBySide.second = "size_label".localize(.addToCommand)
         textFieldSideBySide.secondOptions = ["M", "G"]
     }
     
     private func setupTextFieldView() {
-        textFieldView.title = "Alguma observação?"
-        textFieldView.placeholder = "Ex: Tirar azeitonas e cebolas..."
+        textFieldView.title = "some_observe_hint_label".localize(.addToCommand)
+        textFieldView.placeholder = "obs_exemple_hint_label".localize(.addToCommand)
     }
     
     private func setupCollectionView() {
@@ -164,7 +164,7 @@ extension AddToCommandView {
     
     private func setupAddToCommandButton() {
         addToCommandButton.style = .default
-        addToCommandButton.title = "Adicionar"
+        addToCommandButton.title = "add_hint_label".localize(.default)
         addToCommandButton.addTarget(self, action: #selector(didTapAddToCommandButton), for: .touchUpInside)
     }
     

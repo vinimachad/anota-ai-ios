@@ -15,3 +15,4 @@
 "password_insert_error" = "Campo de texto vazio ou senha incorreta!";
 "password_create_error" = "Campo de texto vazio, insira uma senha!";
 "try_scan_again_error" = "Tente escaner o QRCode novamente, caso continue, chame um funcionário.";
+"other_food_nil_error" = "Você precisa ecolher outra metade para continuarmos.";

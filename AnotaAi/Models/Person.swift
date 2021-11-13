@@ -6,9 +6,18 @@
 //
 
 import Foundation
+import FirebaseFirestoreSwift
 
 struct Person: Codable {
-    var token: String?
+    @DocumentID var token: String? = UUID().uuidString
     var name: String?
     var tableId: String?
+    var command: Command?
+    
+    enum CodingKeys: String, CodingKey  {
+        case token
+        case name
+        case tableId
+        case command
+    }
 }

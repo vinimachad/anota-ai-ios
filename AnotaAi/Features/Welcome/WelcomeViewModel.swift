@@ -33,8 +33,8 @@ class WelcomeViewModel {
     
     // MARK: - Private properties
     
-    private var table: Table = Table()
-    private var personRequest: Person = Person()
+    private var table: Table = Table() // (id: "03")
+    private var personRequest: Person = Person() // (name: "Letycia")
     private var createTableUseCase: CreateTableUseCaseProtocol
     private var getTableUseCase: GetTableUseCaseProtocol
     private var addPersonUseCase: AddPersonUseCaseProtocol
@@ -53,6 +53,7 @@ class WelcomeViewModel {
         self.addPersonUseCase = addPersonUseCase
         self.createSessionUseCase = createSessionUseCase
         scannerView.delegate = self
+        validation()
     }
     
     // MARK: - Validations
@@ -93,6 +94,7 @@ class WelcomeViewModel {
     private func createSession(_ token: String) {
         personRequest.token = token
         createSessionUseCase.execute(userSession: personRequest, success: { [weak self] in
+            PersonManager.shared.createPerson(person: self?.personRequest)
             self?.onSuccessGetQRCodeValue?(self?.table ?? Table())
         }, failure: { [weak self] error in
             self?.onFailureGetQRCodeValue?(error.localizedDescription)

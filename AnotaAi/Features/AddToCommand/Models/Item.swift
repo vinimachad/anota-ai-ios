@@ -1,5 +1,5 @@
 //
-//  CommandItems.swift
+//  Item.swift
 //  AnotaAi
 //
 //  Created by Vinicius Galhardo Machado on 10/11/21.
@@ -7,7 +7,8 @@
 
 import Foundation
 
-class CommandItem: Codable {
+class Item: Codable {
+    
     var name: String = ""
     var isHalf: Bool = false
     var size: String = "M"

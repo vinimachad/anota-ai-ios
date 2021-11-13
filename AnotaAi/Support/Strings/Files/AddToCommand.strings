@@ -6,3 +6,9 @@
   
 */
 "total_label" = "Total: %@";
+"half_label" = "Pela metade?";
+"whole_option_label" = "Inteira";
+"half_option_label" = "Metade";
+"size_label" = "Tamanho";
+"some_observe_hint_label" = "Alguma observação?";
+"obs_exemple_hint_label" = "Ex: Tirar azeitonas e cebolas...";

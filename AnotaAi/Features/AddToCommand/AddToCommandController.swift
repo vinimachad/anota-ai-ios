@@ -9,7 +9,9 @@ import Foundation
 
 import UIKit
 
-protocol AddToCommandControllerDelegate: AnyObject {}
+protocol AddToCommandControllerDelegate: AnyObject {
+    func dismiss()
+}
 
 class AddToCommandController<ViewModel: AddToCommandProtocol>: UIViewController, KeyboardHandler {
 
@@ -64,6 +66,14 @@ class AddToCommandController<ViewModel: AddToCommandProtocol>: UIViewController,
     
     private func bind() {
         contentView.bindIn(viewModel: viewModel)
+        
+        viewModel.onSuccessAddToCommand = { [weak self] in
+            self?.delegate?.dismiss()
+        }
+        
+        viewModel.onFailureAddToCommand = { [weak self] error in
+            self?.showAlert(title: "alert_title_error".localize(.error), message: error)
+        }
     }
 }
 

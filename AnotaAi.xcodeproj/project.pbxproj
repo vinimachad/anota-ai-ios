@@ -105,13 +105,17 @@
 		81AF8BD02736D5F90069BF43 /* FoodCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81AF8BCF2736D5F90069BF43 /* FoodCardCell.xib */; };
 		81AF8BD22736D6060069BF43 /* FoodCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AF8BD12736D6060069BF43 /* FoodCardCell.swift */; };
 		81AF8BD42736D6130069BF43 /* FoodCardCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AF8BD32736D6130069BF43 /* FoodCardCellViewModel.swift */; };
+		81B3444A273E0AFC00BD694F /* AddToCommandUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B34449273E0AFC00BD694F /* AddToCommandUseCase.swift */; };
+		81B3444C273E0B5200BD694F /* CommandRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B3444B273E0B5200BD694F /* CommandRoutes.swift */; };
+		81B3444E273E0CDF00BD694F /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B3444D273E0CDF00BD694F /* Command.swift */; };
+		81B34451273E189B00BD694F /* PersonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B34450273E189B00BD694F /* PersonManager.swift */; };
 		81B3C63527381A5100CA441F /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B3C63427381A5100CA441F /* CounterView.swift */; };
 		81B3C63727381A5F00CA441F /* CounterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81B3C63627381A5F00CA441F /* CounterView.xib */; };
 		81B3C6392738210400CA441F /* CounterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B3C6382738210400CA441F /* CounterViewModel.swift */; };
 		81BB5DF92734B20C00E78BE8 /* CreateSessionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BB5DF72734B20C00E78BE8 /* CreateSessionUseCase.swift */; };
 		81BB5DFA2734B20C00E78BE8 /* AnotaAiSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BB5DF82734B20C00E78BE8 /* AnotaAiSession.swift */; };
 		81BB5DFC2734B6F700E78BE8 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BB5DFB2734B6F700E78BE8 /* Person.swift */; };
-		81DAF945273CB54F001E41D9 /* CommandItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DAF944273CB54F001E41D9 /* CommandItem.swift */; };
+		81DAF945273CB54F001E41D9 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DAF944273CB54F001E41D9 /* Item.swift */; };
 		81DAF949273CC356001E41D9 /* AddToCommand.strings in Resources */ = {isa = PBXBuildFile; fileRef = 81DAF948273CC356001E41D9 /* AddToCommand.strings */; };
 		81DAF94B273CC5FD001E41D9 /* String+NSMutableAttributed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DAF94A273CC5FD001E41D9 /* String+NSMutableAttributed.swift */; };
 		81E7E782272B7FBD00E0E726 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 81E7E781272B7FBD00E0E726 /* GoogleService-Info.plist */; };
@@ -244,13 +248,17 @@
 		81AF8BCF2736D5F90069BF43 /* FoodCardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodCardCell.xib; sourceTree = "<group>"; };
 		81AF8BD12736D6060069BF43 /* FoodCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCardCell.swift; sourceTree = "<group>"; };
 		81AF8BD32736D6130069BF43 /* FoodCardCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCardCellViewModel.swift; sourceTree = "<group>"; };
+		81B34449273E0AFC00BD694F /* AddToCommandUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToCommandUseCase.swift; sourceTree = "<group>"; };
+		81B3444B273E0B5200BD694F /* CommandRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandRoutes.swift; sourceTree = "<group>"; };
+		81B3444D273E0CDF00BD694F /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
+		81B34450273E189B00BD694F /* PersonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonManager.swift; sourceTree = "<group>"; };
 		81B3C63427381A5100CA441F /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
 		81B3C63627381A5F00CA441F /* CounterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CounterView.xib; sourceTree = "<group>"; };
 		81B3C6382738210400CA441F /* CounterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewModel.swift; sourceTree = "<group>"; };
 		81BB5DF72734B20C00E78BE8 /* CreateSessionUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateSessionUseCase.swift; sourceTree = "<group>"; };
 		81BB5DF82734B20C00E78BE8 /* AnotaAiSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnotaAiSession.swift; sourceTree = "<group>"; };
 		81BB5DFB2734B6F700E78BE8 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
-		81DAF944273CB54F001E41D9 /* CommandItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandItem.swift; sourceTree = "<group>"; };
+		81DAF944273CB54F001E41D9 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		81DAF948273CC356001E41D9 /* AddToCommand.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = AddToCommand.strings; sourceTree = "<group>"; };
 		81DAF94A273CC5FD001E41D9 /* String+NSMutableAttributed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+NSMutableAttributed.swift"; sourceTree = "<group>"; };
 		81E7E781272B7FBD00E0E726 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -598,6 +606,7 @@
 		817473FE2735D01700B30046 /* AddToCommand */ = {
 			isa = PBXGroup;
 			children = (
+				81B34448273E0AD500BD694F /* Domain */,
 				81DAF943273CB534001E41D9 /* Models */,
 				81AF8BCE2736D5CE0069BF43 /* FoodCardCell */,
 				817473FF2735D0E400B30046 /* AddToCommandView.xib */,
@@ -699,6 +708,7 @@
 				81AB1D3E272DAC52006FB3C1 /* TableRoutes.swift */,
 				8194F2E6272F2B0000C902FC /* PersonRoutes.swift */,
 				817473EA27359FA000B30046 /* MenuRoutes.swift */,
+				81B3444B273E0B5200BD694F /* CommandRoutes.swift */,
 			);
 			path = Routes;
 			sourceTree = "<group>";
@@ -711,6 +721,22 @@
 				81AF8BD32736D6130069BF43 /* FoodCardCellViewModel.swift */,
 			);
 			path = FoodCardCell;
+			sourceTree = "<group>";
+		};
+		81B34448273E0AD500BD694F /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				81B34449273E0AFC00BD694F /* AddToCommandUseCase.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		81B3444F273E187400BD694F /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				81B34450273E189B00BD694F /* PersonManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		81B3C63327381A3600CA441F /* Counter */ = {
@@ -735,7 +761,8 @@
 		81DAF943273CB534001E41D9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				81DAF944273CB54F001E41D9 /* CommandItem.swift */,
+				81DAF944273CB54F001E41D9 /* Item.swift */,
+				81B3444D273E0CDF00BD694F /* Command.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -755,6 +782,7 @@
 		81E7E783272B7FE200E0E726 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				81B3444F273E187400BD694F /* Managers */,
 				811E4D69272C4B5C0099C7AA /* UI */,
 				811E4D7A272C4DF20099C7AA /* Extension */,
 				811E4D62272C4B1A0099C7AA /* Strings */,
@@ -1125,6 +1153,7 @@
 				817473E127358FA900B30046 /* HomeFactory.swift in Sources */,
 				8174741B2735EF0900B30046 /* TextFieldSideBySideViewModel.swift in Sources */,
 				81FAB369272DC02D00D1B2A0 /* CreateTableUseCase.swift in Sources */,
+				81B34451273E189B00BD694F /* PersonManager.swift in Sources */,
 				811E4D6F272C4B790099C7AA /* Fonts.swift in Sources */,
 				818CDB3D273016A6000B8E06 /* GetTableUseCase.swift in Sources */,
 				811E4D94272C4EC70099C7AA /* CollectionSection.swift in Sources */,
@@ -1153,6 +1182,7 @@
 				817474062735D11100B30046 /* AddToCommandViewModel.swift in Sources */,
 				811E4D92272C4EC70099C7AA /* TableSection.swift in Sources */,
 				8116BF51272CA78800DDC725 /* WelcomeFactory.swift in Sources */,
+				81B3444E273E0CDF00BD694F /* Command.swift in Sources */,
 				811E4D70272C4B790099C7AA /* Images.swift in Sources */,
 				81AB1D30272D91AB006FB3C1 /* MenuView.swift in Sources */,
 				8116BF5A272CBA8F00DDC725 /* LayoutProxy.swift in Sources */,
@@ -1164,6 +1194,7 @@
 				817473DE27358E6100B30046 /* UIViewController+Parent.swift in Sources */,
 				811E4D90272C4EC70099C7AA /* TableViewDataSource.swift in Sources */,
 				8100317F272CA10A003FD820 /* Button.swift in Sources */,
+				81B3444C273E0B5200BD694F /* CommandRoutes.swift in Sources */,
 				81AB1D2B272D9125006FB3C1 /* MenuCoordinator.swift in Sources */,
 				811E4D86272C4DF20099C7AA /* UITableView+Reusable.swift in Sources */,
 				817473FB2735B62800B30046 /* NumberFormatter+Currency.swift in Sources */,
@@ -1185,7 +1216,7 @@
 				81BB5DFA2734B20C00E78BE8 /* AnotaAiSession.swift in Sources */,
 				811E4D84272C4DF20099C7AA /* UIView+Nib.swift in Sources */,
 				811E4D95272C4EC70099C7AA /* CollectionViewDataSource.swift in Sources */,
-				81DAF945273CB54F001E41D9 /* CommandItem.swift in Sources */,
+				81DAF945273CB54F001E41D9 /* Item.swift in Sources */,
 				81003175272C9FB6003FD820 /* WelcomeController.swift in Sources */,
 				817473EE2735A85B00B30046 /* MenuUseCase.swift in Sources */,
 				81FAB363272DB5C600D1B2A0 /* Table.swift in Sources */,
@@ -1204,6 +1235,7 @@
 				814B3C3B272B794A00C9F0CB /* SceneDelegate.swift in Sources */,
 				81B3C63527381A5100CA441F /* CounterView.swift in Sources */,
 				817473D627358CA800B30046 /* HomeController.swift in Sources */,
+				81B3444A273E0AFC00BD694F /* AddToCommandUseCase.swift in Sources */,
 				811E4D82272C4DF20099C7AA /* UIView+NibLodable.swift in Sources */,
 				8100317E272CA10A003FD820 /* Button+Style.swift in Sources */,
 				811E4D68272C4B360099C7AA /* String+Localizable.swift in Sources */,

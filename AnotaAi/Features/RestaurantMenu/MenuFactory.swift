@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import MSession
 
 enum MenuFactory {
     static func table(delegate: MenuControllerDelegate?) -> UIViewController {
@@ -16,7 +17,13 @@ enum MenuFactory {
     }
     
     static func addToCommand(delegate: AddToCommandControllerDelegate?, food: Food?, foods: [Food?]) -> UIViewController {
-        let viewModel = AddToCommandViewModel(food: food, foods: foods)
+        let addToCommandUseCase = AddToCommandUseCase(api: CommandRoutes())
+        let viewModel = AddToCommandViewModel(
+            food: food,
+            foods: foods,
+            addToCommandUseCase: addToCommandUseCase,
+            session: AnotaAiSession.shared.user
+        )
         return AddToCommandController(viewModel: viewModel, delegate: delegate)
     }
 }

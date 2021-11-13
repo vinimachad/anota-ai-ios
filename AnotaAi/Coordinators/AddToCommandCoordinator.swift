@@ -32,6 +32,10 @@ class AddToCommandCoordinator: CoordinatorProtocol {
         navigationController.setViewControllers([vc], animated: true)
         return navigationController
     }
+    
+    func dismiss() {
+        navigationController.dismiss(animated: true, completion: nil)
+    }
 }
 
 extension AddToCommandCoordinator: AddToCommandControllerDelegate {

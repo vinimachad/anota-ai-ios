@@ -185,7 +185,7 @@
                 <outlet property="textFieldView" destination="cW6-mU-5wI" id="KNc-Vt-plh"/>
                 <outlet property="totalLabel" destination="PIV-9b-iby" id="L47-to-WQX"/>
             </connections>
-            <point key="canvasLocation" x="-1664" y="-489"/>
+            <point key="canvasLocation" x="-2981" y="-565"/>
         </view>
     </objects>
     <resources>
