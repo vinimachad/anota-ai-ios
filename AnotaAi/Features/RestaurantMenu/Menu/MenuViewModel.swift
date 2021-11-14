@@ -58,8 +58,10 @@ extension MenuViewModel: MenuProtocol {
     // MARK: - Requests
     
     func getMenu() {
+        
+        let path = "menu/foods/salty/pizzas/sweet"
         menuUseCase?.execute(
-            ids: ["foods", "salty", "pizzas", "sweet"],
+            path,
             success: { [weak self] foods in
                 self?.foods = foods
                 guard let viewModels = self?.generateViewModels() else { return }

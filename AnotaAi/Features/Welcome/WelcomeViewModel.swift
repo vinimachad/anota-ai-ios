@@ -78,9 +78,11 @@ class WelcomeViewModel {
     // MARK: - Request
     
     private func addPerson() {
+        let path = "tables/\(table.id)/persons"
         personRequest.tableId = table.id
         
         addPersonUseCase.execute(
+            path,
             request: personRequest,
             success: { [weak self] person in
                 self?.createSession(person)
@@ -102,21 +104,34 @@ class WelcomeViewModel {
     }
     
     private func getTable(id: String) {
-        getTableUseCase.execute(id: id, failure: { [weak self] error in
-            self?.hasTableValidation(error)
-        }, success: { [weak self] table in
-            self?.table = table
-            self?.onPutPassword?()
-        })
+        let path = "tables/\(id)"
+        
+        getTableUseCase.execute(
+            path,
+            id: id,
+            failure: { [weak self] error in
+                self?.hasTableValidation(error)
+            },
+            success: { [weak self] table in
+                self?.table = table
+                self?.onPutPassword?()
+            }
+        )
     }
     
     private func createTable(_ password: String) {
+        let path = "tables/\(table.id)"
         table.password = password
-        createTableUseCase.execute(request: table, success: { [weak self]  in
-            self?.addPerson()
-        }, failure: { [weak self] error in
-            self?.onFailureGetQRCodeValue?(error)
-        })
+        createTableUseCase.execute(
+            path,
+            request: table,
+            success: { [weak self] in
+                self?.addPerson()
+            },
+            failure: { [weak self] error in
+                self?.onFailureGetQRCodeValue?(error)
+            }
+        )
     }
 }
 

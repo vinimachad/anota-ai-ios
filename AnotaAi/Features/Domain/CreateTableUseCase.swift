@@ -12,7 +12,7 @@ protocol CreateTableUseCaseProtocol {
     typealias Success = (() -> Void)
     typealias Failure = ((String) -> Void)
     
-    func execute(request: Table, success: Success?, failure: Failure?)
+    func execute(_ path: String, request: Table, success: Success?, failure: Failure?)
 }
 
 class CreateTableUseCase: CreateTableUseCaseProtocol {
@@ -27,11 +27,7 @@ class CreateTableUseCase: CreateTableUseCaseProtocol {
         self.api = api
     }
     
-    func execute(request: Table, success: Success? = nil, failure: Failure?) {
-        api.createTable(
-            request: request,
-            failure: failure,
-            success: success
-        )
+    func execute(_ path: String, request: Table, success: Success? = nil, failure: Failure?) {
+        api.createTable(path, request: request, failure: failure, success: success)
     }
 }

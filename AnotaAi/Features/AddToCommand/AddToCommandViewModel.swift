@@ -121,9 +121,11 @@ extension AddToCommandViewModel: AddToCommandProtocol {
     
     private func addToCommand() {
         guard let person = session, let tableId = person.tableId, let token = person.token else { return }
+        let paths = ["tables/\(tableId)/commands", "tables/\(tableId)/persons", token]
+        
         addToCommandUseCase.execute(
+            paths,
             item: item,
-            ids: [tableId, token],
             success: { [weak self] in
                 self?.onSuccessAddToCommand?()
             }, failure: { [weak self] error in
@@ -169,6 +171,7 @@ extension AddToCommandViewModel: AddToCommandProtocol {
         
         isHalfValidation(divided: priceDivided, price: currentFoodPrice)
         sizeValidation()
+        item.name = food?.name ?? ""
         
         guard let otherFoodValue = selectOtherFoodValidation() else { return }
 

@@ -26,5 +26,6 @@ class Item: Codable {
         case observation
         case howMany
         case value
+        case status
     }
 }

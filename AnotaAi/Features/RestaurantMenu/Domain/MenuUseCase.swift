@@ -11,7 +11,7 @@ protocol MenuUseCaseProtocol {
     typealias Success = (([Food?]) -> Void)
     typealias Failure = ((String) -> Void)
     
-    func execute(ids: [String], success: Success?, failure: Failure?)
+    func execute(_ path: String, success: Success?, failure: Failure?)
 }
 
 class MenuUseCase: MenuUseCaseProtocol {
@@ -26,7 +26,7 @@ class MenuUseCase: MenuUseCaseProtocol {
         self.api = api
     }
     
-    func execute(ids: [String], success: Success?, failure: Failure?) {
-        api.menuData(ids: ids, failure: failure, success: success)
+    func execute(_ path: String, success: Success?, failure: Failure?) {
+        api.menuData(path, failure: failure, success: success)
     }
 }

@@ -11,7 +11,7 @@ protocol GetTableUseCaseProtocol {
     typealias Failure = ((String) -> Void)?
     typealias Success = ((Table) -> Void)?
     
-    func execute(id: String, failure: Failure, success: Success)
+    func execute(_ path: String, id: String, failure: Failure, success: Success)
 }
 
 class GetTableUseCase: GetTableUseCaseProtocol {
@@ -26,9 +26,7 @@ class GetTableUseCase: GetTableUseCaseProtocol {
         self.api = api
     }
     
-    func execute(id: String, failure: Failure, success: Success) {
-        api.tableData(id: id, failure: failure, success: { table in
-            success?(table)
-        })
+    func execute(_ path: String, id: String, failure: Failure, success: Success) {
+        api.tableData(path, id: id, failure: failure, success: success)
     }
 }

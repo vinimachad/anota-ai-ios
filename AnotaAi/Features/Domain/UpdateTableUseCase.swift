@@ -11,10 +11,10 @@ protocol UpdateTableUseCaseProtocol {
     typealias Success = (() -> Void)
     typealias Failure = ((String) -> Void)
     
-    func execute(request: Table, success: Success?, failure: Failure?)
+    func execute(_ path: String, request: Table, success: Success?, failure: Failure?)
 }
 
-class UpdateTableUseCase: CreateTableUseCaseProtocol {
+class UpdateTableUseCase: UpdateTableUseCaseProtocol {
     
     // MARK: - Private properties
     
@@ -26,11 +26,7 @@ class UpdateTableUseCase: CreateTableUseCaseProtocol {
         self.api = api
     }
     
-    func execute(request: Table, success: Success? = nil, failure: Failure?) {
-        api.createTable(
-            request: request,
-            failure: failure,
-            success: success
-        )
+    func execute(_ path: String, request: Table, success: Success? = nil, failure: Failure?) {
+        api.createTable(path, request: request, failure: failure, success: success)
     }
 }

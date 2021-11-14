@@ -15,6 +15,8 @@ class CommandViewModel {
     
     // MARK: - Public properties
     
+    var onChangeSections: (([TableSectionProtocol]) -> Void)?
+    
     // MARK: - Private properties
     
     // MARK: - Init

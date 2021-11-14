@@ -12,6 +12,6 @@ enum CommandFactory {
     
     static func command(delegate: CommandControllerDelegate?) -> UIViewController {
         let viewModel = CommandViewModel()
-        CommandController(viewModel: viewModel, delegate: delegate)
+        return CommandController(viewModel: viewModel, delegate: delegate)
     }
 }

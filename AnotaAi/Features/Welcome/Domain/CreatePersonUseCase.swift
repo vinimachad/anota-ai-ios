@@ -11,7 +11,7 @@ protocol CreatePersonUseCaseProtocol {
     typealias Success = ((Person) -> Void)
     typealias Failure = ((String) -> Void)
     
-    func execute(request: Person, success: Success?, failure: Failure?)
+    func execute(_ path: String, request: Person, success: Success?, failure: Failure?)
 }
 
 class CreatePersonUseCase: CreatePersonUseCaseProtocol {
@@ -26,15 +26,13 @@ class CreatePersonUseCase: CreatePersonUseCaseProtocol {
         self.api = api
     }
     
-    func execute(request: Person, success: Success?, failure: Failure?) {
-        api.createPerson(request: request, failure: failure, success: { [weak self] id in
-            self?.getPerson(id, success: success, failure: failure)
+    func execute(_ path: String, request: Person, success: Success?, failure: Failure?) {
+        api.createPerson(path, request: request, failure: failure, success: { [weak self] id in
+            self?.getPerson(path, id, success: success, failure: failure)
         })
     }
     
-    private func getPerson(_ id: String, success: ((Person) -> Void)?, failure: ((String) -> Void)?) {
-        api.personData(id: id, failure: failure, success: { person in
-            success?(person)
-        })
+    private func getPerson(_ path: String, _ id: String, success: ((Person) -> Void)?, failure: ((String) -> Void)?) {
+        api.personData(path, id: id, failure: failure, success: success)
     }
 }

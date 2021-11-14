@@ -10,8 +10,8 @@ import Foundation
 import FirebaseFirestore
 
 protocol PersonRoutesProtocol {
-    func createPerson(request: Person, failure: ((String) -> Void)?, success: ((String) -> Void)?)
-    func personData<T: Codable>(id: String, failure: ((String) -> Void)?, success: ((T) -> Void)?)
+    func createPerson(_ path: String, request: Person, failure: ((String) -> Void)?, success: ((String) -> Void)?)
+    func personData<T: Codable>(_ path: String, id: String, failure: ((String) -> Void)?, success: ((T) -> Void)?)
 }
 
 class PersonRoutes {
@@ -21,11 +21,11 @@ class PersonRoutes {
 
 extension PersonRoutes: PersonRoutesProtocol {
     
-    func createPerson(request: Person, failure: ((String) -> Void)?, success: ((String) -> Void)?) {
-        provider.insertDataWithoutId("persons", data: request, failure: failure, success: success)
+    func createPerson(_ path: String, request: Person, failure: ((String) -> Void)?, success: ((String) -> Void)?) {
+        provider.insertData(path, data: request, failure: failure, success: success)
     }
     
-    func personData<T: Codable>(id: String, failure: ((String) -> Void)?, success: ((T) -> Void)?) {
-        provider.getData("persons", id: id, failure: failure, success: success)
+    func personData<T: Codable>(_ path: String, id: String, failure: ((String) -> Void)?, success: ((T) -> Void)?) {
+        provider.getData(path, id: id, failure: failure, success: success)
     }
 }

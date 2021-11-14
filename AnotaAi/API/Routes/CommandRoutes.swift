@@ -8,8 +8,9 @@
 import FirebaseFirestore
 
 protocol CommandRoutesProtocol {
-    func addToCommand(item: Item, ids: [String], success: ((String) -> Void)?, failure: ((String) -> Void)?)
-    func updatePersonCommand(ids: [String], success: (() -> Void)?, failure: ((String) -> Void)?)
+    func commands(_ path: String, id: String, success: (([Item?]) -> Void)?, failure: ((String) -> Void)?)
+    func addToCommand(_ path: String, item: Item, success: ((String) -> Void)?, failure: ((String) -> Void)?)
+    func updatePersonCommand(_ path: String, docId: String, data: [String: Any],  success: (() -> Void)?)
 }
 
 class CommandRoutes {
@@ -19,21 +20,16 @@ class CommandRoutes {
 
 extension CommandRoutes: CommandRoutesProtocol {
     
-    func addToCommand(item: Item, ids: [String], success: ((String) -> Void)?, failure: ((String) -> Void)?) {
-        var ref: DocumentReference?
-        do {
-            ref = try provider.db.collection("tables/\(ids[0])/commands").addDocument(from: item)
-            success?(ref?.documentID ?? "")
-        } catch let error {
-            failure?(error.localizedDescription)
-        }
+    func addToCommand(_ path: String, item: Item, success: ((String) -> Void)?, failure: ((String) -> Void)?) {
+        provider.insertData(path, data: item, failure: failure, success: success)
     }
     
-    func updatePersonCommand(ids: [String], success: (() -> Void)?, failure: ((String) -> Void)?) {
-        provider.db.collection("tables/\(ids[0])/persons").document(ids[1]).updateData([
-            "commands": FieldValue.arrayUnion([ids[2]])
-        ])
-        success?()
+    func updatePersonCommand(_ path: String, docId: String, data: [String: Any],  success: (() -> Void)?) {
+        provider.updateData(path, docId: docId, data: data, success: success)
+    }
+    
+    func commands(_ path: String, id: String, success: (([Item?]) -> Void)?, failure: ((String) -> Void)?) {
+        provider.getData(path, id: id, failure: failure, success: success)
     }
 }
 

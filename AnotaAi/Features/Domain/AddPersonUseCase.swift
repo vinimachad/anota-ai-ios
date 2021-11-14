@@ -11,7 +11,7 @@ protocol AddPersonUseCaseProtocol {
     typealias Success = ((String) -> Void)
     typealias Failure = ((String) -> Void)
     
-    func execute(request: Person, success: Success?, failure: Failure?)
+    func execute(_ path: String, request: Person, success: Success?, failure: Failure?)
 }
 
 class AddPersonUseCase: AddPersonUseCaseProtocol {
@@ -26,12 +26,7 @@ class AddPersonUseCase: AddPersonUseCaseProtocol {
         self.api = api
     }
     
-    func execute(request: Person, success: Success? = nil, failure: Failure?) {
-        api.addPersonsInTable(
-            request: request,
-            tableId: request.tableId ?? "",
-            failure: failure,
-            success: success
-        )
+    func execute(_ path: String, request: Person, success: Success? = nil, failure: Failure?) {
+        api.addPersonsInTable(path, request: request, failure: failure, success: success)
     }
 }

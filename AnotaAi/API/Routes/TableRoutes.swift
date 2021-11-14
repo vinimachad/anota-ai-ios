@@ -12,9 +12,9 @@ protocol TableRoutesProtocol {
     typealias Failure = ((String) -> Void)?
     typealias Success = (() -> Void)?
     
-    func createTable(request: Table, failure: Failure, success: Success)
-    func tableData<T: Codable>(id: String, failure: ((String) -> Void)?, success: ((T) -> Void)?)
-    func addPersonsInTable<T: Codable>(request: T, tableId: String, failure: ((String) -> Void)?, success: ((String) -> Void)?)
+    func createTable(_ path: String, request: Table, failure: Failure, success: Success)
+    func tableData<T: Codable>(_ path: String, id: String, failure: ((String) -> Void)?, success: ((T) -> Void)?)
+    func addPersonsInTable<T: Codable>(_ path: String, request: T, failure: ((String) -> Void)?, success: ((String) -> Void)?)
 }
 
 class TableRoutes {
@@ -24,37 +24,17 @@ class TableRoutes {
 
 extension TableRoutes: TableRoutesProtocol {
     
-    func createTable(request: Table, failure: Failure, success: Success) {
-        do {
-            try provider.db.collection("tables").document(request.id).setData(from: request)
+    func createTable(_ path: String, request: Table, failure: Failure, success: Success) {
+        provider.insertData(path, data: request, failure: failure, success: { _ in
             success?()
-        } catch let error {
-            failure?(error.localizedDescription)
-        }
+        })
     }
     
-    func addPersonsInTable<T: Codable>(request: T, tableId: String, failure: ((String) -> Void)?, success: ((String) -> Void)?) {
-        var ref: DocumentReference?
-        do {
-            ref = try provider.db.collection("tables").document(tableId).collection("persons").addDocument(from: request)
-            success?(ref?.documentID ?? "")
-        } catch let error {
-            failure?(error.localizedDescription)
-        }
+    func addPersonsInTable<T: Codable>(_ path: String, request: T, failure: ((String) -> Void)?, success: ((String) -> Void)?) {
+        provider.insertData(path, data: request, failure: failure, success: success)
     }
     
-    func tableData<T: Codable>(id: String, failure: ((String) -> Void)?, success: ((T) -> Void)?) {
-        provider.db.collection("tables").document(id).addSnapshotListener { snapshot, error in
-            guard let document = snapshot else {
-                failure?(error?.localizedDescription ?? "")
-                return
-            }
-            guard let model = try? document.data(as: T.self) else {
-                failure?("DECODER")
-                return
-            }
-            
-            success?(model)
-        }
+    func tableData<T: Codable>(_ path: String, id: String, failure: ((String) -> Void)?, success: ((T) -> Void)?) {
+        provider.getData(path, id: id, failure: failure, success: success)
     }
 }

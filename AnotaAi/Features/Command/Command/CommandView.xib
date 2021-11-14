@@ -13,8 +13,23 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CommandView" customModule="AnotaAi" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="zYM-Rl-8Fh">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="zYM-Rl-8Fh" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="acu-Rf-l89"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="zYM-Rl-8Fh" secondAttribute="bottom" id="dFZ-db-0he"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="zYM-Rl-8Fh" secondAttribute="trailing" id="fzT-HW-UIt"/>
+                <constraint firstItem="zYM-Rl-8Fh" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="nqc-4u-iUn"/>
+            </constraints>
+            <connections>
+                <outlet property="tableView" destination="zYM-Rl-8Fh" id="Oqy-y8-sa5"/>
+            </connections>
             <point key="canvasLocation" x="-38" y="212"/>
         </view>
     </objects>

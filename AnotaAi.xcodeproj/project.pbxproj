@@ -20,6 +20,7 @@
 		81003184272CA182003FD820 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81003182272CA182003FD820 /* TitleView.swift */; };
 		81003185272CA182003FD820 /* TitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81003183272CA182003FD820 /* TitleView.xib */; };
 		81003187272CA1CF003FD820 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81003186272CA1CF003FD820 /* Colors.xcassets */; };
+		8115AD0127408E1B0054583A /* CommandUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8115AD0027408E1B0054583A /* CommandUseCase.swift */; };
 		8116BF4E272CA4F200DDC725 /* Welcome.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8116BF4D272CA4F200DDC725 /* Welcome.strings */; };
 		8116BF51272CA78800DDC725 /* WelcomeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8116BF50272CA78800DDC725 /* WelcomeFactory.swift */; };
 		8116BF54272CB2F600DDC725 /* QRCodeScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8116BF53272CB2F600DDC725 /* QRCodeScanView.swift */; };
@@ -165,6 +166,7 @@
 		81003182272CA182003FD820 /* TitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		81003183272CA182003FD820 /* TitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TitleView.xib; sourceTree = "<group>"; };
 		81003186272CA1CF003FD820 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		8115AD0027408E1B0054583A /* CommandUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandUseCase.swift; sourceTree = "<group>"; };
 		8116BF4D272CA4F200DDC725 /* Welcome.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Welcome.strings; sourceTree = "<group>"; };
 		8116BF50272CA78800DDC725 /* WelcomeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeFactory.swift; sourceTree = "<group>"; };
 		8116BF53272CB2F600DDC725 /* QRCodeScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeScanView.swift; sourceTree = "<group>"; };
@@ -794,6 +796,7 @@
 		81BECDDA274013A1006CF661 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				8115AD0027408E1B0054583A /* CommandUseCase.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -1234,6 +1237,7 @@
 				811E4D92272C4EC70099C7AA /* TableSection.swift in Sources */,
 				8116BF51272CA78800DDC725 /* WelcomeFactory.swift in Sources */,
 				81B3444E273E0CDF00BD694F /* Command.swift in Sources */,
+				8115AD0127408E1B0054583A /* CommandUseCase.swift in Sources */,
 				811E4D70272C4B790099C7AA /* Images.swift in Sources */,
 				81AB1D30272D91AB006FB3C1 /* MenuView.swift in Sources */,
 				8116BF5A272CBA8F00DDC725 /* LayoutProxy.swift in Sources */,
