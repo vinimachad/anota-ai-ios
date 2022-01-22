@@ -20,4 +20,8 @@ extension UIViewController {
     func removeShadowLine() {
         navigationController?.navigationBar.shadowImage = UIImage()
     }
+    
+    func setNavigationVisibility(isHidden: Bool) {
+        navigationController?.navigationBar.isHidden = isHidden
+    }
 }

@@ -17,7 +17,7 @@ class FoodCellViewModel {
     var serves: Int?
     var pricing: Double?
     
-    var onSelect: ((FoodCellViewModelProtocol) -> Void)?
+    var onSelect: ((Food?) -> Void)?
     
     // MARK: - Init
     
@@ -27,7 +27,7 @@ class FoodCellViewModel {
         description: String? = nil,
         serves: Int? = nil,
         pricing: Double? = nil,
-        onSelect: ((FoodCellViewModelProtocol) -> Void)?
+        onSelect: ((Food?) -> Void)?
     ) {
         self.stringUrl = stringUrl
         self.name = name
@@ -49,7 +49,7 @@ extension FoodCellViewModel: FoodCellViewModelProtocol {
         pricing?.localizedCurrency()
     }
     
-    func didSelect(_ viewModel: FoodCellViewModelProtocol) {
-        onSelect?(viewModel)
+    func didSelect(_ food: Food?) {
+        onSelect?(food)
     }
 }

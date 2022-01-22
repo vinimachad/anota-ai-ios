@@ -9,7 +9,7 @@ import Foundation
 
 protocol MenuProtocol: MenuViewModelProtocol {
     var onFailureGetFoods: ((String) -> Void)? { get set }
-    var onOpenAddToCommand: ((FoodCellViewModelProtocol) -> Void)? { get set }
+    var onOpenAddToCommand: ((Food?, [Food?]) -> Void)? { get set }
     func getMenu()
 }
 
@@ -19,10 +19,11 @@ class MenuViewModel {
     
     var onFailureGetFoods: ((String) -> Void)?
     var onChangeFoods: (([FoodCellViewModelProtocol]) -> Void)?
-    var onOpenAddToCommand: ((FoodCellViewModelProtocol) -> Void)?
+    var onOpenAddToCommand: ((Food?, [Food?]) -> Void)?
     
     // MARK: - Private properties
     
+    private var foods: [Food?] = []
     private let menuUseCase: MenuUseCaseProtocol?
     private let session: AnotaAiSessionProtocol
     
@@ -33,7 +34,7 @@ class MenuViewModel {
         self.session = session
     }
     
-    private func generateViewModels(_ foods: [Food?]) -> [FoodCellViewModelProtocol] {
+    private func generateViewModels() -> [FoodCellViewModelProtocol] {
         foods.map {
             FoodCellViewModel(
                 stringUrl: $0?.preview,
@@ -60,7 +61,8 @@ extension MenuViewModel: MenuProtocol {
         menuUseCase?.execute(
             ids: ["foods", "salty", "pizzas", "sweet"],
             success: { [weak self] foods in
-                guard let viewModels = self?.generateViewModels(foods) else { return }
+                self?.foods = foods
+                guard let viewModels = self?.generateViewModels() else { return }
                 self?.onChangeFoods?(viewModels)
             },
             failure: { [weak self] error in
@@ -71,12 +73,12 @@ extension MenuViewModel: MenuProtocol {
     
     // MARK: - Actions
     
-    func didOpenAddToCommand(_ viewModel: FoodCellViewModelProtocol) {
-        onOpenAddToCommand?(viewModel)
+    func didOpenAddToCommand(_ food: Food?) {
+        onOpenAddToCommand?(food, foods)
     }
     
-    func didSelect(viewModel: FoodCellViewModelProtocol) {
+    func didSelect(viewModel: FoodCellViewModelProtocol, row: Int?) {
         guard let realViewModel = viewModel as? FoodCellViewModel else { return }
-        realViewModel.didSelect(viewModel)
+        realViewModel.didSelect(foods[row ?? 0])
     }
 }

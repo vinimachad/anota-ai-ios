@@ -9,10 +9,10 @@ target 'AnotaAi' do
 
   pod 'SwiftLint'
   pod 'FirebaseFirestoreSwift'
-  pod 'Firebase/Analytics'
+#  pod 'Firebase/Analytics'
   pod 'Firebase/Crashlytics'
   pod 'MSession/Session'
-  pod 'Kingfisher'
+  pod 'Kingfisher', '~> 7.0'
 
   target 'AnotaAiTests' do
     inherit! :search_paths

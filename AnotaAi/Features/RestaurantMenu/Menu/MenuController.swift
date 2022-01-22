@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 protocol MenuControllerDelegate: AnyObject {
-    func openAddToCommand(_ viewModel: FoodCellViewModelProtocol)
+    func openAddToCommand(_ food: Food?, foods: [Food?])
 }
 
 class MenuController<ViewModel: MenuProtocol>: UIViewController {
@@ -57,8 +57,8 @@ class MenuController<ViewModel: MenuProtocol>: UIViewController {
             self?.showAlert(title: "alert_error_title".localize(.error), message: error)
         }
         
-        viewModel.onOpenAddToCommand = { [weak self] viewModel in
-            self?.delegate?.openAddToCommand(viewModel)
+        viewModel.onOpenAddToCommand = { [weak self] food, foods in
+            self?.delegate?.openAddToCommand(food, foods: foods)
         }
     }
 }

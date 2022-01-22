@@ -9,9 +9,15 @@ import Foundation
 
 import UIKit
 
-protocol AddToCommandControllerDelegate: AnyObject {}
+protocol AddToCommandControllerDelegate: AnyObject {
+    func dismiss()
+}
 
-class AddToCommandController<ViewModel: AddToCommandProtocol>: UIViewController {
+class AddToCommandController<ViewModel: AddToCommandProtocol>: UIViewController, KeyboardHandler {
+
+    var scrollView: UIScrollView? {
+        contentView.scrollView
+    }
     
     // MARK: - Private properties
     
@@ -40,15 +46,34 @@ class AddToCommandController<ViewModel: AddToCommandProtocol>: UIViewController 
         view = contentView
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        startObserveKeyboard()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        stopObserveKeyboard()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         bind()
+        setTransparentNavigation()
     }
     
     // MARK: - Bind
     
     private func bind() {
         contentView.bindIn(viewModel: viewModel)
+        
+        viewModel.onSuccessAddToCommand = { [weak self] in
+            self?.delegate?.dismiss()
+        }
+        
+        viewModel.onFailureAddToCommand = { [weak self] error in
+            self?.showAlert(title: "alert_title_error".localize(.error), message: error)
+        }
     }
 }
 

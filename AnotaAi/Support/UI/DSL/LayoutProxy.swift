@@ -3,7 +3,7 @@
 //  AnotaAi
 //
 //  Created by Vinicius Galhardo Machdo on 09/07/20.
-//  Copyright © 2020 Jera. All rights reserved.
+//  
 //
 
 import UIKit

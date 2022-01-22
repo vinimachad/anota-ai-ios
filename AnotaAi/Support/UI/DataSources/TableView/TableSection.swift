@@ -8,7 +8,7 @@
 import UIKit
 
 protocol TableSectionDelegate: AnyObject {
-    func didSelect(item: Any)
+    func didSelect(item: Any, row: Int?)
 }
 
 class TableSection<Cell: UITableViewCell & TableViewProtocol>: TableSectionProtocol {
@@ -37,6 +37,6 @@ class TableSection<Cell: UITableViewCell & TableViewProtocol>: TableSectionProto
     
     func didSelectAt(row: Int) {
         guard row < items.count else { return }
-        delegate?.didSelect(item: items[row])
+        delegate?.didSelect(item: items[row], row: row)
     }
 }

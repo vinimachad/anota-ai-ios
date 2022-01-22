@@ -26,11 +26,15 @@ class AddToCommandCoordinator: CoordinatorProtocol {
     
     // MARK: - Start
     
-    func start() -> UIViewController {
-        let vc = MenuFactory.addToCommand(delegate: self)
+    func start(food: Food?, foods: [Food?]) -> UIViewController {
+        let vc = MenuFactory.addToCommand(delegate: self, food: food, foods: foods)
         navigationController.modalPresentationStyle = .pageSheet
         navigationController.setViewControllers([vc], animated: true)
         return navigationController
+    }
+    
+    func dismiss() {
+        navigationController.dismiss(animated: true, completion: nil)
     }
 }
 

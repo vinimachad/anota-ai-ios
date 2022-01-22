@@ -12,7 +12,7 @@ import UIKit
 protocol MenuViewModelProtocol {
     var name: String? { get }
     var onChangeFoods: (([FoodCellViewModelProtocol]) -> Void)? { get set }
-    func didSelect(viewModel: FoodCellViewModelProtocol)
+    func didSelect(viewModel: FoodCellViewModelProtocol, row: Int?)
 }
 
 class MenuView: UIView {
@@ -67,8 +67,8 @@ extension MenuView {
 
 extension MenuView: TableSectionDelegate {
     
-    func didSelect(item: Any) {
+    func didSelect(item: Any, row: Int?) {
         guard let viewModel = item as? FoodCellViewModelProtocol else { return }
-        self.viewModel?.didSelect(viewModel: viewModel)
+        self.viewModel?.didSelect(viewModel: viewModel, row: row)
     }
 }
