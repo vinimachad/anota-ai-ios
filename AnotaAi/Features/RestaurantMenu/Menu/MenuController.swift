@@ -9,7 +9,9 @@ import Foundation
 
 import UIKit
 
-protocol MenuControllerDelegate: AnyObject {}
+protocol MenuControllerDelegate: AnyObject {
+    func openAddToCommand(_ viewModel: FoodCellViewModelProtocol)
+}
 
 class MenuController<ViewModel: MenuProtocol>: UIViewController {
     
@@ -43,13 +45,21 @@ class MenuController<ViewModel: MenuProtocol>: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bind()
-        viewModel.createTable()
+        viewModel.getMenu()
     }
     
     // MARK: - Bind
     
     private func bind() {
         contentView.bindIn(viewModel: viewModel)
+        
+        viewModel.onFailureGetFoods = { [weak self] error in
+            self?.showAlert(title: "alert_error_title".localize(.error), message: error)
+        }
+        
+        viewModel.onOpenAddToCommand = { [weak self] viewModel in
+            self?.delegate?.openAddToCommand(viewModel)
+        }
     }
 }
 

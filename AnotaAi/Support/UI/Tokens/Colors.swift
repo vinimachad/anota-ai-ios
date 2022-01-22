@@ -18,4 +18,5 @@ extension UIColor {
     static var errorColor = UIColor(named: "ErrorColor") ?? UIColor()
     static var yellowColor = UIColor(named: "YellowColor") ?? UIColor()
     static var disabledButtonColor = UIColor(named: "DisabledButtonColor") ?? UIColor()
+    static var greenColor = UIColor(named: "GreenColor") ?? UIColor()
 }
