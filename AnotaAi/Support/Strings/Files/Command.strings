@@ -5,6 +5,10 @@
   Created by Vinicius Galhardo Machado on 22/01/22.
   
 */
-"concluded "= "Concluido";
-"preparing" = "Preparando";
-"waiting" = "Aguardando";
+"concluded "= "concluido";
+"preparing" = "preparando";
+"waiting" = "aguardando";
+"size_label" = "Tamanho: %@";
+"total_label" = "Total: %@";
+"request_label" = "%@ fez este pedido";
+"stats_of_your_request_label" = "Seu pedido está %@";

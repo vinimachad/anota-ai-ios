@@ -24,6 +24,7 @@ class AddToCommandViewModel {
     // MARK: - Private properties
     
     private var food: Food?
+    private var otherFood: Food?
     private let foods: [Food?]
     private var item = Item()
     private var session: PersonSession?
@@ -40,6 +41,7 @@ class AddToCommandViewModel {
         currentPrice = food?.price
         item.value = self.food?.price ?? 0.0
         item.foodIds.append(food?.id ?? "")
+        item.clientName = session?.name ?? ""
         updateHalfText("Inteira")
         updateSizeText("M")
     }
@@ -110,7 +112,7 @@ extension AddToCommandViewModel: AddToCommandProtocol {
     // MARK: - Action
     
     func didAddToCommand() {
-        guard item.isHalf && item.otherFood != nil || !item.isHalf else {
+        guard item.isHalf && item.foodIds.count > 1 || !item.isHalf else {
             onFailureAddToCommand?("other_food_nil_error".localize(.error))
             return
         }
@@ -162,8 +164,11 @@ extension AddToCommandViewModel: AddToCommandProtocol {
     
     private func updateOtherFood(_ food: Food?) {
         guard let food = food, let id = food.id else { return }
-        item.otherFood = food
+        if item.foodIds.count > 1 {
+            item.foodIds.removeLast()
+        }
         item.foodIds.append(id)
+        otherFood = food
         updateTotalValue()
     }
     
@@ -173,11 +178,11 @@ extension AddToCommandViewModel: AddToCommandProtocol {
         
         isHalfValidation(divided: priceDivided, price: currentFoodPrice)
         sizeValidation()
-        item.name = food?.name ?? ""
+        item.name = self.food?.name ?? ""
         
         guard let otherFoodValue = selectOtherFoodValidation() else { return }
 
-        item.name = "\(food?.name ?? "") e \(item.otherFood?.name ?? "")"
+        item.name = "\(self.food?.name ?? "") e \(otherFood?.name ?? "")"
         let total = item.value + otherFoodValue
         item.value = total * Double(item.howMany)
         onChangeValues?()
@@ -194,7 +199,7 @@ extension AddToCommandViewModel {
         } else {
             food?.price = price
             item.value = price
-            item.otherFood = nil
+            item.foodIds.removeAll(where: { $0 != $0 })
         }
     }
     
@@ -209,12 +214,12 @@ extension AddToCommandViewModel {
     }
     
     private func selectOtherFoodValidation() -> Double? {
-        guard let otherFoodValue = item.otherFood?.price else {
+        guard item.isHalf else {
             item.value = item.value * Double(item.howMany)
             onChangeValues?()
             return nil
         }
         
-        return otherFoodValue
+        return otherFood?.price ?? 0
     }
 }

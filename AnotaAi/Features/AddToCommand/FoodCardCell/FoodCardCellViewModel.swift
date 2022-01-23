@@ -63,6 +63,7 @@ extension FoodCardCellViewModel: FoodCardCellViewModelProtocol {
         else { return }
         
         let food = Food(
+            id: id,
             description: description,
             name: name,
             preview: preview,

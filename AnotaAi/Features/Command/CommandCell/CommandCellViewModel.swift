@@ -37,15 +37,19 @@ class CommandCellViewModel {
     var title: String?
     var subtitle: String?
     var status: Stats?
-    
-    // MARK: - Private properties
+    var value: String?
+    var size: String?
+    var nameClient: String?
     
     // MARK: - Init
     
-    init(title: String?, subtitle: String?, status: String?) {
+    init(title: String?, subtitle: String?, status: String?, value: Double?, size: String?, clientName: String?) {
         self.title = title
-        self.subtitle = subtitle
+        self.subtitle = updateSubtitle(subtitle)
         self.status = updateStatus(status: status)
+        self.value = updateToCurrency(value)
+        self.size = size
+        self.nameClient = clientName
     }
 }
 
@@ -58,5 +62,16 @@ extension CommandCellViewModel: CommandCellViewModelProtocol {
         case "concluded": return .concluded
         default: return .waiting
         }
+    }
+    
+    private func updateToCurrency(_ val: Double?) -> String? {
+        val?.localizedCurrency()
+    }
+    
+    private func updateSubtitle(_ subtitle: String?) -> String? {
+        guard let subtitle = subtitle, !subtitle.isEmpty else {
+            return "Nenhuma observação"
+        }
+        return subtitle
     }
 }

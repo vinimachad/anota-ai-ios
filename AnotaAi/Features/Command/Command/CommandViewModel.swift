@@ -40,7 +40,10 @@ class CommandViewModel {
             CommandCellViewModel(
                 title: $0?.name,
                 subtitle: $0?.observation,
-                status: $0?.status
+                status: $0?.status,
+                value: $0?.value,
+                size: $0?.size,
+                clientName: $0?.clientName
             )
         }
         onChangeCommands?(viewModels)
