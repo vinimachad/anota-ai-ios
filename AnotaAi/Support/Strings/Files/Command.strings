@@ -1,0 +1,10 @@
+/* 
+  Command.strings
+  AnotaAi
+
+  Created by Vinicius Galhardo Machado on 22/01/22.
+  
+*/
+"concluded "= "Concluido";
+"preparing" = "Preparando";
+"waiting" = "Aguardando";

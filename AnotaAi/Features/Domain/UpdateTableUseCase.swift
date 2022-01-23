@@ -27,6 +27,6 @@ class UpdateTableUseCase: UpdateTableUseCaseProtocol {
     }
     
     func execute(_ path: String, request: Table, success: Success? = nil, failure: Failure?) {
-        api.createTable(path, request: request, failure: failure, success: success)
+        api.createTable(path, id: "", request: request, failure: failure, success: success)
     }
 }

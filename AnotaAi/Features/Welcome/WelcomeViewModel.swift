@@ -59,7 +59,7 @@ class WelcomeViewModel {
     // MARK: - Validations
     
     private func hasTableValidation(_ error: String) {
-        if error == "DECODER" {
+        if error == "empty_error" {
             onCreateTable?()
         } else {
             onFailureGetQRCodeValue?(error)
@@ -104,10 +104,8 @@ class WelcomeViewModel {
     }
     
     private func getTable(id: String) {
-        let path = "tables/\(id)"
-        
         getTableUseCase.execute(
-            path,
+            "tables",
             id: id,
             failure: { [weak self] error in
                 self?.hasTableValidation(error)
@@ -120,10 +118,10 @@ class WelcomeViewModel {
     }
     
     private func createTable(_ password: String) {
-        let path = "tables/\(table.id)"
         table.password = password
         createTableUseCase.execute(
-            path,
+            "tables",
+            id: table.id,
             request: table,
             success: { [weak self] in
                 self?.addPerson()

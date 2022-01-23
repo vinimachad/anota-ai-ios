@@ -6,21 +6,65 @@
 //
 
 import Foundation
+import SwiftUI
 
 protocol CommandProtocol: CommandViewModelProtocol {
-    
+    var onFailureGetCommands: ((String) -> Void)? { get set }
+    var onSuccessGetCommands: (() -> Void)? { get set }
+    func getCommands()
 }
 
 class CommandViewModel {
     
     // MARK: - Public properties
     
-    var onChangeSections: (([TableSectionProtocol]) -> Void)?
+    var onChangeCommands: (([CommandCellViewModelProtocol]) -> Void)?
+    var onFailureGetCommands: ((String) -> Void)?
+    var onSuccessGetCommands: (() -> Void)?
+    var onStartGetCommands: (() -> Void)?
     
     // MARK: - Private properties
     
+    private var commandsUseCase: CommandUseCaseProtocol
+    
     // MARK: - Init
     
+    init(commandsUseCase: CommandUseCaseProtocol) {
+        self.commandsUseCase = commandsUseCase
+    }
+    
+    // MARK: - Sections
+    
+    private func generateSections(_ commands: [Item?]) {
+        let viewModels = commands.map {
+            CommandCellViewModel(
+                title: $0?.name,
+                subtitle: $0?.observation,
+                status: $0?.status
+            )
+        }
+        onChangeCommands?(viewModels)
+    }
 }
 
-extension CommandViewModel: CommandProtocol {}
+extension CommandViewModel: CommandProtocol {
+    
+    func getCommands() {
+        guard let tableId = AnotaAiSession.shared.user?.tableId else {
+            onFailureGetCommands?("Falha ao encontrar sua mesa")
+            return
+        }
+        
+        onStartGetCommands?()
+        commandsUseCase.execute(
+            tableId: tableId,
+            success: { [weak self] commands in
+                self?.onSuccessGetCommands?()
+                self?.generateSections(commands)
+            },
+            failure: { [weak self] error in
+                self?.onFailureGetCommands?(error.description)
+            }
+        )
+    }
+}

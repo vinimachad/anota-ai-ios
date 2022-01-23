@@ -12,7 +12,7 @@ protocol TableRoutesProtocol {
     typealias Failure = ((String) -> Void)?
     typealias Success = (() -> Void)?
     
-    func createTable(_ path: String, request: Table, failure: Failure, success: Success)
+    func createTable(_ path: String, id: String, request: Table, failure: Failure, success: Success)
     func tableData<T: Codable>(_ path: String, id: String, failure: ((String) -> Void)?, success: ((T) -> Void)?)
     func addPersonsInTable<T: Codable>(_ path: String, request: T, failure: ((String) -> Void)?, success: ((String) -> Void)?)
 }
@@ -24,14 +24,14 @@ class TableRoutes {
 
 extension TableRoutes: TableRoutesProtocol {
     
-    func createTable(_ path: String, request: Table, failure: Failure, success: Success) {
-        provider.insertData(path, data: request, failure: failure, success: { _ in
+    func createTable(_ path: String, id: String, request: Table, failure: Failure, success: Success) {
+        provider.insertData(path, id: id, data: request, failure: failure, success: { _ in
             success?()
         })
     }
     
     func addPersonsInTable<T: Codable>(_ path: String, request: T, failure: ((String) -> Void)?, success: ((String) -> Void)?) {
-        provider.insertData(path, data: request, failure: failure, success: success)
+        provider.insertData(path, id: nil, data: request, failure: failure, success: success)
     }
     
     func tableData<T: Codable>(_ path: String, id: String, failure: ((String) -> Void)?, success: ((T) -> Void)?) {

@@ -11,7 +11,7 @@ protocol CommandUseCaseProtocol {
     typealias Success = (([Item?]) -> Void)
     typealias Failure = ((String) -> Void)
     
-    func execute(id: String, success: Success?, failure: Failure?)
+    func execute(tableId: String, success: Success?, failure: Failure?)
 }
 
 class CommandUseCase: CommandUseCaseProtocol {
@@ -26,7 +26,7 @@ class CommandUseCase: CommandUseCaseProtocol {
         self.api = api
     }
     
-    func execute(id: String, success: Success? = nil, failure: Failure? = nil) {
-//        api.commands(id: id, success: success, failure: failure)
+    func execute(tableId: String, success: Success? = nil, failure: Failure? = nil) {
+        api.commands(tableId, success: success, failure: failure)
     }
 }

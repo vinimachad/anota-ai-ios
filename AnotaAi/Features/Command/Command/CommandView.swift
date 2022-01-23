@@ -6,11 +6,10 @@
 //
 
 import Foundation
-
 import UIKit
 
 protocol CommandViewModelProtocol {
-    var onChangeSections: (([TableSectionProtocol]) -> Void)? { get set }
+    var onChangeCommands: (([CommandCellViewModelProtocol]) -> Void)? { get set }
 }
 
 class CommandView: UIView {
@@ -36,8 +35,8 @@ class CommandView: UIView {
     func bindIn(viewModel: CommandViewModelProtocol) {
         self.viewModel = viewModel
         
-        self.viewModel?.onChangeSections = { [weak self] sections in
-            self?.tableViewDataSource.sections = sections
+        self.viewModel?.onChangeCommands = { [weak self] viewModels in
+            self?.tableViewDataSource.sections = [TableSection<CommandCell>(items: viewModels)]
         }
     }
 }
@@ -49,4 +48,3 @@ extension CommandView {
         
     }
 }
-

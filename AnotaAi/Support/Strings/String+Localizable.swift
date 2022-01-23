@@ -14,6 +14,7 @@ enum LocalizableFiles: String {
     case restaurantMenu = "RestaurantMenu"
     case home = "Home"
     case addToCommand = "AddToCommand"
+    case command = "Command"
 }
 
 extension String {

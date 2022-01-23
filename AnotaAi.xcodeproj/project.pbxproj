@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		022F2AD3ED203733F4D68EE4 /* Pods_AnotaAiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB04001192C74A409F86BAFF /* Pods_AnotaAiTests.framework */; };
+		3C8A5B83279C7552005A5831 /* CommandCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8A5B82279C7552005A5831 /* CommandCell.swift */; };
+		3C8A5B85279C755C005A5831 /* CommandCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8A5B84279C755C005A5831 /* CommandCellViewModel.swift */; };
+		3C8A5B87279C8CAA005A5831 /* Command.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3C8A5B86279C8CAA005A5831 /* Command.strings */; };
+		3CF521F6279D0103009CB154 /* Pods_AnotaAi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 212A0C367AF176B42D62C4E8 /* Pods_AnotaAi.framework */; };
 		77C27B2D0FA1606D488FF91A /* Pods_AnotaAi_AnotaAiUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEE173B975CCA42782996915 /* Pods_AnotaAi_AnotaAiUITests.framework */; };
 		8100316D272C9DBB003FD820 /* UICollectionView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8100316C272C9DBB003FD820 /* UICollectionView+Reusable.swift */; };
 		81003171272C9F96003FD820 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81003170272C9F96003FD820 /* WelcomeView.swift */; };
@@ -132,7 +136,6 @@
 		81EDA1E627337F79002EE3B9 /* AddPersonUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EDA1E527337F79002EE3B9 /* AddPersonUseCase.swift */; };
 		81FAB363272DB5C600D1B2A0 /* Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FAB362272DB5C600D1B2A0 /* Table.swift */; };
 		81FAB369272DC02D00D1B2A0 /* CreateTableUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FAB368272DC02D00D1B2A0 /* CreateTableUseCase.swift */; };
-		E076D7C24BCB09C49033EBF2 /* Pods_AnotaAi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 212A0C367AF176B42D62C4E8 /* Pods_AnotaAi.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,6 +157,9 @@
 
 /* Begin PBXFileReference section */
 		212A0C367AF176B42D62C4E8 /* Pods_AnotaAi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AnotaAi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C8A5B82279C7552005A5831 /* CommandCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandCell.swift; sourceTree = "<group>"; };
+		3C8A5B84279C755C005A5831 /* CommandCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandCellViewModel.swift; sourceTree = "<group>"; };
+		3C8A5B86279C8CAA005A5831 /* Command.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Command.strings; sourceTree = "<group>"; };
 		4330ABF6F1B1E9808534A4BC /* Pods-AnotaAiTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnotaAiTests.release.xcconfig"; path = "Target Support Files/Pods-AnotaAiTests/Pods-AnotaAiTests.release.xcconfig"; sourceTree = "<group>"; };
 		8100316C272C9DBB003FD820 /* UICollectionView+Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Reusable.swift"; sourceTree = "<group>"; };
 		81003170272C9F96003FD820 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
@@ -296,7 +302,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E076D7C24BCB09C49033EBF2 /* Pods_AnotaAi.framework in Frameworks */,
+				3CF521F6279D0103009CB154 /* Pods_AnotaAi.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +325,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C8A5B81279C753E005A5831 /* CommandCell */ = {
+			isa = PBXGroup;
+			children = (
+				3C8A5B82279C7552005A5831 /* CommandCell.swift */,
+				3C8A5B84279C755C005A5831 /* CommandCellViewModel.swift */,
+			);
+			path = CommandCell;
+			sourceTree = "<group>";
+		};
 		61C19EE1EA33964990F66930 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -392,6 +407,7 @@
 				81AB1D38272D9ADE006FB3C1 /* RestaurantMenu.strings */,
 				817473E4273593B500B30046 /* Home.strings */,
 				81DAF948273CC356001E41D9 /* AddToCommand.strings */,
+				3C8A5B86279C8CAA005A5831 /* Command.strings */,
 			);
 			path = Files;
 			sourceTree = "<group>";
@@ -775,6 +791,7 @@
 		81BECDD827401394006CF661 /* Command */ = {
 			isa = PBXGroup;
 			children = (
+				3C8A5B81279C753E005A5831 /* CommandCell */,
 				81BECDDB274013A6006CF661 /* Model */,
 				81BECDDA274013A1006CF661 /* Domain */,
 				81BECDD92740139D006CF661 /* Command */,
@@ -1047,6 +1064,7 @@
 				811E4D76272C4BBE0099C7AA /* Gilroy-Regular.ttf in Resources */,
 				8116BF4E272CA4F200DDC725 /* Welcome.strings in Resources */,
 				81AB1D39272D9ADE006FB3C1 /* RestaurantMenu.strings in Resources */,
+				3C8A5B87279C8CAA005A5831 /* Command.strings in Resources */,
 				811E4D79272C4BBE0099C7AA /* Gilroy-Bold.ttf in Resources */,
 				811E4D66272C4B360099C7AA /* Default.strings in Resources */,
 				814B3C45272B794D00C9F0CB /* LaunchScreen.storyboard in Resources */,
@@ -1247,6 +1265,7 @@
 				8194F2E0272EF44900C902FC /* PersonSession.swift in Sources */,
 				817473D727358CA800B30046 /* HomeViewModel.swift in Sources */,
 				817474082735D53500B30046 /* AddToCommandCoordinator.swift in Sources */,
+				3C8A5B83279C7552005A5831 /* CommandCell.swift in Sources */,
 				817473DE27358E6100B30046 /* UIViewController+Parent.swift in Sources */,
 				811E4D90272C4EC70099C7AA /* TableViewDataSource.swift in Sources */,
 				81BECDE3274013E5006CF661 /* CommandViewModel.swift in Sources */,
@@ -1267,6 +1286,7 @@
 				8116BF59272CBA8F00DDC725 /* LayoutAnchor.swift in Sources */,
 				81EDA1E627337F79002EE3B9 /* AddPersonUseCase.swift in Sources */,
 				817474122735E96400B30046 /* TextField+Picker.swift in Sources */,
+				3C8A5B85279C755C005A5831 /* CommandCellViewModel.swift in Sources */,
 				811E4D6E272C4B790099C7AA /* Colors.swift in Sources */,
 				814D0E9D27336DF400570934 /* Alert.swift in Sources */,
 				81E7E78B272B836F00E0E726 /* CoordinatorProtocol.swift in Sources */,

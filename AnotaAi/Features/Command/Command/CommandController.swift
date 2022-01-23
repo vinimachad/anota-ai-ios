@@ -43,12 +43,17 @@ class CommandController<ViewModel: CommandProtocol>: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bind()
+        viewModel.getCommands()
     }
     
     // MARK: - Bind
     
     private func bind() {
         contentView.bindIn(viewModel: viewModel)
+        
+        viewModel.onFailureGetCommands = { error in
+            print(error)
+        }
     }
 }
 

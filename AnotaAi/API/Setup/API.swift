@@ -18,7 +18,7 @@ protocol ApiProtocol {
     func getData<T: Codable>(_ path: String, id: String, failure: ((String) -> Void)?, success: ((T) -> Void)?)
     func getDatas<T: Codable>(_ path: String, failure: ((String) -> Void)?, success: (([T?]) -> Void)?)
     
-    func insertData<T: Codable>(_ path: String, data: T, failure: Failure, success: Success)
+    func insertData<T: Codable>(_ path: String, id: String?, data: T, failure: Failure, success: Success)
     func updateData(_ path: String, docId: String, data: [String: Any], success: (() -> Void)?)
 }
 
@@ -42,7 +42,10 @@ class Api: ApiProtocol {
                 failure?(error?.localizedDescription ?? "")
                 return
             }
-            guard let model = try? document.data(as: T.self) else { return }
+            guard let model = try? document.data(as: T.self) else {
+                failure?("empty_error")
+                return
+            }
             
             success?(model)
         }
@@ -63,12 +66,18 @@ class Api: ApiProtocol {
     
     // MARK: - Post
     
-    func insertData<T: Codable>(_ path: String, data: T, failure: Failure, success: Success) {
+    func insertData<T: Codable>(_ path: String, id: String? = nil, data: T, failure: Failure, success: Success) {
+        var dataResult: DocumentReference
         
-        var ref: DocumentReference?
+        if let id = id {
+            dataResult = db.collection(path).document(id)
+        } else {
+            dataResult = db.collection(path).document()
+        }
+        
         do {
-            ref = try db.collection(path).addDocument(from: data)
-            success?(ref?.documentID ?? "")
+            try dataResult.setData(from: data)
+            success?(dataResult.documentID)
         } catch let error {
             failure?(error.localizedDescription)
         }

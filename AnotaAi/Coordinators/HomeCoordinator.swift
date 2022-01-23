@@ -21,13 +21,13 @@ class HomeCoordinator: CoordinatorProtocol {
     
     private lazy var menuCoordinator: MenuCoordinator = {
         let coordinator = MenuCoordinator()
-        coordinator.start()
+        _ = coordinator.start()
         return coordinator
     }()
     
     private lazy var commandCoordinator: CommandCoordinator = {
         let coordinator = CommandCoordinator()
-        coordinator.start()
+        _ = coordinator.start()
         return coordinator
     }()
 }

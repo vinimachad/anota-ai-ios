@@ -16,17 +16,17 @@ enum HomeTab: CaseIterable {
 
     var title: String {
         switch self {
-            case .menu: return "menu_hint_title".localize(.home)
-            case .requests: return "request_hint_title".localize(.home)
-            case .profile: return "profile_hint_title".localize(.home)
+        case .menu: return "menu_hint_title".localize(.home)
+        case .requests: return "request_hint_title".localize(.home)
+        case .profile: return "profile_hint_title".localize(.home)
         }
     }
 
     var image: UIImage {
         switch self {
-            case .menu: return UIImage()
-            case .requests: return UIImage()
-            case .profile: return UIImage()
+        case .menu: return UIImage.Icons.home
+        case .requests: return UIImage.Icons.recipt
+        case .profile: return UIImage.Icons.user
         }
     }
 }

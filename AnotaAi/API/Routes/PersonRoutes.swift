@@ -22,7 +22,7 @@ class PersonRoutes {
 extension PersonRoutes: PersonRoutesProtocol {
     
     func createPerson(_ path: String, request: Person, failure: ((String) -> Void)?, success: ((String) -> Void)?) {
-        provider.insertData(path, data: request, failure: failure, success: success)
+        provider.insertData(path, id: nil, data: request, failure: failure, success: success)
     }
     
     func personData<T: Codable>(_ path: String, id: String, failure: ((String) -> Void)?, success: ((T) -> Void)?) {
