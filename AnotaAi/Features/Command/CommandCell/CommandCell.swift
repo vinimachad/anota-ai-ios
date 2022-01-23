@@ -8,14 +8,15 @@
 import Foundation
 import UIKit
 import Reusable
+import SnapKit
 
-protocol CommandCellViewModelProtocol: TablesViewModelProtocol {
+protocol CommandCellViewModelProtocol: TablesWithoutViewModelProtocol {
     var title: String? { get }
     var subtitle: String? { get }
-    var onUpdateStats: ((Stats) -> Void)? { get set }
+    var status: Stats? { get }
 }
 
-class CommandCell: UITableViewCell, Reusable, TableViewProtocol {    
+class CommandCell: UITableViewCell, TableViewWithoutNibProtocol {    
     
     // MARK: - UI Components
     
@@ -46,11 +47,8 @@ class CommandCell: UITableViewCell, Reusable, TableViewProtocol {
         self.viewModel = viewModel
         titleLabel.text = viewModel.title
         subtitleLabel.text = viewModel.subtitle
-        
-        self.viewModel?.onUpdateStats = { [weak self] stats in
-            self?.statusLabel.text = stats.title
-            self?.statusLabel.textColor = stats.textColor
-        }
+        statusLabel.text = viewModel.status?.title
+        statusLabel.textColor = viewModel.status?.textColor
     }
 }
 
@@ -67,7 +65,7 @@ extension CommandCell {
     }
     
     private func setupTitleLabel() {
-        titleLabel.font = .default(type: .regular, ofSize: 14)
+        titleLabel.font = .default(type: .regular, ofSize: 16)
         titleLabel.textColor = .blackColor
         titleLabel.numberOfLines = 0
     }
@@ -84,11 +82,11 @@ extension CommandCell {
     }
     
     private func setupContainerView() {
-        containerView.layer.shadowRadius = 8
-        containerView.layer.shadowOffset = .zero;
-        containerView.layer.shadowColor = UIColor.black.cgColor
+        layoutIfNeeded()
+        containerView.backgroundColor = .white
+        containerView.layer.cornerRadius = 4
+        containerView.layer.shadowOffset = .zero
         containerView.layer.shadowOpacity = 0.16
-        containerView.layer.shadowPath = UIBezierPath(roundedRect: containerView.bounds, cornerRadius:containerView.layer.cornerRadius).cgPath
     }
 }
 
@@ -99,37 +97,37 @@ extension CommandCell {
     private func setupConstraints() {
         viewHierarchy()
         
-        containerView.layout {
-            $0.leading.equal(self.leftAnchor, constant: 16)
-            $0.trailing.equal(self.rightAnchor, constant: -16)
-            $0.top.equal(self.topAnchor)
-            $0.bottom.equal(self.bottomAnchor, constant: -16)
+        containerView.snp.makeConstraints {
+            $0.leading.equalTo(self.snp.leadingMargin)
+            $0.trailing.equalTo(self.snp.trailingMargin)
+            $0.top.equalTo(self.snp.top)
+            $0.bottom.equalTo(snp.bottomMargin)
         }
         
-        titleLabel.layout {
-            $0.leading.equal(containerView.leftAnchor, constant: 16)
-            $0.trailing.equal(containerView.rightAnchor, constant: -16)
-            $0.top.equal(containerView.topAnchor, constant: 16)
-            $0.bottom.equal(subtitleLabel.topAnchor, constant: -8)
+        titleLabel.snp.makeConstraints {
+            $0.leading.equalTo(containerView.snp.leadingMargin)
+            $0.trailing.equalTo(containerView.snp.trailingMargin)
+            $0.top.equalTo(containerView.snp.topMargin)
+            $0.bottom.equalTo(subtitleLabel.snp.top).offset(-8)
         }
         
-        subtitleLabel.layout {
-            $0.leading.equal(containerView.leftAnchor, constant: 16)
-            $0.trailing.equal(containerView.rightAnchor, constant: -16)
-            $0.bottom.equal(statusLabel.topAnchor, constant: -8)
+        subtitleLabel.snp.makeConstraints {
+            $0.leading.equalTo(containerView.snp.leadingMargin)
+            $0.trailing.equalTo(containerView.snp.trailingMargin)
+            $0.bottom.equalTo(statusLabel.snp.top).offset(-8)
         }
         
-        statusLabel.layout {
-            $0.leading.equal(containerView.leftAnchor, constant: 16)
-            $0.trailing.equal(containerView.rightAnchor, constant: -16)
-            $0.bottom.equal(containerView.bottomAnchor, constant: -16)
+        statusLabel.snp.makeConstraints {
+            $0.leading.equalTo(containerView.snp.leadingMargin)
+            $0.trailing.equalTo(containerView.snp.trailingMargin)
+            $0.bottom.equalTo(containerView.snp.bottom).offset(-16)
         }
     }
     
     private func viewHierarchy() {
-        addSubview(containerView)
         containerView.addSubview(titleLabel)
         containerView.addSubview(subtitleLabel)
         containerView.addSubview(statusLabel)
+        addSubview(containerView)
     }
 }

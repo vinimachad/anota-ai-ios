@@ -14,6 +14,7 @@ target 'AnotaAi' do
   pod 'MSession/Session'
   pod 'Kingfisher'
   pod 'Reusable'
+  pod 'SnapKit', '~> 5.0.0'
 
   target 'AnotaAiTests' do
     inherit! :search_paths

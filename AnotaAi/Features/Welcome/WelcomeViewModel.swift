@@ -33,8 +33,8 @@ class WelcomeViewModel {
     
     // MARK: - Private properties
     
-    private var table: Table = Table() // (id: "03")
-    private var personRequest: Person = Person() // (name: "Letycia")
+    private var table: Table = Table(id: "02") // (id: "03")
+    private var personRequest: Person = Person(name: "Letycia") // (name: "Letycia")
     private var createTableUseCase: CreateTableUseCaseProtocol
     private var getTableUseCase: GetTableUseCaseProtocol
     private var addPersonUseCase: AddPersonUseCaseProtocol

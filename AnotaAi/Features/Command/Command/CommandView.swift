@@ -21,7 +21,7 @@ class CommandView: UIView {
     // MARK: - Private properties
     
     private(set) var viewModel: CommandViewModelProtocol?
-    private var tableViewDataSource = TableViewDataSource()
+    private var tableViewDataSource = TableViewDataSourceWithoutNib()
     
     // MARK: - Life cycle
     
@@ -36,7 +36,7 @@ class CommandView: UIView {
         self.viewModel = viewModel
         
         self.viewModel?.onChangeCommands = { [weak self] viewModels in
-            self?.tableViewDataSource.sections = [TableSection<CommandCell>(items: viewModels)]
+            self?.tableViewDataSource.sections = [TableSectionWithoutNib<CommandCell>(items: viewModels)]
         }
     }
 }
@@ -44,7 +44,13 @@ class CommandView: UIView {
 // MARK: - View setup
 
 extension CommandView {
+    
     private func setup() {
-        
+        setupTableView()
+    }
+    
+    private func setupTableView() {
+        tableViewDataSource.tableView = tableView
+        tableView.separatorStyle = .none
     }
 }

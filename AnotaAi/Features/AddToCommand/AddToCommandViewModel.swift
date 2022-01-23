@@ -39,6 +39,7 @@ class AddToCommandViewModel {
         self.addToCommandUseCase = addToCommandUseCase
         currentPrice = food?.price
         item.value = self.food?.price ?? 0.0
+        item.foodIds.append(food?.id ?? "")
         updateHalfText("Inteira")
         updateSizeText("M")
     }
@@ -160,8 +161,9 @@ extension AddToCommandViewModel: AddToCommandProtocol {
     }
     
     private func updateOtherFood(_ food: Food?) {
-        guard let food = food else { return }
+        guard let food = food, let id = food.id else { return }
         item.otherFood = food
+        item.foodIds.append(id)
         updateTotalValue()
     }
     

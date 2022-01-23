@@ -308,6 +308,7 @@ PODS:
     - Reusable/View (= 4.1.2)
   - Reusable/Storyboard (4.1.2)
   - Reusable/View (4.1.2)
+  - SnapKit (5.0.1)
   - SwiftLint (0.45.0)
 
 DEPENDENCIES:
@@ -317,6 +318,7 @@ DEPENDENCIES:
   - Kingfisher
   - MSession/Session
   - Reusable
+  - SnapKit (~> 5.0.0)
   - SwiftLint
 
 SPEC REPOS:
@@ -341,6 +343,7 @@ SPEC REPOS:
     - nanopb
     - PromisesObjC
     - Reusable
+    - SnapKit
     - SwiftLint
 
 SPEC CHECKSUMS:
@@ -364,8 +367,9 @@ SPEC CHECKSUMS:
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   Reusable: 6bae6a5e8aa793c9c441db0213c863a64bce9136
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftLint: e5c7f1fba68eccfc51509d5b2ce1699f5502e0c7
 
-PODFILE CHECKSUM: 3d1b0883c29763c4e7e127ef63bae2fde0b858c4
+PODFILE CHECKSUM: 58820fb4d7730a0c686df8f0c9541450b6aa5ed0
 
 COCOAPODS: 1.11.2

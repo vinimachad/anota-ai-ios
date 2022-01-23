@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		022F2AD3ED203733F4D68EE4 /* Pods_AnotaAiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB04001192C74A409F86BAFF /* Pods_AnotaAiTests.framework */; };
+		3C7D4D83279D93F4005FBE66 /* TableViewDataSourceWithoutNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7D4D82279D93F4005FBE66 /* TableViewDataSourceWithoutNib.swift */; };
+		3C7D4D85279D975C005FBE66 /* TableSectionWithoutNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7D4D84279D975C005FBE66 /* TableSectionWithoutNib.swift */; };
+		3C7D4D89279D9CC6005FBE66 /* TableWithoutNibProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7D4D88279D9CC6005FBE66 /* TableWithoutNibProtocols.swift */; };
 		3C8A5B83279C7552005A5831 /* CommandCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8A5B82279C7552005A5831 /* CommandCell.swift */; };
 		3C8A5B85279C755C005A5831 /* CommandCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8A5B84279C755C005A5831 /* CommandCellViewModel.swift */; };
 		3C8A5B87279C8CAA005A5831 /* Command.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3C8A5B86279C8CAA005A5831 /* Command.strings */; };
@@ -157,6 +160,9 @@
 
 /* Begin PBXFileReference section */
 		212A0C367AF176B42D62C4E8 /* Pods_AnotaAi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AnotaAi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C7D4D82279D93F4005FBE66 /* TableViewDataSourceWithoutNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSourceWithoutNib.swift; sourceTree = "<group>"; };
+		3C7D4D84279D975C005FBE66 /* TableSectionWithoutNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSectionWithoutNib.swift; sourceTree = "<group>"; };
+		3C7D4D88279D9CC6005FBE66 /* TableWithoutNibProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableWithoutNibProtocols.swift; sourceTree = "<group>"; };
 		3C8A5B82279C7552005A5831 /* CommandCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandCell.swift; sourceTree = "<group>"; };
 		3C8A5B84279C755C005A5831 /* CommandCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandCellViewModel.swift; sourceTree = "<group>"; };
 		3C8A5B86279C8CAA005A5831 /* Command.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Command.strings; sourceTree = "<group>"; };
@@ -325,6 +331,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C7D4D86279D9BDC005FBE66 /* WithoutNib */ = {
+			isa = PBXGroup;
+			children = (
+				3C7D4D82279D93F4005FBE66 /* TableViewDataSourceWithoutNib.swift */,
+				3C7D4D84279D975C005FBE66 /* TableSectionWithoutNib.swift */,
+				3C7D4D88279D9CC6005FBE66 /* TableWithoutNibProtocols.swift */,
+			);
+			path = WithoutNib;
+			sourceTree = "<group>";
+		};
+		3C7D4D87279D9BEB005FBE66 /* WithNib */ = {
+			isa = PBXGroup;
+			children = (
+				811E4D89272C4EC70099C7AA /* TableViewDataSource.swift */,
+				811E4D8A272C4EC70099C7AA /* TableProtocols.swift */,
+				811E4D8B272C4EC70099C7AA /* TableSection.swift */,
+			);
+			path = WithNib;
+			sourceTree = "<group>";
+		};
 		3C8A5B81279C753E005A5831 /* CommandCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -519,9 +545,8 @@
 		811E4D88272C4EC70099C7AA /* TableView */ = {
 			isa = PBXGroup;
 			children = (
-				811E4D89272C4EC70099C7AA /* TableViewDataSource.swift */,
-				811E4D8A272C4EC70099C7AA /* TableProtocols.swift */,
-				811E4D8B272C4EC70099C7AA /* TableSection.swift */,
+				3C7D4D87279D9BEB005FBE66 /* WithNib */,
+				3C7D4D86279D9BDC005FBE66 /* WithoutNib */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -1251,6 +1276,7 @@
 				817474022735D0F500B30046 /* AddToCommandView.swift in Sources */,
 				811E4D61272C4A5D0099C7AA /* WelcomeCoordinator.swift in Sources */,
 				817473E32735909000B30046 /* HomeCoordinator.swift in Sources */,
+				3C7D4D83279D93F4005FBE66 /* TableViewDataSourceWithoutNib.swift in Sources */,
 				817474062735D11100B30046 /* AddToCommandViewModel.swift in Sources */,
 				811E4D92272C4EC70099C7AA /* TableSection.swift in Sources */,
 				8116BF51272CA78800DDC725 /* WelcomeFactory.swift in Sources */,
@@ -1284,6 +1310,7 @@
 				8100316D272C9DBB003FD820 /* UICollectionView+Reusable.swift in Sources */,
 				81003180272CA10A003FD820 /* TextField.swift in Sources */,
 				8116BF59272CBA8F00DDC725 /* LayoutAnchor.swift in Sources */,
+				3C7D4D89279D9CC6005FBE66 /* TableWithoutNibProtocols.swift in Sources */,
 				81EDA1E627337F79002EE3B9 /* AddPersonUseCase.swift in Sources */,
 				817474122735E96400B30046 /* TextField+Picker.swift in Sources */,
 				3C8A5B85279C755C005A5831 /* CommandCellViewModel.swift in Sources */,
@@ -1305,6 +1332,7 @@
 				81AB1D3F272DAC52006FB3C1 /* TableRoutes.swift in Sources */,
 				8174740B2735E30E00B30046 /* TextFieldSideBySideView.swift in Sources */,
 				81AB1D32272D91B6006FB3C1 /* MenuController.swift in Sources */,
+				3C7D4D85279D975C005FBE66 /* TableSectionWithoutNib.swift in Sources */,
 				81AB1D3C272DA6EB006FB3C1 /* API.swift in Sources */,
 				817473EB27359FA000B30046 /* MenuRoutes.swift in Sources */,
 				81BECDE7274016AE006CF661 /* CommandCoordinator.swift in Sources */,

@@ -36,30 +36,27 @@ class CommandCellViewModel {
     
     var title: String?
     var subtitle: String?
-    var onUpdateStats: ((Stats) -> Void)?
+    var status: Stats?
     
     // MARK: - Private properties
-    
-    private var status: String?
     
     // MARK: - Init
     
     init(title: String?, subtitle: String?, status: String?) {
         self.title = title
         self.subtitle = subtitle
-        self.status = status
-        updateStatus()
+        self.status = updateStatus(status: status)
     }
 }
 
 extension CommandCellViewModel: CommandCellViewModelProtocol {    
     
-    private func updateStatus() {
+    private func updateStatus(status: String?) -> Stats {
         switch status {
-        case "waiting": onUpdateStats?(.waiting)
-        case "preparing": onUpdateStats?(.preparing)
-        case "concluded": onUpdateStats?(.concluded)
-        default: break
+        case "waiting": return .waiting
+        case "preparing": return .preparing
+        case "concluded": return .concluded
+        default: return .waiting
         }
     }
 }

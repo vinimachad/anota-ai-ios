@@ -6,12 +6,17 @@
 //
 
 import UIKit
+import Reusable
 
 extension UITableView {
 
     func registerNib<T: UITableViewCell>(_ type: T.Type) {
         let nib = UINib(nibName: type.reuseIdentifier, bundle: Bundle(for: type))
         self.register(nib, forCellReuseIdentifier: type.reuseIdentifier)
+    }
+    
+    func registerWithoutNib<T: UITableViewCell>(_ type: T.Type) where T: Reusable {
+        register(cellType: type.self)
     }
     
     func dequeueReusableCell<T: UITableViewCell>(for indexPath: IndexPath, cellType: T.Type = T.self) -> T {
