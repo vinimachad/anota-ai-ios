@@ -30,5 +30,3 @@ protocol TableViewWithoutNibProtocol: Reusable {
     associatedtype ViewModel = TablesWithoutViewModelProtocol
     func bindIn(viewModel: ViewModel)
 }
-
-
